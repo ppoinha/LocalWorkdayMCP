@@ -153,7 +153,7 @@ Note that the authorization host usually differs from the services host. Always 
 | **Allow changes in Workday** | Leave **off**. It enables the job change and business title change tools. |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
-6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file or `.env`.
+6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file.
 
 > **Chat tab only.** The Workday extension works in the Chat tab of Claude Desktop. In the Code tab its tools do not load, and Claude will tell you that no `workday_auth_status` (or other Workday) tool exists.
 
