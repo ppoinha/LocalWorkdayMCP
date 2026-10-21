@@ -20,4 +20,21 @@ What you can ask once Workday MCP is installed and you have signed in. All names
 **"Find everyone named Smith in the company, I need the first five."**
 > Returns the first five matches with name, business title and location, and tells you more exist.
 
+**More areas (version 0.2.0 and later; each needs its scope on your API Client, see the installation guide).**
+
+**"Which absence types can I request, and when is my next leave?"**
+> You can request Annual Leave, Sick Leave and Floating Holiday. No leave of absence is scheduled.
+
+**"What goals do I have open this year?"**
+> 3 goals: Launch the quarterly forecast model (in progress), Document the month-end close (not started), Mentor one analyst (in progress).
+
+**"Show me open job postings in Finance."**
+> 2 postings: Senior Financial Analyst (Chicago) and Accounting Manager (Remote), with their posting dates.
+
+**"Who is mentoring whom on my team?"**
+> Maya Chen mentors Priya Nair (started 1 February, in progress).
+
+**"What compensation scorecards exist?"**
+> 2 scorecards: FY25 Merit and FY25 Bonus, each with its measures and weights.
+
 Tip: ask in the **Chat** tab of Claude Desktop, and if Claude says it is not signed in, ask it to call `workday_login`.

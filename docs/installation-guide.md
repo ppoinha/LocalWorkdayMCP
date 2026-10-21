@@ -1,6 +1,6 @@
 # Workday MCP: installation guide
 
-Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `workday-mcp-0.1.1.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
+Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `workday-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
 
 **Licence:** the Workday MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
 
@@ -10,7 +10,7 @@ Connect Claude to Workday and ask questions in plain English, signing in with yo
 
 ## 1. Read this first
 
-**Today it is installed locally, by each person, on their own Windows computer.** The recommended install is the Claude Desktop extension file (`workday-mcp-0.1.1.mcpb`): Claude Desktop runs it with its own built-in Node.js, so there is nothing else to install and no config file to edit. Every person who wants to use it installs the extension themselves, **registers their own Workday API Client** (their own client ID and secret, nothing shared with anyone else) and signs in with their own Workday account. Only Windows has been tested so far; the extension file is also built for macOS, but treat that as untested.
+**Today it is installed locally, by each person, on their own Windows computer.** The recommended install is the Claude Desktop extension file (`workday-mcp-<version>.mcpb`): Claude Desktop runs it with its own built-in Node.js, so there is nothing else to install and no config file to edit. Every person who wants to use it installs the extension themselves, **registers their own Workday API Client** (their own client ID and secret, nothing shared with anyone else) and signs in with their own Workday account. Only Windows has been tested so far; the extension file is also built for macOS, but treat that as untested.
 
 **A central deployment is planned.** A later phase adds a remote (HTTPS) transport, per-user sign-in and per-user token storage, so one hosted server can serve a whole organization with no local install. Until then, clients that can only connect to remote servers (ChatGPT, Microsoft Copilot Studio, the "custom connector" dialog in Claude) cannot use it. See the [support matrix](#6-which-clients-can-use-it-today) and [hosting strategies](#8-where-to-run-the-server).
 
@@ -21,7 +21,7 @@ There are two layers, and both apply on every request:
 1. **The Workday API Client sets the outer limit.** When you register the API Client in Workday you choose its *scopes* (functional areas such as Staffing or Organizations and Roles). The server can only reach resources inside those scopes, whoever signs in.
 2. **The signed-in user sets what comes back.** Each user opens a Workday sign-in page in their browser and authorizes the API Client to act as them. Workday then applies *that user's* security permissions to every call. A manager sees their reports; a regular employee does not. The AI never gets more access than the person using it.
 
-The assistant never sees the client secret or tokens. They are read from your local configuration and kept in an encrypted token file; they are never put into tool arguments, results or logs. There is no generic "call any URL" tool: the assistant can only invoke the specific Workday operations the server exposes. Write operations (job changes, business title changes) are hidden unless you set `WORKDAY_ENABLE_WRITES=true`.
+The assistant never sees the client secret or tokens. They are read from your local configuration and kept in an encrypted token file; they are never put into tool arguments, results or logs. There is no generic "call any URL" tool: the assistant can only invoke the specific Workday operations the server exposes. Every operation that changes data in Workday (job changes, business title changes, time off requests, goals, scorecards, mentorships and more, 81 in all) is hidden unless you switch on **Allow changes in Workday** (`WORKDAY_ENABLE_WRITES=true`).
 
 ---
 
@@ -32,7 +32,7 @@ The assistant never sees the client secret or tokens. They are read from your lo
 | Item | Notes |
 |---|---|
 | A Windows computer with **Claude Desktop** (current version) | Free or paid Claude account; signed in. Extensions are installed from Claude Desktop's settings. |
-| The extension file `workday-mcp-0.1.1.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
+| The extension file `workday-mcp-<version>.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
 | **Your own Workday API Client** | You register it yourself in Workday (section 3). That gives you your own client ID and client secret, plus the authorization and token endpoints. Nobody else needs, or should receive, your secret. |
 | Your own Workday account | The one you will sign in with. Its permissions decide what you see. |
 | A web browser on the same computer | The sign-in page opens there and redirects back to `localhost`. |
@@ -77,20 +77,38 @@ The person registering the client needs permission on the security domain that s
 
 ### Step 3. Choose scopes (functional areas)
 
-The scope limits which parts of Workday the server can reach at all. The extension form defaults to `staffing organizations_and_roles`, which covers workers and organizations. Start small and add more later; changing scopes later means users must log in again to authorize the new scope.
+The scope limits which parts of Workday the server can reach at all. The extension form defaults to `staffing organizations_and_roles`, which covers workers and organizations. Start small and add more later; changing scopes later means users must log in again (ask Claude to call `workday_logout`, then `workday_login`) to authorize the new scope.
 
 | Scope (functional area) | Enables these tools | Recommended |
 |---|---|---|
-| **Staffing** | `workers_*` (get, list, direct reports, history, business title changes), `jobChangeReasons_*`, `supervisoryOrganizations_*` | Yes, start here |
+| **Staffing** | `workers_*` (get, list, direct reports, history, business title changes), `jobChangeReasons_*`, `supervisoryOrganizations_*`, `staffing_*` (worker details, service dates, check-ins, job and organization assignment changes) | Yes, start here |
 | **Organizations and Roles** | `organizations_*`, `organizationTypes_*`, `supervisoryOrganizations_*`, `workers_organizations_*` | Yes, start here |
-| **Time Off and Leave** | `workers_timeOffPlans_*`, `workers_timeOffEntries_*` | Optional |
-| **Tenant Non-Configurable** | `workers_inboxTasks_*`, `currencies_*` | Optional |
+| **Time Off and Leave** | `workers_timeOffPlans_*`, `workers_timeOffEntries_*`, and from version 0.2.0 `absence_*` (balances, eligible absence types, leaves of absence, time off details) | Optional |
+| **Tenant Non-Configurable** | `workers_inboxTasks_*`, `currencies_*`, and from version 0.2.0 `recruiting_offers_*` and `recruiting_employmentAgreements_*` | Optional |
+| **Performance Enablement** | from version 0.2.0 `performance_*` (goals, feedback, performance reviews) and `staffing_workers_checkIns_*` | Optional |
+| **Worker Profile and Skills** | from version 0.2.0 skills tools in `staffing_*`, `performance_*` and `talent_*` | Optional |
+| **Career and Development Planning** | from version 0.2.0 `performance_workers_developmentItems_*` and `talent_mentorships_*` | Optional |
+| **Talent Pipeline** | from version 0.2.0 `talent_successionPlans_*`, `talent_successionPlanEvents_*` and `recruiting_prospects_*` | Optional |
+| **Recruiting** | from version 0.2.0 `recruiting_*` (job postings, interviews, prospects). Candidate data is personal data. | Optional, sensitive |
+| **Advanced Compensation** | from version 0.2.0 `compensation_scorecards_*` and `compensation_scorecardResults_*` | Optional, sensitive |
+| **Jobs & Positions** | from version 0.2.0 `staffing_jobFamilies_*`, `staffing_jobProfiles_*` | Optional |
+| **Contact Information** | from version 0.2.0 `staffing_workers_homeContactInformationChanges_*`, `staffing_workers_workContactInformationChanges_*` | Optional, personal data |
+| **Core Compensation** | `compensation_workers_requestOneTimePayment_create` only (a change operation) | Only if you switch on changes |
 | **Core Payroll** | `workers_paySlips_*` | Only if you really need it; sensitive |
 | **Customers**, **Customer Accounts** | `customers_*` | Optional |
 | **System** | `auditLogs_*` (deprecated by Workday) | Not recommended |
 | **Common Financial Management, Worktags** | `validateWorktags_run` | Not needed for HR use |
 
-The mapping comes from the scopes and security domains documented per operation in the Workday REST OpenAPI file the server is generated from (`spec/common_oas3.json`); each tool's description lists its scope and the security domain that secures it. The user approves the API Client on Workday's consent page when they log in.
+**Scope identifiers.** Put the identifiers, not the display names, into the *Scopes* field. The ones we have used are the display name in lower case with underscores (`organizations_and_roles`, `tenant_non_configurable`), so the new areas should look like `time_off_and_leave`, `performance_enablement`, `worker_profile_and_skills`, `career_and_development_planning`, `talent_pipeline`, `recruiting`, `advanced_compensation`, `jobs_and_positions` and `contact_information`. That pattern is an assumption for the new ones: **copy the exact spelling from your tenant's *View API Client* report** (or from the scope list when you register the client), and if Workday answers with *invalid scope* at sign-in, one of them is misspelled or not ticked on the API Client.
+
+**Example for everything read-only:** tick these on the API Client and put the same identifiers in the form's *Scopes* field:
+`staffing organizations_and_roles time_off_and_leave tenant_non_configurable performance_enablement worker_profile_and_skills career_and_development_planning talent_pipeline recruiting advanced_compensation jobs_and_positions contact_information`
+
+Each tool's description names the scope the spec lists for it. Operations that list several scopes are reachable with the ones you have; if one still answers 403, add the next scope in its description.
+
+The mapping comes from the scopes and security domains documented per operation in the Workday REST OpenAPI files the server is generated from (`spec/*_oas3.json`; the *Common* file plus Staffing, Absence Management, Compensation, Performance Enablement, Recruiting and Talent Management). The user approves the API Client on Workday's consent page when they log in.
+
+**Too many tools?** Version 0.2.0 offers 182 read tools plus the three sign-in tools. If your AI client struggles with that many, use the form field **Workday areas** (`WORKDAY_SERVICES`) to list only the areas you want, for example `common,absence`. The valid names are `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting` and `talent`; the default is `all`.
 
 ### Step 4. Security domain permissions
 
@@ -105,6 +123,12 @@ Scopes are not enough on their own. Each REST operation is also secured by one o
 | Time off balances | Self-Service: Time Off Balances |
 | Inbox tasks | Core Navigation |
 | Pay slips | Self-Service: Payroll (My Payslips) |
+| Time off, leaves of absence | Self-Service: Time Off, Self-Service: Time Off Balances, Self-Service: Leave of Absence (managers: the *Worker Data* versions) |
+| Goals, feedback, development items | Self-Service: Employee Goals, Self-Service: Anytime Feedback, Self-Service: Development Items (managers: *Worker Data*) |
+| Compensation scorecards | Set Up: Merit and Bonus |
+| Job postings, prospects, interviews | Job Postings: External, Prospects, Candidate Data: Attachments, Interview Feedback Public API |
+| Mentorships, succession plans | Self-Service: Mentoring, Worker Data: Succession, Search: Find Succession Plans |
+| Check-ins, skills, service dates | Self-Service: Check-Ins, Self-Service: Skills, Self-Service: Service Dates |
 
 In practice most employees already have the self-service domains, and managers already have the team domains, so a pilot normally needs no security changes beyond the API Client itself. If a user gets "permission denied" for something they can do in the Workday UI, check the domain named in the tool's description with **View Security for Securable Item**.
 
@@ -135,8 +159,8 @@ Note that the authorization host usually differs from the services host. Always 
 
 ## 4. Install the Claude Desktop extension (recommended, Windows)
 
-1. Download `workday-mcp-0.1.1.mcpb` from the repository's [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*) and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
-2. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension** and pick the `workday-mcp-0.1.1.mcpb` file.
+1. Download `workday-mcp-<version>.mcpb` from the repository's [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*) and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
+2. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension** and pick the `workday-mcp-<version>.mcpb` file.
    - This is the only install route we have confirmed. Use it rather than opening the file from Explorer.
 3. Claude Desktop shows the extension ("Workday") and its details. Review them and confirm the installation.
 4. Fill in the form with the values from **your own** API Client (section 3, step 6):
@@ -148,9 +172,10 @@ Note that the authorization host usually differs from the services host. Always 
 | **Authorization Endpoint** | For example `https://<host>/<tenant>/authorize` |
 | **Token Endpoint** | For example `https://<services host>/ccx/oauth2/<tenant>/token`. The tenant and API address are derived from it. |
 | **Redirection URI** | Keep the default `https://localhost:3000/callback`. It must be registered on the API Client, and its port (3000) must be free on your PC when you sign in. |
-| **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles` |
+| **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles`. Add the ones for the areas you use (step 3). |
+| **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. Version 0.2.0 and later. |
 | **Use PKCE** | Leave off unless your API Client has *Support Proof Key for Code Exchange* ticked |
-| **Allow changes in Workday** | Leave **off**. It enables the job change and business title change tools. |
+| **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
 6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file.
