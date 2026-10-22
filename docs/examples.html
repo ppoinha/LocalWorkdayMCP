@@ -48,7 +48,23 @@
 </div>
 </div></section>
 
-<section><div class="wrap"><div class="callout">
+<section><div class="wrap">
+<div class="sechead"><p class="eyebrow">New in 0.6.0</p><h2>Workforce analytics for HR, finance and leadership</h2><p class="lede">Turn on <b>Allow Workday Query Language (WQL) reports</b> in the extension settings and Claude can answer questions about the whole workforce: counts, trends, turnover, cost and mix. Answers are summaries only. No names, no individual pay, and groups smaller than three people are never shown.</p></div>
+<div class="qa-grid">
+<div class="qa"><div class="q">&ldquo;Show the board scorecard.&rdquo;</div><div class="a">Headcount 4,812 (up 2.7% on a year ago), 4,655 FTE. 612 hires and 487 exits in the last 12 months, turnover 10.1%. Women in leadership 38%. Standing out: Customer Support has the highest turnover, and 9% of Finance is within five years of retirement age.</div></div>
+<div class="qa"><div class="q">&ldquo;Headcount, hires and exits by quarter for the last two years.&rdquo;</div><div class="a">Headcount grew from 4,402 to 4,812 over eight quarters. Hiring peaked at 181 in Q2 last year, and exits held steady near 120 a quarter. Net change turned positive in every quarter but one.</div></div>
+<div class="qa"><div class="q">&ldquo;Turnover by function for Germany only.&rdquo;</div><div class="a">Germany has 642 active workers. Customer Support 17.9%, Sales 12.4%, Engineering 7.2%, Finance 5.1%. Groups under three people are rolled into Other.</div></div>
+<div class="qa"><div class="q">&ldquo;Which locations have the highest voluntary turnover?&rdquo;</div><div class="a">Austin 9.8%, Munich 8.6% and Chicago 7.9%. The other 11 locations are below 6%.</div></div>
+<div class="qa"><div class="q">&ldquo;Where are people aged 55 or older concentrated?&rdquo;</div><div class="a">Finance (31% of the function) and Operations (24%). Together they hold 41% of everyone aged 55 or older.</div></div>
+<div class="qa"><div class="q">&ldquo;What does each of the CEO&rsquo;s direct reports&rsquo; organization cost, and how big is it?&rdquo;</div><div class="a">7 organizations. The largest has 1,420 people and a base pay cost of $98M. Leaders appear as their organization plus a short code, never by name.</div></div>
+<div class="qa"><div class="q">&ldquo;Give me the HR business partner view for the Munich location.&rdquo;</div><div class="a">Munich: 318 active workers, 24% women, average tenure 5.2 years, 11 exits in the last 12 months and an average span of control of 7.4.</div></div>
+<div class="qa"><div class="q">&ldquo;Build the workforce report as a PDF.&rdquo;</div><div class="a">Created a 24-page workforce report in your Workday MCP Reports folder: 21 sections included, 2 left out because the data was missing, each with the reason.</div></div>
+<div class="qa"><div class="q">&ldquo;What can you do with my Workday?&rdquo;</div><div class="a">Lists the tools, switches, ready-made views and privacy rules that are active in your install, generated from the live setup so it is always current.</div></div>
+</div>
+<div class="callout" style="margin-top:24px"><b>Good to know.</b> Workforce analytics is read-only and new in 0.6.0. It is still being checked against real tenants, so compare the first figures with a Workday report you trust before you rely on them. The PDF report also needs <b>Allow workforce reports (PDF)</b> switched on. A selection with fewer people than the minimum group size returns nothing, and pay figures need groups of five or more.</div>
+</div></section>
+
+<section class="band"><div class="wrap"><div class="callout" style="background:var(--card)">
 <b>Tips.</b> Ask in the <b>Chat</b> tab of Claude Desktop. If Claude says it is not signed in, ask it to call <code>workday_login</code>. Workday decides what you are allowed to see, so some questions return less, or nothing, for people without the matching permissions.
 </div></div></section>
 <section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>

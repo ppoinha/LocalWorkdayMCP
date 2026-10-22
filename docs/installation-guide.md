@@ -180,6 +180,8 @@ Note that the authorization host usually differs from the services host. Always 
 | **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. Version 0.2.0 and later. |
 | **Use PKCE** | Leave off unless your API Client has *Support Proof Key for Code Exchange* ticked |
 | **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
+| **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools (version 0.6.0 and later). Needs a Workday API Client that can use WQL. |
+| **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC (version 0.6.0 and later). |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
 6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file.
