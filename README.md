@@ -6,7 +6,7 @@
 
 Ask Claude analytical questions about your Workday data in plain English, and get answers, charts and dashboards back, signed in as yourself.
 
-**Website:** <https://ppoinha.github.io/LocalWorkdayMCP/> (features, examples, install walkthrough and security overview).
+**Website:** <https://ppoinha.github.io/LocalWorkdayMCP/> (demo videos, features, examples, install walkthrough and security overview).
 
 This repository contains the **installer and documentation** for Workday MCP, a [Model Context Protocol](https://modelcontextprotocol.io) server for the Workday REST API. The server source code is not published here.
 

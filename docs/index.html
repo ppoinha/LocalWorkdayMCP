@@ -19,25 +19,38 @@
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
-<nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+<nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
 </div></header>
 <main>
 
-<section class="hero"><div class="wrap">
-<div class="stack">
+<section class="hero hero-video"><div class="wrap">
+<div class="stack" style="max-width:68ch">
 <p class="eyebrow">Claude Desktop extension for Workday</p>
 <h1>Ask Claude about your Workday data in plain English.</h1>
 <p class="lede">Workday MCP connects Claude to Workday. Ask analytical questions about your workforce and get answers, charts and dashboards back. You sign in as yourself, so Claude sees what you are allowed to see, and nothing more.</p>
-<div class="row"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="examples.html">See example questions</a></div>
-<p class="note">Early testing. Runs on your own Windows PC through Claude Desktop. Free for non-commercial use. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
+<div class="row"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="demos.html">Watch the demos</a></div>
 </div>
-<div class="chat" role="img" aria-label="Sample conversation: turnover by function in Germany, then a request to draw it as a chart">
-<span class="tag" style="color:#A9C2C8">SAMPLE CONVERSATION · ILLUSTRATIVE SAMPLE DATA</span>
-<div class="bubble u">Turnover by function for Germany, last 12 months.</div>
-<div class="bubble a">Germany has <b>642 active workers</b>. Customer Support is highest at <b>17.9%</b>, then Sales 12.4%, Operations 9.1%, Engineering 7.2% and Finance 5.1%.</div>
-<div class="bubble u">Draw that as a chart and add it to a one-page dashboard.</div>
-<div class="bubble a">Done. Bar chart with Customer Support highlighted, next to the headcount trend and four headline figures.</div>
+<div>
+<div class="player">
+<video id="hero-video" muted playsinline loop controls preload="metadata" poster="assets/videos/headcount-fte-poster.jpg" aria-label="Demo: asking Claude questions about Workday data and getting charts back"><source src="assets/videos/headcount-fte.mp4" type="video/mp4"></video>
+<button class="pp" id="hero-toggle" type="button" hidden aria-label="Pause demo video" data-state="paused"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></button>
 </div>
+<div class="chips" role="group" aria-label="Choose a demo">
+<button class="chip" type="button" data-demo data-src="assets/videos/headcount-fte.mp4" data-poster="assets/videos/headcount-fte-poster.jpg" aria-pressed="true">Headcount and FTE</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/diversity.mp4" data-poster="assets/videos/diversity-poster.jpg" aria-pressed="false">Diversity</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/pay-comparison.mp4" data-poster="assets/videos/pay-comparison-poster.jpg" aria-pressed="false">Pay comparison</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/recruiting.mp4" data-poster="assets/videos/recruiting-poster.jpg" aria-pressed="false">Recruiting</button>
+</div>
+<p class="note" style="margin-top:12px">Recorded on a Workday demo tenant. Aggregates only, no individual records. Early testing, runs on your own Windows PC through Claude Desktop, free for non-commercial use. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sechead"><p class="eyebrow">Demos</p><h2>Watch it answer real questions</h2><p class="lede">Four short demos on a Workday demo tenant. Aggregates only, no individual records.</p></div>
+<div class="demo-cards">
+<a class="demo-card" href="demos.html#headcount-fte"><img src="assets/videos/headcount-fte-poster.jpg" alt="" loading="lazy"><span>Headcount and FTE</span><small>Headcount and FTE by function, and how headcount has changed over the years.</small></a><a class="demo-card" href="demos.html#diversity"><img src="assets/videos/diversity-poster.jpg" alt="" loading="lazy"><span>Diversity</span><small>Women’s share of each function, and the workforce by generation.</small></a><a class="demo-card" href="demos.html#pay-comparison"><img src="assets/videos/pay-comparison-poster.jpg" alt="" loading="lazy"><span>Pay comparison</span><small>Average base pay by grade and gender, and which compensation scorecards exist.</small></a><a class="demo-card" href="demos.html#recruiting"><img src="assets/videos/recruiting-poster.jpg" alt="" loading="lazy"><span>Recruiting</span><small>Open job postings and where they are located.</small></a>
+</div>
+<p style="margin-top:22px"><a href="demos.html">See all demos</a></p>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -84,10 +97,11 @@
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<div class="links"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
 <p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names, numbers and charts on this site are illustrative sample data.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
