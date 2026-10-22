@@ -21,6 +21,10 @@ This repository contains the **installer and documentation** for DaySight MCP, a
 
 Port 3000 must be free on your PC while you sign in. The guide explains why and how to check.
 
+## 30-day trial
+
+The download is a **30-day trial** for each Workday tenant and API client, counted from the first time you use it. When it ends, your assistant says so and shows a **request code** (hashes only, not your tenant name or client ID). [Email your request code](https://daysight.dev/contact.html) (ppoinha@yahoo.com) to get a licence key, then paste it into the extension's **Licence key** setting. Nothing in Workday is changed when the trial ends, and the check sends nothing off your computer.
+
 ## How access works
 
 - Use it with **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety.
@@ -41,4 +45,4 @@ Please open an [issue](https://github.com/ppoinha/LocalWorkdayMCP/issues) with w
 
 ## License
 
-Source-available, **not open source**. Free for non-commercial use under the [PolyForm Noncommercial License 1.0.0](LICENSE); commercial use is not permitted. Copyright (c) 2026 ppoinha.
+Source-available, **not open source**. Free for non-commercial use under the [PolyForm Noncommercial License 1.0.0](LICENSE); commercial use is not permitted. The download is a 30-day trial per Workday tenant and API client (see above). Copyright (c) 2026 ppoinha.

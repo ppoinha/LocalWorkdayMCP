@@ -1,6 +1,6 @@
 # DaySight MCP
 
-> DaySight MCP is a Workday MCP server (Model Context Protocol) that lets an AI assistant answer workforce analytics questions about a Workday tenant in plain English, with charts and dashboards. It runs as a desktop extension on the user's own computer, signs in with the user's own Workday account and returns aggregates only. Source-available, free for non-commercial use (PolyForm Noncommercial License 1.0.0). Independent project, not affiliated with Workday, Inc.
+> DaySight MCP is a Workday MCP server (Model Context Protocol) that lets an AI assistant answer workforce analytics questions about a Workday tenant in plain English, with charts and dashboards. It runs as a desktop extension on the user's own computer, signs in with the user's own Workday account and returns aggregates only. Source-available (PolyForm Noncommercial License 1.0.0). The download is a 30-day trial for each Workday tenant and API client; a licence key is needed after that. Independent project, not affiliated with Workday, Inc.
 
 ## Pages
 
@@ -10,3 +10,4 @@
 - [Demos](https://daysight.dev/demos.html): short recorded demos
 - [Install](https://daysight.dev/install.html): setup steps for Claude Desktop on Windows
 - [Security](https://daysight.dev/security.html): access model, privacy and what stays local
+- [Contact](https://daysight.dev/contact.html): request a licence key after the 30-day trial, or ask a question

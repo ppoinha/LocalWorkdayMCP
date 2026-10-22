@@ -6,7 +6,7 @@
 
 Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `daysight-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
 
-**Licence:** the DaySight MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
+**Licence:** the DaySight MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted. The download is also a **30-day trial** for each Workday tenant and API client; after that you need a licence key (see section 4 and the troubleshooting section).
 
 **Privacy and safety:** use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
 
@@ -184,6 +184,7 @@ Note that the authorization host usually differs from the services host. Always 
 | **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
 | **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools for the whole organization. Needs a Workday API Client that can use WQL. |
 | **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC. |
+| **Licence key** | Optional. Leave empty during the 30-day trial. After the trial, paste the licence key you received here, quit and reopen Claude Desktop and start a new chat. |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
 6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file.
@@ -287,6 +288,7 @@ Example prompts for your team are in the [example questions](example-questions.m
 | Config JSON error | Doubled backslashes missing, trailing comma, or a smart quote copied from a document. |
 | `Missing configuration: ...` | A required form field is empty. Open Settings > Extensions > Workday and fill in Client ID, Authorization Endpoint, Token Endpoint and Redirection URI. |
 | Browser shows a certificate warning | Expected once for the self-signed `https://localhost:3000` callback. Continue to localhost. |
+| Claude says the **30-day trial has ended** (error `TRIAL_EXPIRED`) | The trial lasts 30 days from first use for each Workday tenant and API client. Claude shows a **request code**; it contains only hashes, not your tenant name or client ID. Email the code to ppoinha@yahoo.com (or use the [contact page](https://daysight.dev/contact.html)). When you receive the licence key, paste it into the extension's **Licence key** setting, quit and reopen Claude Desktop, and start a new chat. A key only works for the tenant (and API client) it was issued for. Nothing in Workday was changed, and the check sends nothing off your computer. |
 | Sign-in fails, hangs, or the browser says it cannot connect to `localhost:3000` | Port 3000 must be free during sign-in because the callback listens there. Check what is using it (below), close that program, and run `workday_login` again. If you cannot free the port, register another redirect URI on your API Client (or ask your Workday administrator to) (for example `https://localhost:3100/callback`) and enter exactly that value in the extension's **Redirection URI** field. The port in the extension and the one registered in Workday must be identical. |
 | Login works but a tool returns 403 / permission denied | Either the scope is missing on the API Client (add it, then log in again) or your Workday security groups lack the security domain named in the tool description. |
 | Asked to log in again every hour | The API Client was registered without **Non-Expiring Refresh Tokens**. Edit the client, tick it, and log in again. |
