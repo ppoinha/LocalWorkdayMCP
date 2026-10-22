@@ -50,7 +50,7 @@ Ask your assistant to draw any answer, or to build a whole dashboard for an audi
 - "Make a dashboard for the Munich location to share with its leadership team."
 - "Add a cost view for finance: base pay cost by function and cost per FTE."
 
-See sample charts and a sample dashboard on the [website](https://ppoinha.github.io/LocalWorkdayMCP/examples.html).
+See sample charts and a sample dashboard on the [website](https://daysight.dev/examples.html).
 
 ## Reports
 
