@@ -4,7 +4,7 @@
 
 # Example questions
 
-What you can ask once Workday MCP is installed and you have signed in, and the charts and dashboards Claude can draw from the answers. All names, numbers and answers below are **fictional sample data** ("Northwind Demo Co.") that show the shape of the answers. Claude words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.
+What you can ask once Workday MCP is installed and you have signed in, and the charts and dashboards Claude can draw from the answers. All names, numbers and answers below are **illustrative sample data** ("Northwind Demo Co.") that show the shape of the answers. Claude words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.
 
 > **Privacy and safety.** Use Workday MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
 
