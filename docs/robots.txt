@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+# The Markdown guides duplicate the install and example pages; the HTML pages are the ones to index.
+Disallow: /installation-guide.md
+Disallow: /example-questions.md
+
+Sitemap: https://daysight.dev/sitemap.xml
