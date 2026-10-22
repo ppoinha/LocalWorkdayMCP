@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Features · Workday MCP</title>
+<meta name="description" content="What Workday MCP covers, how easy it is to set up and how it keeps access safe.">
+<meta property="og:title" content="Features · Workday MCP">
+<meta property="og:description" content="What Workday MCP covers, how easy it is to set up and how it keeps access safe.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta name="theme-color" content="#0A1D28">
+<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="features.html" aria-current="page">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+</div></header>
+<main>
+
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Features</p><h1>Built to be easy to start and safe to leave on</h1><p class="lede">Workday MCP is a Model Context Protocol server for the Workday REST API, packaged as a Claude Desktop extension.</p></div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>Ask about</h2><p class="lede">Eight areas of Workday. Choose which ones Claude may use with the "Workday areas" setting.</p></div>
+<div class="grid">
+<div class="card"><span class="ico">W</span><h3>Workers</h3><p>Who someone is, their job history, business title changes, direct reports, inbox tasks and pay slips.</p></div>
+<div class="card"><span class="ico">O</span><h3>Organizations</h3><p>Supervisory organizations, who manages them, who is in them, and how teams fit together.</p></div>
+<div class="card"><span class="ico">S</span><h3>Staffing</h3><p>Jobs and positions, staffing information and job change reasons.</p></div>
+<div class="card"><span class="ico">A</span><h3>Absence and time off</h3><p>Your balances, your plans, scheduled entries, and which absence types you can request.</p></div>
+<div class="card"><span class="ico">C</span><h3>Compensation</h3><p>Compensation scorecards, plans and related reference data you are permitted to see.</p></div>
+<div class="card"><span class="ico">P</span><h3>Performance and goals</h3><p>Your goals, development plans and mentorships.</p></div>
+<div class="card"><span class="ico">R</span><h3>Recruiting</h3><p>Open job postings and requisitions, with their dates and locations.</p></div>
+<div class="card"><span class="ico">T</span><h3>Talent</h3><p>Talent pipeline and development reference data where your security group allows it.</p></div>
+</div>
+<p class="note" style="margin-top:16px">Areas beyond workers and organizations arrive in version 0.2.0 and later and each needs its scope on your API Client. Workday decides what you can see, so some questions return less for people without the matching permissions.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>Easy to set up, easy to use</h2></div>
+<div class="grid two">
+<div class="card"><span class="ico">1</span><h3>One file, no developer tools</h3><p>Claude Desktop runs the extension with its own built-in Node.js. You do not install Node.js, Git or npm.</p></div>
+<div class="card"><span class="ico">2</span><h3>A short form</h3><p>Client ID, client secret, two endpoints and a redirect address. The form has sensible defaults for the rest.</p></div>
+<div class="card"><span class="ico">3</span><h3>Sign in once</h3><p>The login is stored encrypted in your Windows profile and refreshed automatically, so you normally sign in once.</p></div>
+<div class="card"><span class="ico">4</span><h3>Just talk</h3><p>No query language, no report builder. Ask in plain English and follow up the way you would in any conversation.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>Safe by design</h2></div>
+<div class="grid two">
+<div class="card"><span class="ico">&#10003;</span><h3>Your access, not more</h3><p>Two layers apply on every request: the scopes of your own API Client set the outer limit and your Workday permissions decide what comes back.</p></div>
+<div class="card"><span class="ico">&#10003;</span><h3>Secrets stay local</h3><p>The client secret and tokens stay on your computer and never reach the model.</p></div>
+<div class="card"><span class="ico">&#10003;</span><h3>No "call any URL" tool</h3><p>Claude can only use the specific Workday operations the server exposes.</p></div>
+<div class="card"><span class="ico">&#10003;</span><h3>Changes are off by default</h3><p>Every tool that creates, updates or deletes data is hidden until you switch on "Allow changes in Workday".</p></div>
+</div>
+<p style="margin-top:22px"><a href="security.html">More on security and privacy</a></p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>Where it runs today</h2></div>
+<div class="scroll"><table>
+<thead><tr><th>Client</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Claude Desktop on Windows (Chat tab)</td><td><b>Supported</b></td></tr>
+<tr><td>Claude Desktop on macOS</td><td>Built, not yet tested</td></tr>
+<tr><td>ChatGPT, Microsoft Copilot Studio</td><td>Need the planned central (remote) version</td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:14px">A central deployment for a whole organization is planned. Until then each person installs it on their own PC.</p>
+</div></section>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+</div></footer>
+</body>
+</html>

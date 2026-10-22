@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examples · Workday MCP</title>
+<meta name="description" content="Example questions you can ask Claude once Workday MCP is installed, with sample answers.">
+<meta property="og:title" content="Examples · Workday MCP">
+<meta property="og:description" content="Example questions you can ask Claude once Workday MCP is installed, with sample answers.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta name="theme-color" content="#0A1D28">
+<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html" aria-current="page">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+</div></header>
+<main>
+
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Examples</p><h1>What you can ask</h1><p class="lede">Real questions for the Chat tab of Claude Desktop. All names, numbers and answers are fictional sample data from "Northwind Demo Co." Claude words its replies itself, so yours will read differently.</p></div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>Your team and your own Workday</h2></div>
+<div class="qa-grid">
+<div class="qa"><div class="q">&ldquo;Who reports to me?&rdquo;</div><div class="a">You have 4 direct reports: Maya Chen (Senior Analyst), Luis Ortega (Analyst), Priya Nair (Analyst) and Tom Becker (Associate Analyst).</div></div>
+<div class="qa"><div class="q">&ldquo;Which team is Priya Nair in, and who runs it?&rdquo;</div><div class="a">Priya is in the Finance Analytics supervisory organization. It is managed by Alex Rivera and has 9 members.</div></div>
+<div class="qa"><div class="q">&ldquo;How much vacation do I have left this year?&rdquo;</div><div class="a">Annual Leave: 11.5 days available. Your next scheduled entry is 3 days in December.</div></div>
+<div class="qa"><div class="q">&ldquo;What is waiting in my Workday inbox?&rdquo;</div><div class="a">3 items: an expense report approval from Maya Chen, a time off request from Tom Becker and a goals review due Friday.</div></div>
+<div class="qa"><div class="q">&ldquo;Show my last few job changes.&rdquo;</div><div class="a">Business title changed to Finance Manager on 1 March 2024. Before that: Senior Analyst, from 1 June 2021.</div></div>
+<div class="qa"><div class="q">&ldquo;Find everyone named Smith in the company, I need the first five.&rdquo;</div><div class="a">Returns the first five matches with name, business title and location, and tells you more exist.</div></div>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>More areas</h2><p class="lede">Version 0.2.0 and later. Each needs its scope on your API Client.</p></div>
+<div class="qa-grid">
+<div class="qa"><div class="q">&ldquo;Which absence types can I request, and when is my next leave?&rdquo;</div><div class="a">You can request Annual Leave, Sick Leave and Floating Holiday. No leave of absence is scheduled.</div></div>
+<div class="qa"><div class="q">&ldquo;What goals do I have open this year?&rdquo;</div><div class="a">3 goals: Launch the quarterly forecast model (in progress), Document the month-end close (not started), Mentor one analyst (in progress).</div></div>
+<div class="qa"><div class="q">&ldquo;Show me open job postings in Finance.&rdquo;</div><div class="a">2 postings: Senior Financial Analyst (Chicago) and Accounting Manager (Remote), with their posting dates.</div></div>
+<div class="qa"><div class="q">&ldquo;Who is mentoring whom on my team?&rdquo;</div><div class="a">Maya Chen mentors Priya Nair (started 1 February, in progress).</div></div>
+<div class="qa"><div class="q">&ldquo;What compensation scorecards exist?&rdquo;</div><div class="a">2 scorecards: FY25 Merit and FY25 Bonus, each with its measures and weights.</div></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><div class="callout">
+<b>Tips.</b> Ask in the <b>Chat</b> tab of Claude Desktop. If Claude says it is not signed in, ask it to call <code>workday_login</code>. Workday decides what you are allowed to see, so some questions return less, or nothing, for people without the matching permissions.
+</div></div></section>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+</div></footer>
+</body>
+</html>

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/workday-mcp-logo.svg" alt="Workday MCP logo" width="96" height="96">
+</p>
+
 # Example questions
 
 What you can ask once Workday MCP is installed and you have signed in. All names, numbers and answers below are **fictional sample data** ("Northwind Demo Co.") that show the shape of the answers. Claude words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.

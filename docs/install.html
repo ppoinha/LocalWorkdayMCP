@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install · Workday MCP</title>
+<meta name="description" content="Install Workday MCP in Claude Desktop: register your own API Client, install one file and sign in.">
+<meta property="og:title" content="Install · Workday MCP">
+<meta property="og:description" content="Install Workday MCP in Claude Desktop: register your own API Client, install one file and sign in.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta name="theme-color" content="#0A1D28">
+<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html" aria-current="page">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+</div></header>
+<main>
+
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Install</p><h1>Set up in a few steps</h1><p class="lede">You register your own Workday API Client, install one file in Claude Desktop and sign in. Nothing is shared with anyone else.</p></div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>What you need</h2></div>
+<div class="grid two">
+<div class="card"><span class="ico">1</span><h3>Windows and Claude Desktop</h3><p>A current version of Claude Desktop, with you signed in to your Claude account.</p></div>
+<div class="card"><span class="ico">2</span><h3>Your own Workday API Client</h3><p>You register it in Workday and get your own client ID and secret. Ask your Workday administrator if you lack the permission.</p></div>
+<div class="card"><span class="ico">3</span><h3>Port 3000 free</h3><p>The sign-in callback listens on your PC at <code>https://localhost:3000/callback</code> while you log in.</p></div>
+<div class="card"><span class="ico">4</span><h3>A browser</h3><p>The Workday sign-in page opens there and sends you back to your own computer.</p></div>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>The steps</h2></div>
+<ol class="steps">
+<li><h3>Register your API Client</h3><p>In Workday, register an API Client for Integrations with the scopes for the areas you want. Keep its client ID, secret and endpoints. The guide covers each Workday screen.</p></li>
+<li><h3>Download the file</h3><p>Get <code>workday-mcp-&lt;version&gt;.mcpb</code> from the <a href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Releases page</a>, under Assets.</p></li>
+<li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
+<li><h3>Fill in the form</h3><p>Enter your client ID, secret, authorization and token endpoints. Keep the default redirect address and leave "Allow changes in Workday" off.</p></li>
+<li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask Claude to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
+<li><h3>Ask a question</h3><p>Try "Who reports to me?" Ask for <code>workday_auth_status</code> any time to check that you are signed in.</p></li>
+</ol>
+</div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>Good to know</h2></div>
+<ul class="ticks">
+<li>Use the <b>Chat</b> tab of Claude Desktop. The extension's tools do not load in the Code tab.</li>
+<li>After changing a setting, restart Claude Desktop and start a new chat.</li>
+<li>Try it on a sandbox or implementation tenant first.</li>
+<li>Give your API Client only the scopes that match the questions you want to ask.</li>
+<li>Whatever Claude retrieves is sent to the AI provider as part of the conversation, so check your company's policy on HR data first.</li>
+</ul>
+<div class="row" style="margin-top:28px"><a class="btn" href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/docs/installation-guide.md">Read the full installation guide</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download the extension</a></div>
+</div></section>
+<section><div class="wrap"><div class="cta"><h2>Questions or something not working?</h2><p>The guide has a troubleshooting section, including how to check what is using port 3000. Otherwise open an issue and tell us what you asked, what you expected and what happened.</p>
+<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+</div></footer>
+</body>
+</html>

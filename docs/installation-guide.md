@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/workday-mcp-logo.svg" alt="Workday MCP logo" width="96" height="96">
+</p>
+
 # Workday MCP: installation guide
 
 Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `workday-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 

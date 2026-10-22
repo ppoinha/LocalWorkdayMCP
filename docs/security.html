@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security · Workday MCP</title>
+<meta name="description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions and local-only secrets.">
+<meta property="og:title" content="Security · Workday MCP">
+<meta property="og:description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions and local-only secrets.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta name="theme-color" content="#0A1D28">
+<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html" aria-current="page">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+</div></header>
+<main>
+
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Security and privacy</p><h1>Claude gets your access, not more</h1><p class="lede">How access works, what stays on your computer and what to check before you roll it out.</p></div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>Two layers on every request</h2></div>
+<div class="grid">
+<div class="card"><span class="ico">1</span><h3>Your API Client sets the outer limit</h3><p>When you register the client you choose its scopes. The server can only reach resources inside them, whoever signs in.</p></div>
+<div class="card"><span class="ico">2</span><h3>You set what comes back</h3><p>You sign in with your own Workday account and approve the client. Workday then applies your security permissions to every call.</p></div>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>What stays on your computer</h2></div>
+<ul class="ticks">
+<li>The client secret is kept in Claude Desktop's secure storage.</li>
+<li>Your login token is stored encrypted in your Windows user profile.</li>
+<li>Secrets and tokens never go into tool arguments, results or logs, so the model never sees them.</li>
+<li>There is no generic "call any URL" tool. Claude can only use the Workday operations the server exposes.</li>
+<li>Audit logs record the tool name, argument names, status and duration, never values.</li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<div class="sechead"><h2>A checklist before you start</h2></div>
+<ul class="ticks">
+<li>Register your <b>own</b> API Client and never share its secret.</li>
+<li>Give it the smallest set of scopes that covers your questions.</li>
+<li>Keep <b>Allow changes in Workday</b> off unless you have a reviewed need.</li>
+<li>Start on a sandbox or implementation tenant.</li>
+<li>Remember that what Claude retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to that service.</li>
+</ul>
+<div class="row" style="margin-top:28px"><a class="btn" href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/docs/installation-guide.md">Read the security checklist in the guide</a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>Licence</h2></div>
+<p>Workday MCP is source-available, <b>not open source</b>. It is free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Commercial use is not permitted. The server source code is not published in this repository.</p>
+</div></section>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+</div></footer>
+</body>
+</html>
