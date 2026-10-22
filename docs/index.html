@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Workday MCP: ask Claude about your Workday data</title>
-<meta name="description" content="Ask Claude about your Workday data in plain English. A Claude Desktop extension for the Workday REST API that signs in as you.">
+<meta name="description" content="Ask Claude about your Workday data in plain English. Workforce analytics, charts and dashboards from a Claude Desktop extension that signs in as you.">
 <meta property="og:title" content="Workday MCP: ask Claude about your Workday data">
-<meta property="og:description" content="Ask Claude about your Workday data in plain English. A Claude Desktop extension for the Workday REST API that signs in as you.">
+<meta property="og:description" content="Ask Claude about your Workday data in plain English. Workforce analytics, charts and dashboards from a Claude Desktop extension that signs in as you.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
 <meta name="theme-color" content="#0A1D28">
@@ -27,46 +27,57 @@
 <div class="stack">
 <p class="eyebrow">Claude Desktop extension for Workday</p>
 <h1>Ask Claude about your Workday data in plain English.</h1>
-<p class="lede">Workday MCP connects Claude to the Workday REST API. You sign in as yourself, so Claude sees what you are allowed to see, and nothing more.</p>
+<p class="lede">Workday MCP connects Claude to Workday. Ask analytical questions about your workforce and get answers, charts and dashboards back. You sign in as yourself, so Claude sees what you are allowed to see, and nothing more.</p>
 <div class="row"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="examples.html">See example questions</a></div>
-<p class="note">Early testing. Runs on your own Windows PC through Claude Desktop. Free for non-commercial use.</p>
+<p class="note">Early testing. Runs on your own Windows PC through Claude Desktop. Free for non-commercial use. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
 </div>
-<div class="chat" role="img" aria-label="Sample conversation: who reports to me, and how much vacation is left">
-<span class="tag">SAMPLE CONVERSATION · FICTIONAL DATA</span>
-<div class="bubble u">Who reports to me?</div>
-<div class="bubble a">You have <b>4 direct reports</b>: Maya Chen (Senior Analyst), Luis Ortega (Analyst), Priya Nair (Analyst) and Tom Becker (Associate Analyst).</div>
-<div class="bubble u">How much vacation do I have left this year?</div>
-<div class="bubble a">Annual Leave: <b>11.5 days</b> available. Your next scheduled entry is 3 days in December.</div>
+<div class="chat" role="img" aria-label="Sample conversation: turnover by function in Germany, then a request to draw it as a chart">
+<span class="tag" style="color:#A9C2C8">SAMPLE CONVERSATION · FICTIONAL DATA</span>
+<div class="bubble u">Turnover by function for Germany, last 12 months.</div>
+<div class="bubble a">Germany has <b>642 active workers</b>. Customer Support is highest at <b>17.9%</b>, then Sales 12.4%, Operations 9.1%, Engineering 7.2% and Finance 5.1%.</div>
+<div class="bubble u">Draw that as a chart and add it to a one-page dashboard.</div>
+<div class="bubble a">Done. Bar chart with Customer Support highlighted, next to the headcount trend and four headline figures.</div>
 </div>
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><p class="eyebrow">Why people like it</p><h2>The questions you used to click through five screens for</h2></div>
+<div class="sechead"><p class="eyebrow">Why people like it</p><h2>The workforce questions you used to need a report for</h2></div>
 <div class="grid two">
-<div class="card"><span class="ico">?</span><h3>Plain-English questions</h3><p>Ask about your team, time off, open roles or goals the way you would ask a colleague. Claude finds the right Workday data and answers.</p></div>
-<div class="card"><span class="ico">&#9679;</span><h3>Signs in as you</h3><p>You approve access with your own Workday account. Workday's security still decides what comes back: a manager sees their reports, an employee does not.</p></div>
-<div class="card"><span class="ico">&#9633;</span><h3>One-file install</h3><p>Install one extension file from Claude Desktop's settings and fill in a short form. No Node.js, no Git, no config files to edit.</p></div>
-<div class="card"><span class="ico">R</span><h3>Read-only by default</h3><p>Tools that change data in Workday stay hidden until you switch them on. Start by looking, and decide later whether you want more.</p></div>
+<div class="card"><span class="ico">?</span><h3>Analytics in plain English</h3><p>Headcount, hires, exits, turnover, tenure, cost and mix, by function, region, location or leader. Ask the way you would ask a colleague.</p></div>
+<div class="card"><span class="ico">&#9638;</span><h3>Charts and dashboards on request</h3><p>Ask Claude to turn any answer into a chart, or a whole dashboard for the board, finance or a local team.</p></div>
+<div class="card"><span class="ico">&#9679;</span><h3>Signs in as you</h3><p>You approve access with your own Workday account. Workday&rsquo;s security still decides what comes back.</p></div>
+<div class="card"><span class="ico">&#10003;</span><h3>Read-only and private</h3><p>Analytics come back as summaries: no names, no individual pay, and groups smaller than three people are hidden.</p></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
+<div class="sechead"><p class="eyebrow">What you get back</p><h2>From a question to a dashboard</h2><p class="lede">An illustration of what Claude can draw from your answers. The data is fictional.</p></div>
+<div class="dash" role="group" aria-label="Sample dashboard with fictional data">
+<div class="dash-head"><b>Northwind Demo Co. · Workforce overview</b><span class="tag">SAMPLE · FICTIONAL DATA</span></div>
+<div class="tiles"><div class="tile"><span class="tl">Active headcount</span><span class="tv">4,812</span><span class="ts">up 2.7% on a year ago</span></div><div class="tile"><span class="tl">Turnover, 12 months</span><span class="tv">10.1%</span><span class="ts">487 exits, 612 hires</span></div><div class="tile"><span class="tl">Women in leadership</span><span class="tv">38%</span><span class="ts">up 2 points</span></div><div class="tile"><span class="tl">Base pay cost</span><span class="tv">$402M</span><span class="ts">$86.4k per FTE</span></div></div>
+<div class="dash-grid">
+<figure class="vizcard"><figcaption>Active headcount, last eight quarters</figcaption><svg class="chart" viewBox="0 0 520 250" role="img" aria-label="Line chart: active headcount rises from 4,402 to 4,812 over eight quarters"><line class="grid" x1="52" x2="496" y1="178.3" y2="178.3"/><text class="ax" x="44" y="182.3" text-anchor="end">4,400</text><line class="grid" x1="52" x2="496" y1="115.0" y2="115.0"/><text class="ax" x="44" y="119.0" text-anchor="end">4,600</text><line class="grid" x1="52" x2="496" y1="51.7" y2="51.7"/><text class="ax" x="44" y="55.7" text-anchor="end">4,800</text><text class="ax" x="52.0" y="236" text-anchor="middle">Q3 '24</text><text class="ax" x="163.0" y="236" text-anchor="middle">Q1 '25</text><text class="ax" x="274.0" y="236" text-anchor="middle">Q3 '25</text><text class="ax" x="385.0" y="236" text-anchor="middle">Q1 '26</text><text class="ax" x="496.0" y="236" text-anchor="middle">Q3 '26</text><polygon class="area" points="52,210 52.0,177.7 107.5,156.8 163.0,130.5 218.5,107.7 274.0,87.5 329.5,76.7 385.0,63.1 440.5,54.8 496.0,47.9 496.0,210"/><polyline class="ln" points="52.0,177.7 107.5,156.8 163.0,130.5 218.5,107.7 274.0,87.5 329.5,76.7 385.0,63.1 440.5,54.8 496.0,47.9"/><circle class="dot" cx="52.0" cy="177.7" r="3.5"/><circle class="dot" cx="107.5" cy="156.8" r="3.5"/><circle class="dot" cx="163.0" cy="130.5" r="3.5"/><circle class="dot" cx="218.5" cy="107.7" r="3.5"/><circle class="dot" cx="274.0" cy="87.5" r="3.5"/><circle class="dot" cx="329.5" cy="76.7" r="3.5"/><circle class="dot" cx="385.0" cy="63.1" r="3.5"/><circle class="dot" cx="440.5" cy="54.8" r="3.5"/><circle class="dot" cx="496.0" cy="47.9" r="3.5"/><circle class="dot-end" cx="496.0" cy="47.9" r="6"/><text class="val" x="496.0" y="33.9" text-anchor="end">4,812</text></svg></figure>
+<figure class="vizcard"><figcaption>Turnover by function, Germany, last 12 months</figcaption><svg class="chart" viewBox="0 0 520 244" role="img" aria-label="Bar chart: turnover by function in Germany, from Customer Support 17.9 percent down to Finance 5.1 percent"><line class="grid" x1="150.0" x2="150.0" y1="14" y2="218"/><text class="ax" x="150.0" y="236" text-anchor="middle">0%</text><line class="grid" x1="228.5" x2="228.5" y1="14" y2="218"/><text class="ax" x="228.5" y="236" text-anchor="middle">5%</text><line class="grid" x1="307.0" x2="307.0" y1="14" y2="218"/><text class="ax" x="307.0" y="236" text-anchor="middle">10%</text><line class="grid" x1="385.5" x2="385.5" y1="14" y2="218"/><text class="ax" x="385.5" y="236" text-anchor="middle">15%</text><line class="grid" x1="464.0" x2="464.0" y1="14" y2="218"/><text class="ax" x="464.0" y="236" text-anchor="middle">20%</text><text class="lab" x="140" y="35.0" text-anchor="end">Customer Support</text><rect class="bar hot" x="150" y="20" width="281.0" height="22" rx="3"/><text class="val" x="439.0" y="35.0">17.9%</text><text class="lab" x="140" y="69.0" text-anchor="end">Sales</text><rect class="bar" x="150" y="54" width="194.7" height="22" rx="3"/><text class="val" x="352.7" y="69.0">12.4%</text><text class="lab" x="140" y="103.0" text-anchor="end">Operations</text><rect class="bar" x="150" y="88" width="142.9" height="22" rx="3"/><text class="val" x="300.9" y="103.0">9.1%</text><text class="lab" x="140" y="137.0" text-anchor="end">Engineering</text><rect class="bar" x="150" y="122" width="113.0" height="22" rx="3"/><text class="val" x="271.0" y="137.0">7.2%</text><text class="lab" x="140" y="171.0" text-anchor="end">Other (small groups)</text><rect class="bar" x="150" y="156" width="94.2" height="22" rx="3"/><text class="val" x="252.2" y="171.0">6.0%</text><text class="lab" x="140" y="205.0" text-anchor="end">Finance</text><rect class="bar" x="150" y="190" width="80.1" height="22" rx="3"/><text class="val" x="238.1" y="205.0">5.1%</text></svg></figure>
+</div></div>
+<p style="margin-top:22px"><a href="examples.html">See the example questions behind it</a></p>
+</div></section>
+
+<section class="band"><div class="wrap">
 <div class="sechead"><p class="eyebrow">How it works</p><h2>From download to first answer in four steps</h2></div>
 <ol class="steps">
 <li><h3>Register your API Client</h3><p>In Workday, you create your own API Client and choose its scopes. Your client ID and secret are yours alone.</p></li>
 <li><h3>Install the extension</h3><p>In Claude Desktop, open Settings, Extensions, Advanced settings and pick the downloaded file.</p></li>
-<li><h3>Fill in the short form</h3><p>Paste your client details and endpoints. Leave "Allow changes in Workday" off.</p></li>
+<li><h3>Fill in the short form</h3><p>Paste your client details and endpoints, and switch on the analytics option.</p></li>
 <li><h3>Sign in and ask</h3><p>Ask Claude to call <code>workday_login</code>, approve in your browser, then start asking questions.</p></li>
 </ol>
 <p style="margin-top:22px"><a href="install.html">Read the full install walkthrough</a></p>
 </div></section>
 
-<section class="band"><div class="wrap">
-<div class="sechead"><p class="eyebrow">What it covers</p><h2>Workers, organizations and six more Workday areas</h2><p class="lede">Version 0.2.0 and later reach beyond the basics. Each area needs its scope on your API Client.</p></div>
-<div class="row" style="gap:10px">
-<span class="btn ghost" style="cursor:default">Workers</span><span class="btn ghost" style="cursor:default">Organizations</span><span class="btn ghost" style="cursor:default">Staffing</span><span class="btn ghost" style="cursor:default">Absence and time off</span><span class="btn ghost" style="cursor:default">Compensation</span><span class="btn ghost" style="cursor:default">Performance and goals</span><span class="btn ghost" style="cursor:default">Recruiting</span><span class="btn ghost" style="cursor:default">Talent</span><span class="btn ghost" style="cursor:default">Workforce analytics (0.6.0)</span>
-</div>
+<section><div class="wrap">
+<div class="sechead"><p class="eyebrow">What it covers</p><h2>Workforce analytics plus the core Workday areas</h2><p class="lede">Each area needs its scope on your API Client.</p></div>
+<div class="row" style="gap:10px"><span class="btn ghost" style="cursor:default">Workforce analytics</span><span class="btn ghost" style="cursor:default">Workers</span><span class="btn ghost" style="cursor:default">Organizations</span><span class="btn ghost" style="cursor:default">Staffing</span><span class="btn ghost" style="cursor:default">Absence and time off</span><span class="btn ghost" style="cursor:default">Compensation</span><span class="btn ghost" style="cursor:default">Performance and goals</span><span class="btn ghost" style="cursor:default">Recruiting</span><span class="btn ghost" style="cursor:default">Talent</span></div>
 <p style="margin-top:22px"><a href="features.html">See all features</a></p>
+<div style="margin-top:28px"><div class="privacy"><span><b>Privacy and safety.</b> Use Workday MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.</span></div></div>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
@@ -74,8 +85,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names, numbers and charts on this site are fictional sample data.</p>
 </div></footer>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Security · Workday MCP</title>
-<meta name="description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions and local-only secrets.">
+<meta name="description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
 <meta property="og:title" content="Security · Workday MCP">
-<meta property="og:description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions and local-only secrets.">
+<meta property="og:description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
 <meta name="theme-color" content="#0A1D28">
@@ -34,6 +34,17 @@
 </div></section>
 
 <section class="band"><div class="wrap">
+<div class="sechead"><h2>Analytics are summaries</h2></div>
+<ul class="ticks">
+<li>Workforce analytics returns aggregates only. No names and no individual pay.</li>
+<li>Groups smaller than three people are rolled into "Other" or hidden, and a selection that small returns nothing.</li>
+<li>Pay figures need groups of five or more.</li>
+<li>Leaders appear as the organization they lead plus an opaque code, never by name.</li>
+<li>Diversity fields stay off until the owner of the install switches them on.</li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
 <div class="sechead"><h2>What stays on your computer</h2></div>
 <ul class="ticks">
 <li>The client secret is kept in Claude Desktop's secure storage.</li>
@@ -44,19 +55,19 @@
 </ul>
 </div></section>
 
-<section><div class="wrap">
-<div class="sechead"><h2>A checklist before you start</h2></div>
+<section class="band"><div class="wrap">
+<div class="sechead"><h2>Claude Enterprise for privacy and safety</h2><p class="lede">Whatever Claude retrieves is sent to the AI provider as part of the conversation. For HR data, use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on sending HR data to an AI service.</p></div>
+<h3 style="margin-bottom:12px">A checklist before you start</h3>
 <ul class="ticks">
 <li>Register your <b>own</b> API Client and never share its secret.</li>
 <li>Give it the smallest set of scopes that covers your questions.</li>
-<li>Keep <b>Allow changes in Workday</b> off unless you have a reviewed need.</li>
 <li>Start on a sandbox or implementation tenant.</li>
-<li>Remember that what Claude retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to that service.</li>
+<li>Use Claude Enterprise rather than a consumer account.</li>
 </ul>
 <div class="row" style="margin-top:28px"><a class="btn" href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/docs/installation-guide.md">Read the security checklist in the guide</a></div>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section><div class="wrap">
 <div class="sechead"><h2>Licence</h2></div>
 <p>Workday MCP is source-available, <b>not open source</b>. It is free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Commercial use is not permitted. The server source code is not published in this repository.</p>
 </div></section>
@@ -66,8 +77,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names, numbers and charts on this site are fictional sample data.</p>
 </div></footer>
 </body>
 </html>

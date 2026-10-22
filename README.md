@@ -4,7 +4,7 @@
 
 # Workday MCP for Claude Desktop (local install)
 
-Ask Claude about your Workday data in plain English, signed in as yourself.
+Ask Claude analytical questions about your Workday data in plain English, and get answers, charts and dashboards back, signed in as yourself.
 
 **Website:** <https://ppoinha.github.io/LocalWorkdayMCP/> (features, examples, install walkthrough and security overview).
 
@@ -23,6 +23,7 @@ Port 3000 must be free on your PC while you sign in. The guide explains why and 
 
 ## How access works
 
+- Use it with **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety.
 - The **Workday API Client you register** limits which parts of Workday the server can reach (its scopes).
 - **You sign in with your own Workday account**, so Workday's security still decides what you see. Claude never gets more access than you have.
 - The client secret and tokens stay on your computer and never reach the model. There is no "call any URL" tool, and the tools that change data are off by default.

@@ -28,7 +28,7 @@
 <section><div class="wrap">
 <div class="sechead"><h2>What you need</h2></div>
 <div class="grid two">
-<div class="card"><span class="ico">1</span><h3>Windows and Claude Desktop</h3><p>A current version of Claude Desktop, with you signed in to your Claude account.</p></div>
+<div class="card"><span class="ico">1</span><h3>Windows and Claude Desktop</h3><p>A current version of Claude Desktop with you signed in. For privacy and safety, use Claude Enterprise, which does not use your conversations to train models.</p></div>
 <div class="card"><span class="ico">2</span><h3>Your own Workday API Client</h3><p>You register it in Workday and get your own client ID and secret. Ask your Workday administrator if you lack the permission.</p></div>
 <div class="card"><span class="ico">3</span><h3>Port 3000 free</h3><p>The sign-in callback listens on your PC at <code>https://localhost:3000/callback</code> while you log in.</p></div>
 <div class="card"><span class="ico">4</span><h3>A browser</h3><p>The Workday sign-in page opens there and sends you back to your own computer.</p></div>
@@ -41,9 +41,9 @@
 <li><h3>Register your API Client</h3><p>In Workday, register an API Client for Integrations with the scopes for the areas you want. Keep its client ID, secret and endpoints. The guide covers each Workday screen.</p></li>
 <li><h3>Download the file</h3><p>Get <code>workday-mcp-&lt;version&gt;.mcpb</code> from the <a href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Releases page</a>, under Assets.</p></li>
 <li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
-<li><h3>Fill in the form</h3><p>Enter your client ID, secret, authorization and token endpoints. Keep the default redirect address and leave "Allow changes in Workday" off.</p></li>
+<li><h3>Fill in the form</h3><p>Enter your client ID, secret, authorization and token endpoints. Keep the default redirect address and switch on <b>Allow Workday Query Language (WQL) reports</b> for workforce analytics.</p></li>
 <li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask Claude to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
-<li><h3>Ask a question</h3><p>Try "Who reports to me?" Ask for <code>workday_auth_status</code> any time to check that you are signed in.</p></li>
+<li><h3>Ask a question</h3><p>Try "Show the board scorecard", then "Draw it as a dashboard". Ask for <code>workday_auth_status</code> any time to check that you are signed in.</p></li>
 </ol>
 </div></section>
 
@@ -54,7 +54,7 @@
 <li>After changing a setting, restart Claude Desktop and start a new chat.</li>
 <li>Try it on a sandbox or implementation tenant first.</li>
 <li>Give your API Client only the scopes that match the questions you want to ask.</li>
-<li>Whatever Claude retrieves is sent to the AI provider as part of the conversation, so check your company's policy on HR data first.</li>
+<li>Whatever Claude retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on HR data first.</li>
 </ul>
 <div class="row" style="margin-top:28px"><a class="btn" href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/docs/installation-guide.md">Read the full installation guide</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download the extension</a></div>
 </div></section>
@@ -64,8 +64,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names and numbers on this site are fictional sample data.</p>
+<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. Example names, numbers and charts on this site are fictional sample data.</p>
 </div></footer>
 </body>
 </html>

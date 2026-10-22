@@ -105,3 +105,35 @@ footer.site a{color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
 .wrap.sechead{max-width:1040px;margin-bottom:0}
 .wrap.sechead>*{max-width:62ch}
+
+/* charts and dashboard */
+.dash{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.dash-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.dash-head b{font-family:var(--display);font-size:18px}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{background:var(--soft);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tl{font-size:13px;color:var(--muted)}
+.tv{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.15;font-variant-numeric:tabular-nums}
+.ts{font-size:13px;color:var(--muted)}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.vizcard{margin:0;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.vizcard figcaption{font-family:var(--display);font-weight:600;font-size:15px}
+svg.chart{width:100%;height:auto;display:block}
+svg.chart text{font-family:var(--body)}
+svg.chart .ax{fill:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+svg.chart .lab{fill:var(--fg);font-size:13px}
+svg.chart .val{fill:var(--fg);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+svg.chart .grid{stroke:var(--line);stroke-width:1}
+svg.chart .ln{fill:none;stroke:var(--accent);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+svg.chart .area{fill:var(--accent);opacity:.12}
+svg.chart .dot{fill:var(--card);stroke:var(--accent);stroke-width:2}
+svg.chart .dot-end{fill:var(--accent)}
+svg.chart .bar{fill:var(--accent);opacity:.55}
+svg.chart .bar.hot{opacity:1}
+.privacy{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:15px;line-height:1.5}
+.privacy b{white-space:nowrap}
+.promptlist{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:20px}
+.prompt{font-family:var(--mono);font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg)}
+.vizcard{overflow-x:auto}
+svg.chart{min-width:440px}

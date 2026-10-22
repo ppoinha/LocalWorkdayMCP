@@ -8,6 +8,8 @@ Connect Claude to Workday and ask questions in plain English, signing in with yo
 
 **Licence:** the Workday MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
 
+**Privacy and safety:** use Workday MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
+
 *Client-support information was checked against vendor documentation on 21 October 2026. These products change quickly, so treat the "supported today" notes as a snapshot and check the linked sources.*
 
 ---
@@ -35,7 +37,7 @@ The assistant never sees the client secret or tokens. They are read from your lo
 
 | Item | Notes |
 |---|---|
-| A Windows computer with **Claude Desktop** (current version) | Free or paid Claude account; signed in. Extensions are installed from Claude Desktop's settings. |
+| A Windows computer with **Claude Desktop** (current version) | A Claude account, signed in. For privacy and safety, use **Claude Enterprise**, which does not use your conversations to train models. Extensions are installed from Claude Desktop's settings. |
 | The extension file `workday-mcp-<version>.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
 | **Your own Workday API Client** | You register it yourself in Workday (section 3). That gives you your own client ID and client secret, plus the authorization and token endpoints. Nobody else needs, or should receive, your secret. |
 | Your own Workday account | The one you will sign in with. Its permissions decide what you see. |
@@ -87,16 +89,16 @@ The scope limits which parts of Workday the server can reach at all. The extensi
 |---|---|---|
 | **Staffing** | `workers_*` (get, list, direct reports, history, business title changes), `jobChangeReasons_*`, `supervisoryOrganizations_*`, `staffing_*` (worker details, service dates, check-ins, job and organization assignment changes) | Yes, start here |
 | **Organizations and Roles** | `organizations_*`, `organizationTypes_*`, `supervisoryOrganizations_*`, `workers_organizations_*` | Yes, start here |
-| **Time Off and Leave** | `workers_timeOffPlans_*`, `workers_timeOffEntries_*`, and from version 0.2.0 `absence_*` (balances, eligible absence types, leaves of absence, time off details) | Optional |
-| **Tenant Non-Configurable** | `workers_inboxTasks_*`, `currencies_*`, and from version 0.2.0 `recruiting_offers_*` and `recruiting_employmentAgreements_*` | Optional |
-| **Performance Enablement** | from version 0.2.0 `performance_*` (goals, feedback, performance reviews) and `staffing_workers_checkIns_*` | Optional |
-| **Worker Profile and Skills** | from version 0.2.0 skills tools in `staffing_*`, `performance_*` and `talent_*` | Optional |
-| **Career and Development Planning** | from version 0.2.0 `performance_workers_developmentItems_*` and `talent_mentorships_*` | Optional |
-| **Talent Pipeline** | from version 0.2.0 `talent_successionPlans_*`, `talent_successionPlanEvents_*` and `recruiting_prospects_*` | Optional |
-| **Recruiting** | from version 0.2.0 `recruiting_*` (job postings, interviews, prospects). Candidate data is personal data. | Optional, sensitive |
-| **Advanced Compensation** | from version 0.2.0 `compensation_scorecards_*` and `compensation_scorecardResults_*` | Optional, sensitive |
-| **Jobs & Positions** | from version 0.2.0 `staffing_jobFamilies_*`, `staffing_jobProfiles_*` | Optional |
-| **Contact Information** | from version 0.2.0 `staffing_workers_homeContactInformationChanges_*`, `staffing_workers_workContactInformationChanges_*` | Optional, personal data |
+| **Time Off and Leave** | `workers_timeOffPlans_*`, `workers_timeOffEntries_*`, and `absence_*` (balances, eligible absence types, leaves of absence, time off details) | Optional |
+| **Tenant Non-Configurable** | `workers_inboxTasks_*`, `currencies_*`, and `recruiting_offers_*` and `recruiting_employmentAgreements_*` | Optional |
+| **Performance Enablement** | `performance_*` (goals, feedback, performance reviews) and `staffing_workers_checkIns_*` | Optional |
+| **Worker Profile and Skills** | skills tools in `staffing_*`, `performance_*` and `talent_*` | Optional |
+| **Career and Development Planning** | `performance_workers_developmentItems_*` and `talent_mentorships_*` | Optional |
+| **Talent Pipeline** | `talent_successionPlans_*`, `talent_successionPlanEvents_*` and `recruiting_prospects_*` | Optional |
+| **Recruiting** | `recruiting_*` (job postings, interviews, prospects). Candidate data is personal data. | Optional, sensitive |
+| **Advanced Compensation** | `compensation_scorecards_*` and `compensation_scorecardResults_*` | Optional, sensitive |
+| **Jobs & Positions** | `staffing_jobFamilies_*`, `staffing_jobProfiles_*` | Optional |
+| **Contact Information** | `staffing_workers_homeContactInformationChanges_*`, `staffing_workers_workContactInformationChanges_*` | Optional, personal data |
 | **Core Compensation** | `compensation_workers_requestOneTimePayment_create` only (a change operation) | Only if you switch on changes |
 | **Core Payroll** | `workers_paySlips_*` | Only if you really need it; sensitive |
 | **Customers**, **Customer Accounts** | `customers_*` | Optional |
@@ -112,7 +114,7 @@ Each tool's description names the scope the spec lists for it. Operations that l
 
 The mapping comes from the scopes and security domains documented per operation in the Workday REST OpenAPI files the server is generated from (`spec/*_oas3.json`; the *Common* file plus Staffing, Absence Management, Compensation, Performance Enablement, Recruiting and Talent Management). The user approves the API Client on Workday's consent page when they log in.
 
-**Too many tools?** Version 0.2.0 offers 182 read tools plus the three sign-in tools. If your AI client struggles with that many, use the form field **Workday areas** (`WORKDAY_SERVICES`) to list only the areas you want, for example `common,absence`. The valid names are `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting` and `talent`; the default is `all`.
+**Too many tools?** The extension offers more than 180 read tools plus the sign-in tools. If your AI client struggles with that many, use the form field **Workday areas** (`WORKDAY_SERVICES`) to list only the areas you want, for example `common,absence`. The valid names are `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting` and `talent`; the default is `all`.
 
 ### Step 4. Security domain permissions
 
@@ -177,11 +179,11 @@ Note that the authorization host usually differs from the services host. Always 
 | **Token Endpoint** | For example `https://<services host>/ccx/oauth2/<tenant>/token`. The tenant and API address are derived from it. |
 | **Redirection URI** | Keep the default `https://localhost:3000/callback`. It must be registered on the API Client, and its port (3000) must be free on your PC when you sign in. |
 | **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles`. Add the ones for the areas you use (step 3). |
-| **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. Version 0.2.0 and later. |
+| **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. |
 | **Use PKCE** | Leave off unless your API Client has *Support Proof Key for Code Exchange* ticked |
 | **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
-| **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools (version 0.6.0 and later). Needs a Workday API Client that can use WQL. |
-| **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC (version 0.6.0 and later). |
+| **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools for the whole organization. Needs a Workday API Client that can use WQL. |
+| **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC. |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
 6. **Use it from the Chat tab.** Switch to the **Chat** tab of Claude Desktop (not the **Code** tab, the one with *Add folder* and slash commands) and start a **new chat**. Click **+**, then **Connectors**, and check that **Workday** is switched on. You do not need to edit any config file.
@@ -313,7 +315,7 @@ Close that program normally. Only if it is a stray process you recognize, stop i
 - Give your API Client the smallest set of scopes that covers the questions you want to ask.
 - Keep **Allow changes in Workday** off in the extension form unless you have a reviewed need.
 - Prefer a non-production tenant (sandbox / implementation) for first tests.
-- Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
+- Use **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety. Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
 - The extension keeps the client secret in Claude Desktop's secure storage and the login token encrypted in your user profile.
 - Audit logs on stderr record tool name, argument names, status and duration, never values.
 
