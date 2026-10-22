@@ -6,7 +6,7 @@
 
 What you can ask once DaySight MCP is installed and you have signed in, and the charts and dashboards your assistant can draw from the answers. All names, numbers and answers below are **illustrative sample data** ("Northwind Demo Co.") that show the shape of the answers. The assistant words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.
 
-> **30-day trial.** The download works for 30 days for each Workday tenant and API client; after that a licence key is needed (see the [installation guide](installation-guide.md#10-troubleshooting)).
+> **30-day trial.** The download works for 30 days for each Workday tenant; after that a licence key is needed (see the [installation guide](installation-guide.md#10-troubleshooting)).
 
 > **Privacy and safety.** Use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.
 
