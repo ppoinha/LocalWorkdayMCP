@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Security · Workday MCP</title>
-<meta name="description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
-<meta property="og:title" content="Security · Workday MCP">
-<meta property="og:description" content="How Workday MCP limits what Claude can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
+<title>Security · DaySight MCP</title>
+<meta name="description" content="How DaySight MCP limits what your AI assistant can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
+<meta property="og:title" content="Security · DaySight MCP">
+<meta property="og:description" content="How DaySight MCP limits what your AI assistant can see: your API Client scopes, your own Workday permissions, aggregate-only analytics and local-only secrets.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/daysight-mcp-logo-512.png">
 <meta name="theme-color" content="#0A1D28">
-<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
@@ -18,12 +18,12 @@
 </head>
 <body>
 <header class="site"><div class="wrap">
-<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<a class="brand" href="index.html"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
 <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html" aria-current="page">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
 </div></header>
 <main>
 
-<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Security and privacy</p><h1>Claude gets your access, not more</h1><p class="lede">How access works, what stays on your computer and what to check before you roll it out.</p></div></section>
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Security and privacy</p><h1>Your assistant gets your access, not more</h1><p class="lede">How access works, what stays on your computer and what to check before you roll it out.</p></div></section>
 
 <section><div class="wrap">
 <div class="sechead"><h2>Two layers on every request</h2></div>
@@ -50,13 +50,13 @@
 <li>The client secret is kept in Claude Desktop's secure storage.</li>
 <li>Your login token is stored encrypted in your Windows user profile.</li>
 <li>Secrets and tokens never go into tool arguments, results or logs, so the model never sees them.</li>
-<li>There is no generic "call any URL" tool. Claude can only use the Workday operations the server exposes.</li>
+<li>There is no generic "call any URL" tool. Your assistant can only use the Workday operations the server exposes.</li>
 <li>Audit logs record the tool name, argument names, status and duration, never values.</li>
 </ul>
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><h2>Claude Enterprise for privacy and safety</h2><p class="lede">Whatever Claude retrieves is sent to the AI provider as part of the conversation. For HR data, use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on sending HR data to an AI service.</p></div>
+<div class="sechead"><h2>Claude Enterprise for privacy and safety</h2><p class="lede">Whatever your assistant retrieves is sent to the AI provider as part of the conversation. For HR data, use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on sending HR data to an AI service.</p></div>
 <h3 style="margin-bottom:12px">A checklist before you start</h3>
 <ul class="ticks">
 <li>Register your <b>own</b> API Client and never share its secret.</li>
@@ -69,7 +69,7 @@
 
 <section><div class="wrap">
 <div class="sechead"><h2>Licence</h2></div>
-<p>Workday MCP is source-available, <b>not open source</b>. It is free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Commercial use is not permitted. The server source code is not published in this repository.</p>
+<p>DaySight MCP is source-available, <b>not open source</b>. It is free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Commercial use is not permitted. The server source code is not published in this repository.</p>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
@@ -77,9 +77,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
-<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

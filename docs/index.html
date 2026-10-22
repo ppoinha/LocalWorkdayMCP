@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Workday MCP: ask Claude about your Workday data</title>
-<meta name="description" content="Ask Claude about your Workday data in plain English. Workforce analytics, charts and dashboards from a Claude Desktop extension that signs in as you.">
-<meta property="og:title" content="Workday MCP: ask Claude about your Workday data">
-<meta property="og:description" content="Ask Claude about your Workday data in plain English. Workforce analytics, charts and dashboards from a Claude Desktop extension that signs in as you.">
+<title>DaySight MCP: ask about your Workday data in plain English</title>
+<meta name="description" content="Ask about your Workday data in plain English. Workforce analytics, charts and dashboards from an extension that signs in as you.">
+<meta property="og:title" content="DaySight MCP: ask about your Workday data in plain English">
+<meta property="og:description" content="Ask about your Workday data in plain English. Workforce analytics, charts and dashboards from an extension that signs in as you.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/daysight-mcp-logo-512.png">
 <meta name="theme-color" content="#0A1D28">
-<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
@@ -18,28 +18,28 @@
 </head>
 <body>
 <header class="site"><div class="wrap">
-<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<a class="brand" href="index.html"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
 <nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
 </div></header>
 <main>
 
 <section class="hero hero-video"><div class="wrap">
 <div class="stack" style="max-width:68ch">
-<p class="eyebrow">Claude Desktop extension for Workday</p>
-<h1>Ask Claude about your Workday data in plain English.</h1>
-<p class="lede">Workday MCP connects Claude to Workday. Ask analytical questions about your workforce and get answers, charts and dashboards back. You sign in as yourself, so Claude sees what you are allowed to see, and nothing more.</p>
+<p class="eyebrow">Workforce analytics for Workday</p>
+<h1>Ask about your Workday data in plain English.</h1>
+<p class="lede">DaySight MCP connects your AI assistant to Workday. Ask analytical questions about your workforce and get answers, charts and dashboards back. You sign in as yourself, so your assistant sees what you are allowed to see, and nothing more.</p>
 <div class="row"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="demos.html">Watch the demos</a></div>
 </div>
 <div>
 <div class="player">
-<video id="hero-video" muted playsinline loop controls preload="metadata" poster="assets/videos/headcount-fte-poster.jpg?v=2" aria-label="Demo: asking Claude questions about Workday data and getting charts back"><source src="assets/videos/headcount-fte.mp4?v=2" type="video/mp4"></video>
+<video id="hero-video" muted playsinline loop controls preload="metadata" poster="assets/videos/headcount-fte-poster.jpg?v=3" aria-label="Demo: asking questions about Workday data and getting charts back"><source src="assets/videos/headcount-fte.mp4?v=3" type="video/mp4"></video>
 <button class="pp" id="hero-toggle" type="button" hidden aria-label="Pause demo video" data-state="paused"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></button>
 </div>
 <div class="chips" role="group" aria-label="Choose a demo">
-<button class="chip" type="button" data-demo data-src="assets/videos/headcount-fte.mp4?v=2" data-poster="assets/videos/headcount-fte-poster.jpg?v=2" aria-pressed="true">Headcount and FTE</button>
-<button class="chip" type="button" data-demo data-src="assets/videos/diversity.mp4?v=2" data-poster="assets/videos/diversity-poster.jpg?v=2" aria-pressed="false">Diversity</button>
-<button class="chip" type="button" data-demo data-src="assets/videos/pay-comparison.mp4?v=2" data-poster="assets/videos/pay-comparison-poster.jpg?v=2" aria-pressed="false">Pay comparison</button>
-<button class="chip" type="button" data-demo data-src="assets/videos/recruiting.mp4?v=2" data-poster="assets/videos/recruiting-poster.jpg?v=2" aria-pressed="false">Recruiting</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/headcount-fte.mp4?v=3" data-poster="assets/videos/headcount-fte-poster.jpg?v=3" aria-pressed="true">Headcount and FTE</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/diversity.mp4?v=3" data-poster="assets/videos/diversity-poster.jpg?v=3" aria-pressed="false">Diversity</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/pay-comparison.mp4?v=3" data-poster="assets/videos/pay-comparison-poster.jpg?v=3" aria-pressed="false">Pay comparison</button>
+<button class="chip" type="button" data-demo data-src="assets/videos/recruiting.mp4?v=3" data-poster="assets/videos/recruiting-poster.jpg?v=3" aria-pressed="false">Recruiting</button>
 </div>
 <p class="note" style="margin-top:12px">Recorded on a Workday demo tenant. Aggregates only, no individual records. Early testing, runs on your own Windows PC through Claude Desktop, free for non-commercial use. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
 </div>
@@ -48,7 +48,7 @@
 <section><div class="wrap">
 <div class="sechead"><p class="eyebrow">Demos</p><h2>Watch it answer real questions</h2><p class="lede">Four short demos on a Workday demo tenant. Aggregates only, no individual records.</p></div>
 <div class="demo-cards">
-<a class="demo-card" href="demos.html#headcount-fte"><img src="assets/videos/headcount-fte-poster.jpg?v=2" alt="" loading="lazy"><span>Headcount and FTE</span><small>Headcount and FTE by function, and how headcount has changed over the years.</small></a><a class="demo-card" href="demos.html#diversity"><img src="assets/videos/diversity-poster.jpg?v=2" alt="" loading="lazy"><span>Diversity</span><small>Women’s share of each function, and the workforce by generation.</small></a><a class="demo-card" href="demos.html#pay-comparison"><img src="assets/videos/pay-comparison-poster.jpg?v=2" alt="" loading="lazy"><span>Pay comparison</span><small>Average base pay by grade and gender, and which compensation scorecards exist.</small></a><a class="demo-card" href="demos.html#recruiting"><img src="assets/videos/recruiting-poster.jpg?v=2" alt="" loading="lazy"><span>Recruiting</span><small>Open job postings and where they are located.</small></a>
+<a class="demo-card" href="demos.html#headcount-fte"><img src="assets/videos/headcount-fte-poster.jpg?v=3" alt="" loading="lazy"><span>Headcount and FTE</span><small>Headcount and FTE by function, and how headcount has changed over the years.</small></a><a class="demo-card" href="demos.html#diversity"><img src="assets/videos/diversity-poster.jpg?v=3" alt="" loading="lazy"><span>Diversity</span><small>Women’s share of each function, and the workforce by generation.</small></a><a class="demo-card" href="demos.html#pay-comparison"><img src="assets/videos/pay-comparison-poster.jpg?v=3" alt="" loading="lazy"><span>Pay comparison</span><small>Average base pay by grade and gender, and which compensation scorecards exist.</small></a><a class="demo-card" href="demos.html#recruiting"><img src="assets/videos/recruiting-poster.jpg?v=3" alt="" loading="lazy"><span>Recruiting</span><small>Open job postings and where they are located.</small></a>
 </div>
 <p style="margin-top:22px"><a href="demos.html">See all demos</a></p>
 </div></section>
@@ -57,14 +57,14 @@
 <div class="sechead"><p class="eyebrow">Why people like it</p><h2>The workforce questions you used to need a report for</h2></div>
 <div class="grid two">
 <div class="card"><span class="ico">?</span><h3>Analytics in plain English</h3><p>Headcount, hires, exits, turnover, tenure, cost and mix, by function, region, location or leader. Ask the way you would ask a colleague.</p></div>
-<div class="card"><span class="ico">&#9638;</span><h3>Charts and dashboards on request</h3><p>Ask Claude to turn any answer into a chart, or a whole dashboard for the board, finance or a local team.</p></div>
+<div class="card"><span class="ico">&#9638;</span><h3>Charts and dashboards on request</h3><p>Ask your assistant to turn any answer into a chart, or a whole dashboard for the board, finance or a local team.</p></div>
 <div class="card"><span class="ico">&#9679;</span><h3>Signs in as you</h3><p>You approve access with your own Workday account. Workday&rsquo;s security still decides what comes back.</p></div>
 <div class="card"><span class="ico">&#10003;</span><h3>Read-only and private</h3><p>Analytics come back as summaries: no names, no individual pay, and groups smaller than three people are hidden.</p></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
-<div class="sechead"><p class="eyebrow">What you get back</p><h2>From a question to a dashboard</h2><p class="lede">An illustration of what Claude can draw from your answers. The data is illustrative sample data.</p></div>
+<div class="sechead"><p class="eyebrow">What you get back</p><h2>From a question to a dashboard</h2><p class="lede">An illustration of what your assistant can draw from your answers. The data is illustrative sample data.</p></div>
 <div class="dash" role="group" aria-label="Sample dashboard with illustrative sample data">
 <div class="dash-head"><b>Northwind Demo Co. · Workforce overview</b><span class="tag">SAMPLE · ILLUSTRATIVE SAMPLE DATA</span></div>
 <div class="tiles"><div class="tile"><span class="tl">Active headcount</span><span class="tv">4,812</span><span class="ts">up 2.7% on a year ago</span></div><div class="tile"><span class="tl">Turnover, 12 months</span><span class="tv">10.1%</span><span class="ts">487 exits, 612 hires</span></div><div class="tile"><span class="tl">Women in leadership</span><span class="tv">38%</span><span class="ts">up 2 points</span></div><div class="tile"><span class="tl">Base pay cost</span><span class="tv">$402M</span><span class="ts">$86.4k per FTE</span></div></div>
@@ -81,7 +81,7 @@
 <li><h3>Register your API Client</h3><p>In Workday, you create your own API Client and choose its scopes. Your client ID and secret are yours alone.</p></li>
 <li><h3>Install the extension</h3><p>In Claude Desktop, open Settings, Extensions, Advanced settings and pick the downloaded file.</p></li>
 <li><h3>Fill in the short form</h3><p>Paste your client details and endpoints, and switch on the analytics option.</p></li>
-<li><h3>Sign in and ask</h3><p>Ask Claude to call <code>workday_login</code>, approve in your browser, then start asking questions.</p></li>
+<li><h3>Sign in and ask</h3><p>Ask your assistant to call <code>workday_login</code>, approve in your browser, then start asking questions.</p></li>
 </ol>
 <p style="margin-top:22px"><a href="install.html">Read the full install walkthrough</a></p>
 </div></section>
@@ -90,7 +90,7 @@
 <div class="sechead"><p class="eyebrow">What it covers</p><h2>Workforce analytics plus the core Workday areas</h2><p class="lede">Each area needs its scope on your API Client.</p></div>
 <div class="row" style="gap:10px"><span class="btn ghost" style="cursor:default">Workforce analytics</span><span class="btn ghost" style="cursor:default">Workers</span><span class="btn ghost" style="cursor:default">Organizations</span><span class="btn ghost" style="cursor:default">Staffing</span><span class="btn ghost" style="cursor:default">Absence and time off</span><span class="btn ghost" style="cursor:default">Compensation</span><span class="btn ghost" style="cursor:default">Performance and goals</span><span class="btn ghost" style="cursor:default">Recruiting</span><span class="btn ghost" style="cursor:default">Talent</span></div>
 <p style="margin-top:22px"><a href="features.html">See all features</a></p>
-<div style="margin-top:28px"><div class="privacy"><span><b>Privacy and safety.</b> Use Workday MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.</span></div></div>
+<div style="margin-top:28px"><div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.</span></div></div>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
@@ -98,9 +98,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
-<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

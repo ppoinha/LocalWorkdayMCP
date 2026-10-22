@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Install · Workday MCP</title>
-<meta name="description" content="Install Workday MCP in Claude Desktop: register your own API Client, install one file and sign in.">
-<meta property="og:title" content="Install · Workday MCP">
-<meta property="og:description" content="Install Workday MCP in Claude Desktop: register your own API Client, install one file and sign in.">
+<title>Install · DaySight MCP</title>
+<meta name="description" content="Install DaySight MCP in Claude Desktop: register your own API Client, install one file and sign in.">
+<meta property="og:title" content="Install · DaySight MCP">
+<meta property="og:description" content="Install DaySight MCP in Claude Desktop: register your own API Client, install one file and sign in.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/workday-mcp-logo-512.png">
+<meta property="og:image" content="https://ppoinha.github.io/LocalWorkdayMCP/assets/daysight-mcp-logo-512.png">
 <meta name="theme-color" content="#0A1D28">
-<link rel="icon" type="image/svg+xml" href="assets/workday-mcp-logo.svg">
+<link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
@@ -18,7 +18,7 @@
 </head>
 <body>
 <header class="site"><div class="wrap">
-<a class="brand" href="index.html"><img src="assets/workday-mcp-logo.svg" alt="" width="40" height="40">Workday MCP</a>
+<a class="brand" href="index.html"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
 <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html" aria-current="page">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
 </div></header>
 <main>
@@ -42,7 +42,7 @@
 <li><h3>Download the file</h3><p>Get <code>workday-mcp-&lt;version&gt;.mcpb</code> from the <a href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Releases page</a>, under Assets.</p></li>
 <li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
 <li><h3>Fill in the form</h3><p>Enter your client ID, secret, authorization and token endpoints. Keep the default redirect address and switch on <b>Allow Workday Query Language (WQL) reports</b> for workforce analytics.</p></li>
-<li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask Claude to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
+<li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask your assistant to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
 <li><h3>Ask a question</h3><p>Try "Show the board scorecard", then "Draw it as a dashboard". Ask for <code>workday_auth_status</code> any time to check that you are signed in.</p></li>
 </ol>
 </div></section>
@@ -54,7 +54,7 @@
 <li>After changing a setting, restart Claude Desktop and start a new chat.</li>
 <li>Try it on a sandbox or implementation tenant first.</li>
 <li>Give your API Client only the scopes that match the questions you want to ask.</li>
-<li>Whatever Claude retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on HR data first.</li>
+<li>Whatever your assistant retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on HR data first.</li>
 </ul>
 <div class="row" style="margin-top:28px"><a class="btn" href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/docs/installation-guide.md">Read the full installation guide</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download the extension</a></div>
 </div></section>
@@ -64,9 +64,9 @@
 </main>
 <footer class="site"><div class="wrap">
 <div class="links"><a href="index.html">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
-<p>For privacy and safety, use Workday MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
 <p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha.</p>
-<p>Workday MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

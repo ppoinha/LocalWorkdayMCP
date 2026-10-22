@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="docs/assets/workday-mcp-logo.svg" alt="Workday MCP logo" width="128" height="128">
+  <img src="docs/assets/daysight-mcp-logo.svg" alt="DaySight MCP logo" width="128" height="128">
 </p>
 
-# Workday MCP for Claude Desktop (local install)
+# DaySight MCP for Workday (local install)
 
-Ask Claude analytical questions about your Workday data in plain English, and get answers, charts and dashboards back, signed in as yourself.
+Ask analytical questions about your Workday data in plain English, and get answers, charts and dashboards back, signed in as yourself.
 
 **Website:** <https://ppoinha.github.io/LocalWorkdayMCP/> (demo videos, features, examples, install walkthrough and security overview).
 
-This repository contains the **installer and documentation** for Workday MCP, a [Model Context Protocol](https://modelcontextprotocol.io) server for the Workday REST API. The server source code is not published here.
+This repository contains the **installer and documentation** for DaySight MCP, a [Model Context Protocol](https://modelcontextprotocol.io) server for the Workday REST API. The server source code is not published here.
 
 > **Status: early testing.** Today it is installed locally, by each person, on their own **Windows** computer, through **Claude Desktop**. A central deployment for a whole organization is planned.
 
@@ -25,7 +25,7 @@ Port 3000 must be free on your PC while you sign in. The guide explains why and 
 
 - Use it with **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety.
 - The **Workday API Client you register** limits which parts of Workday the server can reach (its scopes).
-- **You sign in with your own Workday account**, so Workday's security still decides what you see. Claude never gets more access than you have.
+- **You sign in with your own Workday account**, so Workday's security still decides what you see. Your assistant never gets more access than you have.
 - The client secret and tokens stay on your computer and never reach the model. There is no "call any URL" tool, and the tools that change data are off by default.
 
 ## What works today

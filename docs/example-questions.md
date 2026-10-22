@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/workday-mcp-logo.svg" alt="Workday MCP logo" width="96" height="96">
+  <img src="assets/daysight-mcp-logo.svg" alt="DaySight MCP logo" width="96" height="96">
 </p>
 
 # Example questions
 
-What you can ask once Workday MCP is installed and you have signed in, and the charts and dashboards Claude can draw from the answers. All names, numbers and answers below are **illustrative sample data** ("Northwind Demo Co.") that show the shape of the answers. Claude words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.
+What you can ask once DaySight MCP is installed and you have signed in, and the charts and dashboards your assistant can draw from the answers. All names, numbers and answers below are **illustrative sample data** ("Northwind Demo Co.") that show the shape of the answers. The assistant words its replies itself, so the real wording and formatting will differ. Workday decides what you are allowed to see, so some questions return less (or nothing) for people without the matching permissions.
 
-> **Privacy and safety.** Use Workday MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
+> **Privacy and safety.** Use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.
 
 ## Workforce analytics
 
@@ -41,7 +41,7 @@ Switch on **Allow Workday Query Language (WQL) reports** in the extension settin
 
 ## Dashboards and charts
 
-Ask Claude to draw any answer, or to build a whole dashboard for an audience. Claude draws the charts from the answers it gets from Workday, and you can refine them in the same conversation.
+Ask your assistant to draw any answer, or to build a whole dashboard for an audience. Your assistant draws the charts from the answers it gets from Workday, and you can refine them in the same conversation.
 
 - "Build a one-page workforce dashboard for the board."
 - "Chart headcount by quarter for the last two years."
@@ -79,4 +79,4 @@ Each area needs its scope on your API Client (see the installation guide).
 **"What compensation scorecards exist?"**
 > 2 scorecards: FY25 Merit and FY25 Bonus, each with its measures and weights.
 
-Tip: ask in the **Chat** tab of Claude Desktop, and if Claude says it is not signed in, ask it to call `workday_login`.
+Tip: ask in the **Chat** tab of Claude Desktop, and if the assistant says it is not signed in, ask it to call `workday_login`.

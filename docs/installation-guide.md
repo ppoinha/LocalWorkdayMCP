@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="assets/workday-mcp-logo.svg" alt="Workday MCP logo" width="96" height="96">
+  <img src="assets/daysight-mcp-logo.svg" alt="DaySight MCP logo" width="96" height="96">
 </p>
 
-# Workday MCP: installation guide
+# DaySight MCP: installation guide
 
 Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `workday-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
 
-**Licence:** the Workday MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
+**Licence:** the DaySight MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
 
-**Privacy and safety:** use Workday MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
+**Privacy and safety:** use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
 
 *Client-support information was checked against vendor documentation on 21 October 2026. These products change quickly, so treat the "supported today" notes as a snapshot and check the linked sources.*
 
@@ -69,7 +69,7 @@ The person registering the client needs permission on the security domain that s
 
 | Field | Value |
 |---|---|
-| **Client Name** | A recognizable name, for example `Workday MCP (pilot)`. |
+| **Client Name** | A recognizable name, for example `DaySight MCP (pilot)`. |
 | **Client Grant Type** | **Authorization Code Grant**. This is what lets each user sign in as themselves. |
 | **Access Token Type** | **Bearer**. |
 | **Redirection URI** | `https://localhost:3000/callback`. It must match `WORKDAY_REDIRECT_URI` (the extension's *Redirection URI* field) exactly, including the port. Your PC listens on this address only while a login is in progress, with a locally generated self-signed certificate, so **port 3000 must be free on your PC** during sign-in. If you register a different port, use that exact URI in the extension form. |
@@ -214,7 +214,7 @@ Then try the questions in the [example questions](example-questions.md), for exa
 
 The server currently speaks **stdio only**: the client starts it as a local process (the Claude Desktop extension does this for you). Some products can only connect to **remote HTTPS** servers.
 
-| Client | Connects to local stdio server? | Connects to remote HTTPS server? | Works with Workday MCP today? |
+| Client | Connects to local stdio server? | Connects to remote HTTPS server? | Works with DaySight MCP today? |
 |---|---|---|---|
 | **Claude Desktop** (Windows, `.mcpb` extension; **Chat tab** only, not the Code tab) | Yes, via the extension | Yes, via Settings > Connectors (custom connector) | **Yes, recommended** (section 4) |
 | **ChatGPT** (web; Plus, Pro, Business, Enterprise, Education, via Developer mode) | **No**, remote endpoints only | Yes (streaming HTTP and SSE; OAuth, none, or mixed) | **Not yet**, needs the planned remote deployment |
@@ -232,7 +232,7 @@ The extension in section 4 is the supported route today. These notes describe wh
 
 ### 7.1 ChatGPT
 
-**Honest status: not possible today.** ChatGPT connects to **remote MCP endpoints** (public HTTPS), not to local stdio processes, and the Workday MCP server has no HTTP transport yet. When the central deployment exists, the steps will be roughly:
+**Honest status: not possible today.** ChatGPT connects to **remote MCP endpoints** (public HTTPS), not to local stdio processes, and the DaySight MCP server has no HTTP transport yet. When the central deployment exists, the steps will be roughly:
 
 1. In ChatGPT: **Settings > Apps > Advanced settings > Developer mode** (available to Pro, Plus, Business, Enterprise and Education accounts on the web).
 2. **Create app**, give it a name, enter the server's HTTPS MCP URL, choose authentication (OAuth), and confirm.
