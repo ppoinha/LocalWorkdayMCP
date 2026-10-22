@@ -4,7 +4,7 @@
 
 # DaySight MCP: installation guide
 
-Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `workday-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
+Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `daysight-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
 
 **Licence:** the DaySight MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted.
 
@@ -16,7 +16,7 @@ Connect Claude to Workday and ask questions in plain English, signing in with yo
 
 ## 1. Read this first
 
-**Today it is installed locally, by each person, on their own Windows computer.** The recommended install is the Claude Desktop extension file (`workday-mcp-<version>.mcpb`): Claude Desktop runs it with its own built-in Node.js, so there is nothing else to install and no config file to edit. Every person who wants to use it installs the extension themselves, **registers their own Workday API Client** (their own client ID and secret, nothing shared with anyone else) and signs in with their own Workday account. Only Windows has been tested so far; the extension file is also built for macOS, but treat that as untested.
+**Today it is installed locally, by each person, on their own Windows computer.** The recommended install is the Claude Desktop extension file (`daysight-mcp-<version>.mcpb`): Claude Desktop runs it with its own built-in Node.js, so there is nothing else to install and no config file to edit. Every person who wants to use it installs the extension themselves, **registers their own Workday API Client** (their own client ID and secret, nothing shared with anyone else) and signs in with their own Workday account. Only Windows has been tested so far; the extension file is also built for macOS, but treat that as untested.
 
 **A central deployment is planned.** A later phase adds a remote (HTTPS) transport, per-user sign-in and per-user token storage, so one hosted server can serve a whole organization with no local install. Until then, clients that can only connect to remote servers (ChatGPT, Microsoft Copilot Studio, the "custom connector" dialog in Claude) cannot use it. See the [support matrix](#6-which-clients-can-use-it-today) and [hosting strategies](#8-where-to-run-the-server).
 
@@ -38,7 +38,7 @@ The assistant never sees the client secret or tokens. They are read from your lo
 | Item | Notes |
 |---|---|
 | A Windows computer with **Claude Desktop** (current version) | A Claude account, signed in. For privacy and safety, use **Claude Enterprise**, which does not use your conversations to train models. Extensions are installed from Claude Desktop's settings. |
-| The extension file `workday-mcp-<version>.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
+| The extension file `daysight-mcp-<version>.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
 | **Your own Workday API Client** | You register it yourself in Workday (section 3). That gives you your own client ID and client secret, plus the authorization and token endpoints. Nobody else needs, or should receive, your secret. |
 | Your own Workday account | The one you will sign in with. Its permissions decide what you see. |
 | A web browser on the same computer | The sign-in page opens there and redirects back to `localhost`. |
@@ -165,8 +165,8 @@ Note that the authorization host usually differs from the services host. Always 
 
 ## 4. Install the Claude Desktop extension (recommended, Windows)
 
-1. Download `workday-mcp-<version>.mcpb` from the repository's [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*) and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
-2. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension** and pick the `workday-mcp-<version>.mcpb` file.
+1. Download `daysight-mcp-<version>.mcpb` from the repository's [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*) and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
+2. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension** and pick the `daysight-mcp-<version>.mcpb` file.
    - This is the only install route we have confirmed. Use it rather than opening the file from Explorer.
 3. Claude Desktop shows the extension ("Workday") and its details. Review them and confirm the installation.
 4. Fill in the form with the values from **your own** API Client (section 3, step 6):
@@ -311,7 +311,7 @@ Close that program normally. Only if it is a stray process you recognize, stop i
 
 ## 11. Security checklist
 
-- Register your **own** API Client and never share its secret. Never post the client secret or client ID in chat, email, tickets, screenshots or Git, and never share the files in `%USERPROFILE%\.workday-mcp\`. If a secret is ever exposed, regenerate it in Workday.
+- Register your **own** API Client and never share its secret. Never post the client secret or client ID in chat, email, tickets, screenshots or Git, and never share the files in `%USERPROFILE%\.daysight-mcp\`. If a secret is ever exposed, regenerate it in Workday.
 - Give your API Client the smallest set of scopes that covers the questions you want to ask.
 - Keep **Allow changes in Workday** off in the extension form unless you have a reviewed need.
 - Prefer a non-production tenant (sandbox / implementation) for first tests.

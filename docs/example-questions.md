@@ -55,7 +55,7 @@ See sample charts and a sample dashboard on the [website](https://ppoinha.github
 ## Reports
 
 **"Build the workforce report as a PDF."** (also needs **Allow workforce reports (PDF)**)
-> Created a 24-page workforce report in your Workday MCP Reports folder: 21 sections included, 2 left out because the data was missing, each with the reason.
+> Created a 24-page workforce report in your DaySight MCP Reports folder: 21 sections included, 2 left out because the data was missing, each with the reason.
 
 **"What can you do with my Workday?"**
 > Lists the tools, switches, ready-made views and privacy rules that are active in your install.

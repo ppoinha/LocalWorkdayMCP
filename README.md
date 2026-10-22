@@ -15,7 +15,7 @@ This repository contains the **installer and documentation** for DaySight MCP, a
 ## Get started
 
 1. **Read the [installation guide](docs/installation-guide.md).** It walks through registering your own Workday API Client (your own client ID and secret, nothing shared), installing the extension and signing in.
-2. **Download the install file** `workday-mcp-<version>.mcpb` from the [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*).
+2. **Download the install file** `daysight-mcp-<version>.mcpb` from the [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*).
 3. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension**, pick the file, fill in the form, and use it from the **Chat** tab.
 4. Try the [example questions](docs/example-questions.md).
 
