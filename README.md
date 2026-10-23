@@ -23,7 +23,7 @@ Port 3000 must be free on your PC while you sign in. The guide explains why and 
 
 ## 30-day trial
 
-The download is a **30-day trial** for each Workday tenant, counted from the first time you use it. When it ends, your assistant says so and shows a **request code** (a hash, not your tenant name). [Email your request code](https://daysight.dev/contact.html) (ppoinha@yahoo.com) to get a licence key, then paste it into the extension's **Licence key** setting. Nothing in Workday is changed when the trial ends, and the check sends nothing off your computer.
+The download is a **30-day trial** for each Workday tenant, counted from the first time you use it. When it ends, your assistant says so and shows a **request code** (a hash, not your tenant name). [Email your request code](https://daysight.dev/contact.html) (contacts@daysight.dev) to get a licence key, then paste it into the extension's **Licence key** setting. Nothing in Workday is changed when the trial ends, and the check sends nothing off your computer.
 
 ## How access works
 
