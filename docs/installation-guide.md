@@ -181,6 +181,7 @@ Note that the authorization host usually differs from the services host. Always 
 | **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles`. Add the ones for the areas you use (step 3). |
 | **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. |
 | **Use PKCE** | Leave off unless your API Client has *Support Proof Key for Code Exchange* ticked |
+| **Aggregates only (no person-level data)** | On by default; leave it on for a standard rollout. WQL answers only with aggregates, and REST offers only the organization-structure and reference tools (`organizations_*`, `supervisoryOrganizations_*`, `organizationTypes_*`, `currencies_*`, `jobChangeReasons_*`). Untick it only if the people using DaySight MCP may send individual-level HR data to the AI provider. The worker, pay slip, time off and other individual-record tools then appear, with contact details, addresses and identifiers removed from the answers. The tools that change data in Workday also need it unticked. |
 | **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
 | **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools for the whole organization. Needs a Workday API Client that can use WQL. |
 | **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC. |
@@ -276,6 +277,8 @@ Ask Claude (in the Chat tab of Claude Desktop):
 3. *"Who reports to me?"* (`workers_directReports_list`).
 4. *"List the first 10 supervisory organizations."*
 
+Questions 2 and 3 use tools that return individual records, so with **Aggregates only** on (the default) they are not offered. Ask question 4 first, and untick **Aggregates only** only on a test tenant where individual-level answers are acceptable.
+
 Example prompts for your team are in the [example questions](example-questions.md).
 
 ## 10. Troubleshooting
@@ -315,6 +318,7 @@ Close that program normally. Only if it is a stray process you recognize, stop i
 
 - Register your **own** API Client and never share its secret. Never post the client secret or client ID in chat, email, tickets, screenshots or Git, and never share the files in `%USERPROFILE%\.daysight-mcp\`. If a secret is ever exposed, regenerate it in Workday.
 - Give your API Client the smallest set of scopes that covers the questions you want to ask.
+- Leave **Aggregates only** on unless the people using it may send individual-level HR data to the AI provider.
 - Keep **Allow changes in Workday** off in the extension form unless you have a reviewed need.
 - Prefer a non-production tenant (sandbox / implementation) for first tests.
 - Use **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety. Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
