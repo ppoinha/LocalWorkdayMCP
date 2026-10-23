@@ -24,7 +24,7 @@ There is no bug bounty. Please give a reasonable time to fix an issue before you
 
 ## Privacy switch
 
-One setting controls what personal data can leave your computer: **Aggregates only**, on by default. While it is on, answers are counts, averages and percentiles with small groups hidden (default minimum 3, setting **Smallest group shown**), no names or other person-level data are returned, and diversity data (ethnicity, disability, veteran status, nationality) is read only as such counts. Unticking it means the people using DaySight MCP may send individual-level HR data, including names, to the AI provider; anything Workday lets the signed-in user see can then be returned. Contact details, addresses and identifiers are removed in both modes, and religion and sexual orientation are never read.
+One setting controls what personal data can leave your computer: **Aggregates only**, on by default. While it is on, answers are counts, averages and percentiles with small groups hidden (default minimum 3, setting **Smallest group shown**), no names or other person-level data are returned, and diversity data (ethnicity, disability, veteran status, nationality) is read only as such counts. Unticking it means the people using DaySight MCP may send individual-level HR data, including names, to the AI provider; anything Workday lets the signed-in user see can then be returned. Work email and work phone come through only when it is unticked. Personal contact details (home and personal email, phone and address) and identifiers are removed in both modes, and religion and sexual orientation are never read.
 
 ## Supported versions
 
