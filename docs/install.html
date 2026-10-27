@@ -51,7 +51,7 @@
 <div class="sechead"><h2>The steps</h2></div>
 <ol class="steps">
 <li><h3>Register your API Client</h3><p>In Workday, run the task Register API Client: Authorization Code Grant with Support PKCE ticked, so no client secret is needed. Choose the scopes for the areas you want and keep its client ID and endpoints. The guide covers each Workday screen.</p></li>
-<li><h3>Download the file</h3><p><a href="downloads/daysight-mcp-0.9.6.mcpb" download>Download <code>daysight-mcp-0.9.6.mcpb</code></a> (about 0.8 MB). It contains no secrets. You can check it against the SHA-256 value below.</p></li>
+<li><h3>Download the file</h3><p><a href="downloads/daysight-mcp-0.10.0.mcpb" download>Download <code>daysight-mcp-0.10.0.mcpb</code></a> (about 0.8 MB). It contains no secrets. You can check it against the SHA-256 value below.</p></li>
 <li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
 <li><h3>Fill in the form</h3><p>Enter your client ID, the authorization and token endpoints, and tick Use PKCE (no secret needed). Keep the default redirect address.</p></li>
 <li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask your assistant to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
@@ -69,17 +69,17 @@
 <li>Whatever your assistant retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on HR data first.</li>
 </ul>
 <div class="sechead" id="download" style="margin-top:40px"><h2>Download and checksum</h2></div>
-<p>The extension is one file, <code>daysight-mcp-0.9.6.mcpb</code>, hosted on this site. Download it, then install it as in step 3. To check that the file is intact, compare its SHA-256 value (in PowerShell: <code>Get-FileHash .\daysight-mcp-0.9.6.mcpb</code>) with this one:</p>
-<p class="sha"><code>b6a52ac2ae1eb52e7f511831bdf246e8c40f7ff5ce05642ce1f6d56469de9cfb</code></p>
-<div class="row" style="margin-top:16px"><a class="btn" href="downloads/daysight-mcp-0.9.6.mcpb" download>Download the extension</a><a class="btn ghost" href="downloads/daysight-mcp-0.9.6.mcpb.sha256" download>SHA-256 file</a><a class="btn ghost" href="downloads/daysight-mcp-0.9.6.sbom.cdx.json" download>Software bill of materials</a></div>
+<p>The extension is one file, <code>daysight-mcp-0.10.0.mcpb</code>, hosted on this site. Download it, then install it as in step 3. To check that the file is intact, compare its SHA-256 value (in PowerShell: <code>Get-FileHash .\daysight-mcp-0.10.0.mcpb</code>) with this one:</p>
+<p class="sha"><code>076915a0531822d630d662ceba3f1a788198c72dcb8d1ac2bd8c71f63169aabb</code></p>
+<div class="row" style="margin-top:16px"><a class="btn" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download the extension</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb.sha256" download>SHA-256 file</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.sbom.cdx.json" download>Software bill of materials</a></div>
 <p class="note" style="margin-top:12px">By installing or using DaySight MCP you accept the <a href="license.html">DaySight MCP Licence Agreement</a>. Terms for this website are in the <a href="terms.html">terms of use</a> and the <a href="privacy.html">privacy notice</a>.</p>
 
 <div class="sechead" id="licence" style="margin-top:40px"><h2>30-day trial and licence key</h2></div>
 <p>The download works for <b>30 days</b> for each Workday tenant, counted from the first time you use it. When the trial ends, your assistant says so and shows a <b>request code</b> (it is a hash, not your tenant name). To continue, <a href="contact.html">email us your request code</a> and you receive a licence key. Paste it into the <b>Licence key</b> setting of the extension, quit and reopen Claude Desktop and start a new chat. Nothing in Workday is changed when the trial ends, and the trial check sends nothing off your computer.</p>
-<div class="row" style="margin-top:28px"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF) for Claude and ChatGPT</a><a class="btn ghost" href="downloads/daysight-mcp-0.9.6.mcpb" download>Download the extension</a></div>
+<div class="row" style="margin-top:28px"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF) for Claude and ChatGPT</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download the extension</a></div>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Questions or something not working?</h2><p>The PDF guide has a troubleshooting section, including how to check what is using port 3000. Otherwise <a href="contact.html">write to us</a> and tell us what you asked, what you expected and what happened.</p>
-<div class="row" style="justify-content:center"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF)</a><a class="btn ghost" href="downloads/daysight-mcp-0.9.6.mcpb" download>Download</a></div></div></div></section>
+<div class="row" style="justify-content:center"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF)</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">

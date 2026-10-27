@@ -582,7 +582,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ==============================================================================
-body-parser 2.3.0  (MIT)
+body-parser 2.4.0  (MIT)
 https://github.com/expressjs/body-parser
 ==============================================================================
 
@@ -3223,7 +3223,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
 IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ==============================================================================
-zod 3.25.76  (MIT)
+zod 4.6.7  (MIT)
 https://github.com/colinhacks/zod
 ==============================================================================
 

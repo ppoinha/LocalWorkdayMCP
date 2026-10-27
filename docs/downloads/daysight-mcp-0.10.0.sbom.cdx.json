@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:855d034c-fedb-402b-9d7f-f66eb83a8e2d",
+  "serialNumber": "urn:uuid:4ac2c7a9-8f11-42ee-b0f5-e455f2f65022",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-27T14:54:24.243Z",
+    "timestamp": "2026-10-27T19:31:01.993Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -19,13 +19,13 @@
       }
     ],
     "component": {
-      "bom-ref": "daysight-mcp@0.9.6",
+      "bom-ref": "daysight-mcp@0.10.0",
       "type": "library",
       "name": "WorkdayMCP",
-      "version": "0.9.6",
+      "version": "0.10.0",
       "scope": "required",
       "description": "Evolving MCP server for the Workday REST API, authenticated with a Workday API Client (OAuth 2.0 authorization code flow).",
-      "purl": "pkg:npm/daysight-mcp@0.9.6",
+      "purl": "pkg:npm/daysight-mcp@0.10.0",
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1027,13 +1027,13 @@
       ]
     },
     {
-      "bom-ref": "body-parser@2.3.0",
+      "bom-ref": "body-parser@2.4.0",
       "type": "library",
       "name": "body-parser",
-      "version": "2.3.0",
+      "version": "2.4.0",
       "scope": "required",
       "description": "Node.js body parsing middleware",
-      "purl": "pkg:npm/body-parser@2.3.0",
+      "purl": "pkg:npm/body-parser@2.4.0",
       "properties": [
         {
           "name": "cdx:npm:package:path",
@@ -1043,7 +1043,7 @@
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/body-parser/-/body-parser-2.3.0.tgz"
+          "url": "https://registry.npmjs.org/body-parser/-/body-parser-2.4.0.tgz"
         },
         {
           "type": "vcs",
@@ -1061,7 +1061,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "d9c1a626ea5a36083e414c152c0b9c0ee5aea0c67a117f621c346cc19e65b0d6049b03da4649cc3c22d9cf4ef24f356affcde9e28ff0cdb0d96c1ad3bc619323"
+          "content": "21f93529c2ebc5a1add6871c41a81034534d3aa46dd4b16e7a11271c7cc1f19e9c460231454d5305a888b14882740fa0cb93cbed8d485f7d4334a9119b1b578d"
         }
       ],
       "licenses": [
@@ -5569,7 +5569,7 @@
   ],
   "dependencies": [
     {
-      "ref": "daysight-mcp@0.9.6",
+      "ref": "daysight-mcp@0.10.0",
       "dependsOn": [
         "@modelcontextprotocol/sdk@1.32.1",
         "pdf-lib@1.17.1",
@@ -5767,7 +5767,7 @@
       ]
     },
     {
-      "ref": "body-parser@2.3.0",
+      "ref": "body-parser@2.4.0",
       "dependsOn": [
         "bytes@3.1.2",
         "content-type@2.1.0",
@@ -5892,7 +5892,7 @@
       "ref": "express@5.3.0",
       "dependsOn": [
         "accepts@2.0.0",
-        "body-parser@2.3.0",
+        "body-parser@2.4.0",
         "content-disposition@2.0.1",
         "content-type@2.1.0",
         "cookie@0.7.2",
