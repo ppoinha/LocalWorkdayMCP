@@ -8,7 +8,7 @@ Connect Claude to Workday and ask questions in plain English, signing in with yo
 
 **Licence:** DaySight MCP is proprietary software, licensed under the [DaySight MCP Licence Agreement](https://daysight.dev/license.html). Each Workday tenant gets a **free 30-day evaluation**; after that you need a licence key (see section 4 and the troubleshooting section). A PDF version of this guide with the ChatGPT desktop route is on the [Install page](https://daysight.dev/install.html).
 
-**Privacy and safety:** use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
+**Privacy and safety:** use DaySight MCP with an enterprise edition of your AI assistant, **Claude Enterprise** or **ChatGPT Enterprise**, with data sharing and model training turned off. Both providers say that business data is not used for training by default, so check these settings in your own plan. Whatever the assistant retrieves is sent to the AI provider as part of the conversation.
 
 *Client-support information was checked against vendor documentation on 21 October 2026. These products change quickly, so treat the "supported today" notes as a snapshot and check the linked sources.*
 
@@ -37,7 +37,7 @@ The assistant never sees the client secret or tokens. They are read from your lo
 
 | Item | Notes |
 |---|---|
-| A Windows computer with **Claude Desktop** (current version) | A Claude account, signed in. For privacy and safety, use **Claude Enterprise**, which does not use your conversations to train models. Extensions are installed from Claude Desktop's settings. |
+| A Windows computer with **Claude Desktop** (current version) | A Claude account, signed in. For privacy and safety, use **Claude Enterprise** (or **ChatGPT Enterprise** in the ChatGPT desktop app) with data sharing and model training turned off. Extensions are installed from Claude Desktop's settings. |
 | The extension file `daysight-mcp-<version>.mcpb` | Download it from the [Install page](https://daysight.dev/install.html#download) of the website. It contains no secrets. |
 | **Your own Workday API Client** | You register it yourself in Workday (section 3). That gives you your own client ID and client secret, plus the authorization and token endpoints. Nobody else needs, or should receive, your secret. |
 | Your own Workday account | The one you will sign in with. Its permissions decide what you see. |
@@ -322,7 +322,7 @@ Close that program normally. Only if it is a stray process you recognize, stop i
 - Register your **own** API Client and never share its secret. Never post the client secret or client ID in chat, email, tickets, screenshots or Git, and never share the files in `%USERPROFILE%\.daysight-mcp\`. If a secret is ever exposed, regenerate it in Workday.
 - Give your API Client the smallest set of scopes that covers the questions you want to ask.
 - Prefer a non-production tenant (sandbox / implementation) for first tests.
-- Use **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety. Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
+- Use **Claude Enterprise** or **ChatGPT Enterprise** with data sharing and model training turned off, for privacy and safety. Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
 - The extension keeps the client secret in Claude Desktop's secure storage and the login token encrypted in your user profile.
 - Audit logs on stderr record tool name, argument names, status and duration, never values.
 

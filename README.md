@@ -14,7 +14,7 @@ This repository contains the **documentation** for DaySight MCP, a [Model Contex
 
 ## Get started
 
-1. **Read the [install guide (PDF)](https://daysight.dev/downloads/daysight-mcp-install-guide.pdf)** or the [text version](docs/installation-guide.md). It walks through registering your own Workday API Client (your own client ID and secret, nothing shared), installing the extension and signing in.
+1. **Read the [install guide (PDF)](https://daysight.dev/downloads/daysight-mcp-install-guide.pdf)** or the [text version](docs/installation-guide.md). It walks through the Workday API Client your HRIS administrator registers, installing the extension and signing in with your own Workday account.
 2. **Download the install file** `daysight-mcp-<version>.mcpb` from the [Install page](https://daysight.dev/install.html#download) of the website.
 3. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension**, pick the file, fill in the form, and use it from the **Chat** tab.
 4. Try the [example questions](docs/example-questions.md).
@@ -27,8 +27,8 @@ The download is a **30-day trial** for each Workday tenant, counted from the fir
 
 ## How access works
 
-- Use it with **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety.
-- The **Workday API Client you register** limits which parts of Workday the server can reach (its scopes).
+- For privacy and safety, use it with **Claude Enterprise** or **ChatGPT Enterprise**, with data sharing and model training turned off.
+- The **Workday API Client** (registered by your HRIS administrator) limits which parts of Workday the server can reach (its scopes).
 - **You sign in with your own Workday account**, so Workday's security still decides what you see. Your assistant never gets more access than you have.
 - The client secret and tokens stay on your computer and never reach the model. There is no "call any URL" tool, and DaySight MCP only reads from Workday: it has no tools that change data.
 
@@ -37,7 +37,7 @@ The download is a **30-day trial** for each Workday tenant, counted from the fir
 | Client | Status |
 |---|---|
 | Claude Desktop on Windows (Chat tab) | Supported |
-| ChatGPT, Microsoft Copilot Studio | Need the planned remote version |
+| ChatGPT desktop app on Windows | Supported |
 
 ## Feedback
 

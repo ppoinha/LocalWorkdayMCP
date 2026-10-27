@@ -180,3 +180,9 @@ svg.chart{min-width:440px}
 .prose ul{padding-left:22px;margin:0 0 14px}
 .prose table{width:100%;margin:14px 0 24px}
 .addr{font-style:normal;line-height:1.75;margin:10px 0}
+
+.announce{background:var(--deep);color:var(--deep-fg);border-bottom:1px solid var(--line)}
+.announce .wrap{display:flex;gap:10px 16px;align-items:center;flex-wrap:wrap;padding-block:12px}
+.announce .tag{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:var(--mint);color:#08141B;border-radius:999px;padding:3px 10px}
+.announce p{margin:0;font-size:16px;flex:1 1 320px}
+.announce a{color:var(--mint);font-weight:600;white-space:nowrap}

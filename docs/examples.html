@@ -31,21 +31,21 @@
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="./"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
-<nav class="main" aria-label="Main"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html" aria-current="page">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
+<nav class="main" aria-label="Main"><a href="./">Home</a><a href="features.html">Features</a><a href="security.html">Security</a><a href="examples.html" aria-current="page">Examples</a><a href="demos.html">Demos</a><a href="install.html">Install</a><a href="contact.html">Contact</a></nav>
 </div></header>
 <main>
 
 <section class="page-title"><div class="wrap sechead"><p class="eyebrow">Examples</p><h1>What you can ask</h1><p class="lede">Analytical questions to ask, and the charts and dashboards your assistant can draw from the answers. All names, numbers and charts are illustrative sample data from "Northwind Demo Co." The assistant words its replies itself, so yours will read differently.</p></div></section>
 
 <section><div class="wrap">
-<div class="sechead"><h2>Workforce analytics</h2><p class="lede">Workforce analytics answers are summaries only: no names, no individual pay, and groups smaller than three people are never shown.</p></div>
+<div class="sechead"><h2>Workforce analytics</h2><p class="lede">Example questions and the kind of answer to expect. Figures are illustrative.</p></div>
 <div class="qa-grid">
 <div class="qa"><div class="q">&ldquo;Show the board scorecard.&rdquo;</div><div class="a">Headcount 4,812 (up 2.7% on a year ago), 4,655 FTE. 612 hires and 487 exits in the last 12 months, turnover 10.1%. Women in leadership 38%. Standing out: Customer Support has the highest turnover, and 9% of Finance is within five years of retirement age.</div></div>
 <div class="qa"><div class="q">&ldquo;Headcount, hires and exits by quarter for the last two years.&rdquo;</div><div class="a">Headcount grew from 4,402 to 4,812 over eight quarters. Hiring peaked at 181 in Q2 last year, and exits held steady near 120 a quarter.</div></div>
-<div class="qa"><div class="q">&ldquo;Turnover by function for Germany only.&rdquo;</div><div class="a">Germany has 642 active workers. Customer Support 17.9%, Sales 12.4%, Operations 9.1%, Engineering 7.2%, Finance 5.1%. Groups under three people are rolled into Other.</div></div>
+<div class="qa"><div class="q">&ldquo;Turnover by function for Germany only.&rdquo;</div><div class="a">Germany has 642 active workers. Customer Support 17.9%, Sales 12.4%, Operations 9.1%, Engineering 7.2%, Finance 5.1%.</div></div>
 <div class="qa"><div class="q">&ldquo;Which locations have the highest voluntary turnover?&rdquo;</div><div class="a">Austin 9.8%, Munich 8.6% and Chicago 7.9%. The other 11 locations are below 6%.</div></div>
 <div class="qa"><div class="q">&ldquo;Where are people aged 55 or older concentrated?&rdquo;</div><div class="a">Finance (31% of the function) and Operations (24%). Together they hold 41% of everyone aged 55 or older.</div></div>
-<div class="qa"><div class="q">&ldquo;What does each of the CEO&rsquo;s direct reports&rsquo; organization cost, and how big is it?&rdquo;</div><div class="a">7 organizations. The largest has 1,420 people and a base pay cost of $98M. Leaders appear as their organization plus a short code, never by name.</div></div>
+<div class="qa"><div class="q">&ldquo;What does each of the CEO&rsquo;s direct reports&rsquo; organization cost, and how big is it?&rdquo;</div><div class="a">7 organizations. The largest has 1,420 people and a base pay cost of $98M.</div></div>
 <div class="qa"><div class="q">&ldquo;How does women&rsquo;s share in leadership compare across functions?&rdquo;</div><div class="a">Finance 52%, Marketing 47%, Sales 39%, Operations 34%, Engineering 27%. The company average is 38%.</div></div>
 <div class="qa"><div class="q">&ldquo;Give me the HR business partner view for the Munich location.&rdquo;</div><div class="a">Munich: 318 active workers, 24% women, average tenure 5.2 years, 11 exits in the last 12 months and an average span of control of 7.4.</div></div>
 <div class="qa"><div class="q">&ldquo;Which groups are growing fastest, and which are shrinking?&rdquo;</div><div class="a">Customer Support grew 9.4% and Engineering 6.1% over 12 months. Operations shrank 2.3%. Smaller groups are rolled into Other.</div></div>
@@ -75,7 +75,7 @@
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><h2>About your team and the wider Workday areas</h2><p class="lede">Each area needs its scope on your API Client.</p></div>
+<div class="sechead"><h2>About your team and the wider Workday areas</h2><p class="lede">Each area needs its scope on the API Client.</p></div>
 <div class="qa-grid">
 <div class="qa"><div class="q">&ldquo;Who reports to me?&rdquo;</div><div class="a">You have 4 direct reports: Maya Chen (Senior Analyst), Luis Ortega (Analyst), Priya Nair (Analyst) and Tom Becker (Associate Analyst).</div></div>
 <div class="qa"><div class="q">&ldquo;How much vacation do I have left this year?&rdquo;</div><div class="a">Annual Leave: 11.5 days available. Your next scheduled entry is 3 days in December.</div></div>
@@ -86,17 +86,17 @@
 </div></section>
 
 <section><div class="wrap">
-<div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust. Ask in the <b>Chat</b> tab of Claude Desktop, and if the assistant says it is not signed in, ask it to call <code>workday_login</code>. Workday decides what you are allowed to see, so some questions return less, or nothing, for people without the matching permissions.</span></div>
+<div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with an enterprise edition of your AI assistant, <b>Claude Enterprise</b> or <b>ChatGPT Enterprise</b>, with data sharing and model training turned off. Both providers say that business data is not used for training by default, so check these settings in your own plan. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust. Ask in the <b>Chat</b> tab of Claude Desktop, and if the assistant says it is not signed in, ask it to call <code>workday_login</code>. Workday decides what you are allowed to see, so some questions return less, or nothing, for people without the matching permissions.</span></div>
 </div></section>
-<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, get the Workday API Client details from your HRIS administrator and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
-<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<div class="links"><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise or ChatGPT Enterprise, with data sharing and model training turned off. Both providers say that business data is not used for training by default.</p>
 <p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed (see <a href="contact.html">Contact</a>). Copyright (c) 2026 Paulo Poinha.</p>
-<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

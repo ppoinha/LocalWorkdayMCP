@@ -8,11 +8,11 @@ What you can ask once DaySight MCP is installed and you have signed in, and the 
 
 > **30-day trial.** The download works for 30 days for each Workday tenant; after that a licence key is needed (see the [installation guide](installation-guide.md#10-troubleshooting)).
 
-> **Privacy and safety.** Use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.
+> **Privacy and safety.** Use DaySight MCP with an enterprise edition of your AI assistant, **Claude Enterprise** or **ChatGPT Enterprise**, with data sharing and model training turned off. Both providers say that business data is not used for training by default, so check these settings in your own plan. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.
 
 ## Workforce analytics
 
-Workforce analytics answers are summaries only: no names, no individual pay, groups under three people are never shown, and pay figures need groups of five or more. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust.
+Answers show what the signed-in person may see in Workday. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust.
 
 **"Show the board scorecard."**
 > Headcount 4,812 (up 2.7% on a year ago), 4,655 FTE. 612 hires and 487 exits in the last 12 months, turnover 10.1%. Women in leadership 38%. Standing out: Customer Support has the highest turnover, and 9% of Finance is within five years of retirement age.
@@ -21,7 +21,7 @@ Workforce analytics answers are summaries only: no names, no individual pay, gro
 > Headcount grew from 4,402 to 4,812 over eight quarters. Hiring peaked at 181 in Q2 last year, and exits held steady near 120 a quarter.
 
 **"Turnover by function for Germany only."**
-> Germany has 642 active workers. Customer Support 17.9%, Sales 12.4%, Operations 9.1%, Engineering 7.2%, Finance 5.1%. Groups under three people are rolled into Other.
+> Germany has 642 active workers. Customer Support 17.9%, Sales 12.4%, Operations 9.1%, Engineering 7.2%, Finance 5.1%.
 
 **"Which locations have the highest voluntary turnover?"**
 > Austin 9.8%, Munich 8.6% and Chicago 7.9%. The other 11 locations are below 6%.
@@ -30,7 +30,7 @@ Workforce analytics answers are summaries only: no names, no individual pay, gro
 > Finance (31% of the function) and Operations (24%). Together they hold 41% of everyone aged 55 or older.
 
 **"What does each of the CEO's direct reports' organization cost, and how big is it?"**
-> 7 organizations. The largest has 1,420 people and a base pay cost of $98M. Leaders appear as their organization plus a short code, never by name.
+> 7 organizations. The largest has 1,420 people and a base pay cost of $98M.
 
 **"How does women's share in leadership compare across functions?"**
 > Finance 52%, Marketing 47%, Sales 39%, Operations 34%, Engineering 27%. The company average is 38%.

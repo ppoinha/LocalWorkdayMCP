@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Security and privacy: read-only Workday access | DaySight MCP</title>
-<meta name="description" content="How DaySight MCP keeps Workday access limited: your own API Client scopes, your Workday permissions, aggregate-only analytics, secrets kept local.">
+<meta name="description" content="How DaySight MCP keeps Workday access limited: the API Client scopes, your Workday permissions, read-only access, secrets kept local.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://daysight.dev/security.html">
 <meta property="og:site_name" content="DaySight MCP">
@@ -12,26 +12,26 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://daysight.dev/security.html">
 <meta property="og:title" content="Security and privacy: read-only Workday access | DaySight MCP">
-<meta property="og:description" content="How DaySight MCP keeps Workday access limited: your own API Client scopes, your Workday permissions, aggregate-only analytics, secrets kept local.">
+<meta property="og:description" content="How DaySight MCP keeps Workday access limited: the API Client scopes, your Workday permissions, read-only access, secrets kept local.">
 <meta property="og:image" content="https://daysight.dev/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DaySight MCP: ask about your Workday data in plain English">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Security and privacy: read-only Workday access | DaySight MCP">
-<meta name="twitter:description" content="How DaySight MCP keeps Workday access limited: your own API Client scopes, your Workday permissions, aggregate-only analytics, secrets kept local.">
+<meta name="twitter:description" content="How DaySight MCP keeps Workday access limited: the API Client scopes, your Workday permissions, read-only access, secrets kept local.">
 <meta name="twitter:image" content="https://daysight.dev/assets/og-image.png">
 <meta name="twitter:image:alt" content="DaySight MCP: ask about your Workday data in plain English">
 <meta name="theme-color" content="#0A1D28">
 <link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="apple-touch-icon" href="assets/daysight-mcp-logo-512.png">
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://daysight.dev/security.html#webpage","url":"https://daysight.dev/security.html","name":"Security and privacy: read-only Workday access | DaySight MCP","description":"How DaySight MCP keeps Workday access limited: your own API Client scopes, your Workday permissions, aggregate-only analytics, secrets kept local.","inLanguage":"en","isPartOf":{"@id":"https://daysight.dev/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://daysight.dev/"},{"@type":"ListItem","position":2,"name":"Security","item":"https://daysight.dev/security.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://daysight.dev/security.html#webpage","url":"https://daysight.dev/security.html","name":"Security and privacy: read-only Workday access | DaySight MCP","description":"How DaySight MCP keeps Workday access limited: the API Client scopes, your Workday permissions, read-only access, secrets kept local.","inLanguage":"en","isPartOf":{"@id":"https://daysight.dev/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://daysight.dev/"},{"@type":"ListItem","position":2,"name":"Security","item":"https://daysight.dev/security.html"}]}]}</script>
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="./"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
-<nav class="main" aria-label="Main"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html" aria-current="page">Security</a><a href="contact.html">Contact</a></nav>
+<nav class="main" aria-label="Main"><a href="./">Home</a><a href="features.html">Features</a><a href="security.html" aria-current="page">Security</a><a href="examples.html">Examples</a><a href="demos.html">Demos</a><a href="install.html">Install</a><a href="contact.html">Contact</a></nav>
 </div></header>
 <main>
 
@@ -40,20 +40,18 @@
 <section><div class="wrap">
 <div class="sechead"><h2>Two layers on every request</h2></div>
 <div class="grid">
-<div class="card"><span class="ico">1</span><h3>Your API Client sets the outer limit</h3><p>When you register the client you choose its scopes. The server can only reach resources inside them, whoever signs in.</p></div>
+<div class="card"><span class="ico">1</span><h3>The API Client sets the outer limit</h3><p>When your administrator registers the client, they choose its scopes. The server can only reach resources inside them, whoever signs in.</p></div>
 <div class="card"><span class="ico">2</span><h3>You set what comes back</h3><p>You sign in with your own Workday account and approve the client. Workday then applies your security permissions to every call.</p></div>
 </div>
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><h2>Analytics are summaries</h2></div>
+<div class="sechead"><h2>Read-only, within your Workday permissions</h2></div>
 <ul class="ticks">
-<li>Workforce analytics returns summaries. No names and no individual pay.</li>
 <li>DaySight MCP only reads from Workday. It has no tools that change data.</li>
-<li>Groups smaller than three people are rolled into "Other" or hidden, and a selection that small returns nothing.</li>
-<li>Pay figures need groups of five or more.</li>
-<li>Leaders appear as the organization they lead plus an opaque code, never by name.</li>
-<li>Diversity fields are only read as counts, with small groups hidden.</li>
+<li>Answers show what the signed-in person may already see in Workday. Workday security, the API Client scopes and that person's own permissions decide what comes back.</li>
+<li>Worker names, work email and work phone are returned when you ask for them, as is other data your Workday permissions allow. Names and contact details of job candidates are never returned.</li>
+<li>Personal contact details, national IDs and bank details are always removed. Religion and sexual orientation are never read.</li>
 </ul>
 </div></section>
 
@@ -69,13 +67,13 @@
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><h2>Claude Enterprise for privacy and safety</h2><p class="lede">Whatever your assistant retrieves is sent to the AI provider as part of the conversation. For HR data, use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on sending HR data to an AI service.</p></div>
+<div class="sechead"><h2>Claude Enterprise or ChatGPT Enterprise for privacy and safety</h2><p class="lede">Whatever your assistant retrieves is sent to the AI provider as part of the conversation. For HR data, use Claude Enterprise or ChatGPT Enterprise with data sharing and model training turned off. Both providers say that business data is not used for training by default, so check these settings in your own plan, and check your company's policy on sending HR data to an AI service.</p></div>
 <h3 style="margin-bottom:12px">A checklist before you start</h3>
 <ul class="ticks">
-<li>Register your <b>own</b> API Client and never share its secret.</li>
+<li>Have your HRIS administrator register the API Client, and never share a client secret.</li>
 <li>Give it the smallest set of scopes that covers your questions.</li>
 <li>Start on a sandbox or implementation tenant.</li>
-<li>Use Claude Enterprise rather than a consumer account.</li>
+<li>Use Claude Enterprise or ChatGPT Enterprise rather than a consumer account, with data sharing and model training turned off.</li>
 </ul>
 <div class="row" style="margin-top:28px"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Read the security checklist in the install guide (PDF)</a></div>
 </div></section>
@@ -84,15 +82,15 @@
 <div class="sechead"><h2>Licence</h2></div>
 <p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed to continue. The trial check runs on your computer: it stores only a hash of your tenant name, never your client secret, and sends nothing anywhere. The server source code is not published. The open-source components it contains are listed on the <a href="attributions.html">attributions page</a>.</p>
 </div></section>
-<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, get the Workday API Client details from your HRIS administrator and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
-<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<div class="links"><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise or ChatGPT Enterprise, with data sharing and model training turned off. Both providers say that business data is not used for training by default.</p>
 <p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed (see <a href="contact.html">Contact</a>). Copyright (c) 2026 Paulo Poinha.</p>
-<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

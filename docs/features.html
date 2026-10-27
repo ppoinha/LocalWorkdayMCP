@@ -31,7 +31,7 @@
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="./"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
-<nav class="main" aria-label="Main"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html" aria-current="page">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
+<nav class="main" aria-label="Main"><a href="./">Home</a><a href="features.html" aria-current="page">Features</a><a href="security.html">Security</a><a href="examples.html">Examples</a><a href="demos.html">Demos</a><a href="install.html">Install</a><a href="contact.html">Contact</a></nav>
 </div></header>
 <main>
 
@@ -67,7 +67,7 @@
 </div></section>
 
 <section><div class="wrap">
-<div class="sechead"><h2>Ask about</h2><p class="lede">Core Workday areas. Each needs its scope on your API Client, so you choose what the assistant can reach there.</p></div>
+<div class="sechead"><h2>Ask about</h2><p class="lede">Core Workday areas. Each needs its scope on the API Client, so you choose what the assistant can reach there.</p></div>
 <div class="grid">
 <div class="card"><span class="ico">W</span><h3>Workers</h3><p>Who someone is, their job history, direct reports and organization membership.</p></div>
 <div class="card"><span class="ico">O</span><h3>Organizations</h3><p>Supervisory organizations, who manages them, who is in them, and how teams fit together.</p></div>
@@ -78,7 +78,7 @@
 <div class="card"><span class="ico">R</span><h3>Recruiting</h3><p>Open job postings and requisitions, with their dates and locations.</p></div>
 <div class="card"><span class="ico">T</span><h3>Talent</h3><p>Talent pipeline and development reference data where your security group allows it.</p></div>
 </div>
-<p class="note" style="margin-top:16px">Each area needs its scope on your API Client. Workday decides what you can see, so some questions return less for people without the matching permissions.</p>
+<p class="note" style="margin-top:16px">Each area needs its scope on the API Client. Workday decides what you can see, so some questions return less for people without the matching permissions.</p>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -94,12 +94,11 @@
 <section><div class="wrap">
 <div class="sechead"><h2>Safe and private by design</h2></div>
 <div class="grid two">
-<div class="card"><span class="ico">&#10003;</span><h3>Your access, not more</h3><p>The scopes of your own API Client set the outer limit and your Workday permissions decide what comes back.</p></div>
+<div class="card"><span class="ico">&#10003;</span><h3>Your access, not more</h3><p>The scopes of the API Client set the outer limit and your Workday permissions decide what comes back.</p></div>
 <div class="card"><span class="ico">&#10003;</span><h3>Secrets stay local</h3><p>The client secret and tokens stay on your computer and never reach the model.</p></div>
-<div class="card"><span class="ico">&#10003;</span><h3>Summaries, not people</h3><p>Workforce analytics return summaries. No names, no individual pay, groups under three hidden and pay figures only for groups of five or more.</p></div>
 <div class="card"><span class="ico">&#10003;</span><h3>Read-only</h3><p>Your assistant can only use the specific Workday operations the server exposes, and there is no "call any URL" tool.</p></div>
 </div>
-<div style="margin-top:22px"><div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.</span></div></div>
+<div style="margin-top:22px"><div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with an enterprise edition of your AI assistant, <b>Claude Enterprise</b> or <b>ChatGPT Enterprise</b>, with data sharing and model training turned off. Both providers say that business data is not used for training by default, so check these settings in your own plan. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.</span></div></div>
 <p style="margin-top:22px"><a href="security.html">More on security and privacy</a></p>
 </div></section>
 
@@ -109,20 +108,19 @@
 <thead><tr><th>Client</th><th>Status</th></tr></thead>
 <tbody>
 <tr><td>Claude Desktop on Windows (Chat tab)</td><td><b>Supported</b></td></tr>
-<tr><td>Claude Desktop on macOS</td><td>Built, not yet tested</td></tr>
-<tr><td>ChatGPT, Microsoft Copilot Studio</td><td>Need the planned central (remote) version</td></tr>
+<tr><td>ChatGPT desktop app on Windows</td><td><b>Supported</b></td></tr>
 </tbody></table></div>
-<p class="note" style="margin-top:14px">A central deployment for a whole organization is planned. Until then each person installs it on their own PC.</p>
+<p class="note" style="margin-top:14px">Each person installs it on their own PC.</p>
 </div></section>
-<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
+<section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, get the Workday API Client details from your HRIS administrator and ask your first question. A test or implementation tenant is the best place to start.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
-<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<div class="links"><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise or ChatGPT Enterprise, with data sharing and model training turned off. Both providers say that business data is not used for training by default.</p>
 <p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed (see <a href="contact.html">Contact</a>). Copyright (c) 2026 Paulo Poinha.</p>
-<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

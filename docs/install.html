@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Install DaySight MCP: connect Workday to your AI assistant</title>
-<meta name="description" content="How to install DaySight MCP in Claude Desktop: register your own Workday API Client, install one file, sign in and ask your first question.">
+<meta name="description" content="How to install DaySight MCP in Claude Desktop: get the Workday API Client details from your HRIS administrator, install one file, sign in and ask your first question.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://daysight.dev/install.html">
 <meta property="og:site_name" content="DaySight MCP">
@@ -12,45 +12,45 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://daysight.dev/install.html">
 <meta property="og:title" content="Install DaySight MCP: connect Workday to your AI assistant">
-<meta property="og:description" content="How to install DaySight MCP in Claude Desktop: register your own Workday API Client, install one file, sign in and ask your first question.">
+<meta property="og:description" content="How to install DaySight MCP in Claude Desktop: get the Workday API Client details from your HRIS administrator, install one file, sign in and ask your first question.">
 <meta property="og:image" content="https://daysight.dev/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DaySight MCP: ask about your Workday data in plain English">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Install DaySight MCP: connect Workday to your AI assistant">
-<meta name="twitter:description" content="How to install DaySight MCP in Claude Desktop: register your own Workday API Client, install one file, sign in and ask your first question.">
+<meta name="twitter:description" content="How to install DaySight MCP in Claude Desktop: get the Workday API Client details from your HRIS administrator, install one file, sign in and ask your first question.">
 <meta name="twitter:image" content="https://daysight.dev/assets/og-image.png">
 <meta name="twitter:image:alt" content="DaySight MCP: ask about your Workday data in plain English">
 <meta name="theme-color" content="#0A1D28">
 <link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="apple-touch-icon" href="assets/daysight-mcp-logo-512.png">
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://daysight.dev/install.html#webpage","url":"https://daysight.dev/install.html","name":"Install DaySight MCP: connect Workday to your AI assistant","description":"How to install DaySight MCP in Claude Desktop: register your own Workday API Client, install one file, sign in and ask your first question.","inLanguage":"en","isPartOf":{"@id":"https://daysight.dev/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://daysight.dev/"},{"@type":"ListItem","position":2,"name":"Install","item":"https://daysight.dev/install.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://daysight.dev/install.html#webpage","url":"https://daysight.dev/install.html","name":"Install DaySight MCP: connect Workday to your AI assistant","description":"How to install DaySight MCP in Claude Desktop: get the Workday API Client details from your HRIS administrator, install one file, sign in and ask your first question.","inLanguage":"en","isPartOf":{"@id":"https://daysight.dev/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://daysight.dev/"},{"@type":"ListItem","position":2,"name":"Install","item":"https://daysight.dev/install.html"}]}]}</script>
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="./"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
-<nav class="main" aria-label="Main"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html" aria-current="page">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
+<nav class="main" aria-label="Main"><a href="./">Home</a><a href="features.html">Features</a><a href="security.html">Security</a><a href="examples.html">Examples</a><a href="demos.html">Demos</a><a href="install.html" aria-current="page">Install</a><a href="contact.html">Contact</a></nav>
 </div></header>
 <main>
 
-<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Install</p><h1>Set up in a few steps</h1><p class="lede">You register your own Workday API Client, install one file in Claude Desktop and sign in. Nothing is shared with anyone else.</p></div></section>
+<section class="page-title"><div class="wrap sechead"><p class="eyebrow">Install</p><h1>Set up in a few steps</h1><p class="lede">Your HRIS administrator registers a Workday API Client and gives you its details. You install DaySight MCP in Claude Desktop or in the ChatGPT desktop app and sign in with your own Workday account.</p></div></section>
 
 <section><div class="wrap">
 <div class="sechead"><h2>What you need</h2></div>
 <div class="grid two">
-<div class="card"><span class="ico">1</span><h3>Windows and Claude Desktop</h3><p>A current version of Claude Desktop with you signed in (the PDF guide also covers the ChatGPT desktop app). For privacy and safety, use Claude Enterprise, which does not use your conversations to train models.</p></div>
-<div class="card"><span class="ico">2</span><h3>Your own Workday API Client</h3><p>You register it in Workday and get your own client ID. With PKCE you need no client secret. Ask your Workday administrator if you lack the permission.</p></div>
-<div class="card"><span class="ico">3</span><h3>A free port</h3><p>The sign-in callback listens on your PC at <code>https://localhost:3000/callback</code> while you log in. Any free port works, as long as Workday and the app use the same one.</p></div>
+<div class="card"><span class="ico">1</span><h3>Windows and your AI app</h3><p>The Claude Desktop app or the ChatGPT desktop app, with you signed in. ChatGPT in the browser cannot use a local server. For privacy and safety, use Claude Enterprise or ChatGPT Enterprise with data sharing and model training turned off.</p></div>
+<div class="card"><span class="ico">2</span><h3>A Workday API Client</h3><p>Your HRIS administrator registers it in Workday and gives you the client ID, the endpoints, the callback port and the scopes. With PKCE there is no client secret.</p></div>
+<div class="card"><span class="ico">3</span><h3>The callback port</h3><p>The sign-in callback listens on your PC at <code>https://localhost:3000/callback</code> while you log in. The port is the one your HRIS administrator used for the API Client (3000 by default): enter the same one in the app, and keep it free while you sign in.</p></div>
 <div class="card"><span class="ico">4</span><h3>A browser</h3><p>The Workday sign-in page opens there and sends you back to your own computer.</p></div>
 </div>
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="sechead"><h2>The steps</h2></div>
+<div class="sechead" id="claude"><h2>Install in Claude Desktop</h2></div>
 <ol class="steps">
-<li><h3>Register your API Client</h3><p>In Workday, run the task Register API Client: Authorization Code Grant with Support PKCE ticked, so no client secret is needed. Choose the scopes for the areas you want and keep its client ID and endpoints. The guide covers each Workday screen.</p></li>
+<li><h3>Get the API Client details</h3><p>Your HRIS administrator runs the Workday task Register API Client: Authorization Code Grant with Support PKCE ticked, so no client secret is needed. They choose the scopes and give you the client ID and endpoints. The PDF guide covers each Workday screen for them.</p></li>
 <li><h3>Download the file</h3><p><a href="downloads/daysight-mcp-0.10.0.mcpb" download>Download <code>daysight-mcp-0.10.0.mcpb</code></a> (about 0.8 MB). It contains no secrets. You can check it against the SHA-256 value below.</p></li>
 <li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
 <li><h3>Fill in the form</h3><p>Enter your client ID, the authorization and token endpoints, and tick Use PKCE (no secret needed). Keep the default redirect address.</p></li>
@@ -60,33 +60,50 @@
 </div></section>
 
 <section><div class="wrap">
+<div class="sechead" id="chatgpt"><h2>Install in the ChatGPT desktop app</h2><p class="lede">A Windows setup program asks for your Workday API Client details and adds DaySight MCP to the app. You do not need Node.js or a command window.</p></div>
+<ol class="steps">
+<li><h3>Get the API Client details</h3><p>The same details as for Claude Desktop: client ID, endpoints, callback port and scopes from your HRIS administrator. With PKCE there is no client secret.</p></li>
+<li><h3>Download the setup</h3><p><a href="downloads/DaySightMCP-Setup-0.10.0.exe" download>Download <code>DaySightMCP-Setup-0.10.0.exe</code></a> (about 90 MB, Windows). Check it against the SHA-256 value below. The setup is signed with DaySight's own certificate, which Windows does not know, so it may say &ldquo;unknown publisher&rdquo;.</p></li>
+<li><h3>Run the setup</h3><p>Close the ChatGPT desktop app and run the file. Enter your client ID and the authorization and token endpoints, then the callback port and the scopes you were given. Leave the client secret empty. Click Install.</p></li>
+<li><h3>Restart ChatGPT</h3><p>Quit the app completely, reopen it and start a new chat. In <b>Settings, Plugins, MCPs</b> you should see <code>daysight</code> under Servers, switched on.</p></li>
+<li><h3>Sign in and ask</h3><p>Ask the app to call <code>workday_login</code>, sign in to Workday as yourself and approve. Then try "Show the board scorecard". To change a setting later, run the setup again.</p></li>
+</ol>
+<p class="note" style="margin-top:16px">The ChatGPT desktop app sends tool results to OpenAI. For privacy and safety, use ChatGPT Enterprise with data sharing and model training turned off, and check your company's policy on HR data first. Check with your workspace administrator that local MCP servers are allowed in your plan.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
 <div class="sechead"><h2>Good to know</h2></div>
 <ul class="ticks">
 <li>Use the <b>Chat</b> tab of Claude Desktop. The extension's tools do not load in the Code tab.</li>
-<li>After changing a setting, restart Claude Desktop and start a new chat.</li>
+<li>After changing a setting, restart Claude Desktop or the ChatGPT desktop app and start a new chat.</li>
 <li>Try it on a sandbox or implementation tenant first.</li>
-<li>Give your API Client only the scopes that match the questions you want to ask.</li>
-<li>Whatever your assistant retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise, which does not use your conversations to train models, and check your company's policy on HR data first.</li>
+<li>The API Client should only have the scopes that match the questions people want to ask.</li>
+<li>Whatever your assistant retrieves is sent to the AI provider as part of the conversation. Use Claude Enterprise or ChatGPT Enterprise with data sharing and model training turned off (both providers say that business data is not used for training by default), and check your company's policy on HR data first.</li>
+<li>Claude Desktop and the ChatGPT desktop app share your sign-in folder. Use one at a time, and give both the same callback port, or ask your administrator for a second API Client.</li>
 </ul>
 <div class="sechead" id="download" style="margin-top:40px"><h2>Download and checksum</h2></div>
-<p>The extension is one file, <code>daysight-mcp-0.10.0.mcpb</code>, hosted on this site. Download it, then install it as in step 3. To check that the file is intact, compare its SHA-256 value (in PowerShell: <code>Get-FileHash .\daysight-mcp-0.10.0.mcpb</code>) with this one:</p>
+<p><b>Claude Desktop.</b> The extension is one file, <code>daysight-mcp-0.10.0.mcpb</code>, hosted on this site. Download it, then install it as in step 3. To check that the file is intact, compare its SHA-256 value (in PowerShell: <code>Get-FileHash .\daysight-mcp-0.10.0.mcpb</code>) with this one:</p>
 <p class="sha"><code>f446a66d0c55f7244f0546f30101a0e8af9fbf071bbf1c4cbcbc2f8ca27efdc7</code></p>
 <div class="row" style="margin-top:16px"><a class="btn" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download the extension</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb.sha256" download>SHA-256 file</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.sbom.cdx.json" download>Software bill of materials</a></div>
+<p style="margin-top:28px"><b>ChatGPT desktop app.</b> The Windows setup program is one file, <code>DaySightMCP-Setup-0.10.0.exe</code>, hosted on this site. In PowerShell, <code>Get-FileHash .\DaySightMCP-Setup-0.10.0.exe</code> should show this SHA-256 value:</p>
+<p class="sha" data-file="setup"><code>8fcffab1fbe4e0e01a2cdc14ab62ed531db0356dc416988398c4b82eeab404f9</code></p>
+<div class="row" style="margin-top:16px"><a class="btn" href="downloads/DaySightMCP-Setup-0.10.0.exe" download>Download the setup</a><a class="btn ghost" href="downloads/DaySightMCP-Setup-0.10.0.exe.sha256" download>SHA-256 file</a><a class="btn ghost" href="downloads/DaySightMCP.cer" download>Signing certificate</a></div>
+<p class="note" style="margin-top:12px">The certificate file is only for checking who signed the setup. You do not need to install it to run the setup, and you should not add it to your trusted certificates unless your IT department agrees.</p>
 <p class="note" style="margin-top:12px">By installing or using DaySight MCP you accept the <a href="license.html">DaySight MCP Licence Agreement</a>. Terms for this website are in the <a href="terms.html">terms of use</a> and the <a href="privacy.html">privacy notice</a>.</p>
 
 <div class="sechead" id="licence" style="margin-top:40px"><h2>30-day trial and licence key</h2></div>
-<p>The download works for <b>30 days</b> for each Workday tenant, counted from the first time you use it. When the trial ends, your assistant says so and shows a <b>request code</b> (it is a hash, not your tenant name). To continue, <a href="contact.html">email us your request code</a> and you receive a licence key. Paste it into the <b>Licence key</b> setting of the extension, quit and reopen Claude Desktop and start a new chat. Nothing in Workday is changed when the trial ends, and the trial check sends nothing off your computer.</p>
-<div class="row" style="margin-top:28px"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF) for Claude and ChatGPT</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download the extension</a></div>
+<p>The download works for <b>30 days</b> for each Workday tenant, counted from the first time you use it. When the trial ends, your assistant says so and shows a <b>request code</b> (it is a hash, not your tenant name). To continue, <a href="contact.html">email us your request code</a> and you receive a licence key. Paste it into the <b>Licence key</b> setting of the extension, quit and reopen Claude Desktop and start a new chat. Nothing in Workday is changed when the trial ends, and the trial check sends nothing off your computer. In the ChatGPT desktop app, run the setup again and enter the key on the Tool approvals page.</p>
+<div class="row" style="margin-top:28px"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF) for Claude and ChatGPT</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download for Claude</a><a class="btn ghost" href="downloads/DaySightMCP-Setup-0.10.0.exe" download>Download for ChatGPT</a></div>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Questions or something not working?</h2><p>The PDF guide has a troubleshooting section, including how to check what is using port 3000. Otherwise <a href="contact.html">write to us</a> and tell us what you asked, what you expected and what happened.</p>
 <div class="row" style="justify-content:center"><a class="btn" href="downloads/daysight-mcp-install-guide.pdf">Install guide (PDF)</a><a class="btn ghost" href="downloads/daysight-mcp-0.10.0.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
-<p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
+<div class="links"><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
+<p>For privacy and safety, use DaySight MCP with Claude Enterprise or ChatGPT Enterprise, with data sharing and model training turned off. Both providers say that business data is not used for training by default.</p>
 <p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed (see <a href="contact.html">Contact</a>). Copyright (c) 2026 Paulo Poinha.</p>
-<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>
