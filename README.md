@@ -16,7 +16,7 @@ This repository contains the **documentation** for DaySight MCP, a [Model Contex
 
 1. **Read the [install guide (PDF)](https://daysight.dev/downloads/daysight-mcp-install-guide.pdf)** or the [text version](docs/installation-guide.md). It walks through the Workday API Client your HRIS administrator registers, installing the extension and signing in with your own Workday account.
 2. **Download the install file** `daysight-mcp-<version>.mcpb` from the [Install page](https://daysight.dev/install.html#download) of the website.
-3. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension**, pick the file, tick **I accept the Licence Agreement, Terms of use and Privacy notice**, fill in the form, and use it from the **Chat** tab.
+3. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension**, pick the file, fill in the form, and use it from the **Chat** tab. The first time you use it, the assistant shows the Licence Agreement, Terms of use and Privacy notice and asks you to reply **I Accept**.
 4. Try the [example questions](docs/example-questions.md).
 
 Port 3000 must be free on your PC while you sign in. The guide explains why and how to check.
