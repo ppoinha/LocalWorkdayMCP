@@ -30,7 +30,7 @@ The download is a **30-day trial** for each Workday tenant, counted from the fir
 - Use it with **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety.
 - The **Workday API Client you register** limits which parts of Workday the server can reach (its scopes).
 - **You sign in with your own Workday account**, so Workday's security still decides what you see. Your assistant never gets more access than you have.
-- The client secret and tokens stay on your computer and never reach the model. There is no "call any URL" tool, and the tools that change data are off by default.
+- The client secret and tokens stay on your computer and never reach the model. There is no "call any URL" tool, and DaySight MCP only reads from Workday: it has no tools that change data.
 
 ## What works today
 

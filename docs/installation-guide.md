@@ -27,7 +27,7 @@ There are two layers, and both apply on every request:
 1. **The Workday API Client sets the outer limit.** When you register the API Client in Workday you choose its *scopes* (functional areas such as Staffing or Organizations and Roles). The server can only reach resources inside those scopes, whoever signs in.
 2. **The signed-in user sets what comes back.** Each user opens a Workday sign-in page in their browser and authorizes the API Client to act as them. Workday then applies *that user's* security permissions to every call. A manager sees their reports; a regular employee does not. The AI never gets more access than the person using it.
 
-The assistant never sees the client secret or tokens. They are read from your local configuration and kept in an encrypted token file; they are never put into tool arguments, results or logs. There is no generic "call any URL" tool: the assistant can only invoke the specific Workday operations the server exposes. Every operation that changes data in Workday (job changes, business title changes, time off requests, goals, scorecards, mentorships and more, 81 in all) is hidden unless you switch on **Allow changes in Workday** (`WORKDAY_ENABLE_WRITES=true`).
+The assistant never sees the client secret or tokens. They are read from your local configuration and kept in an encrypted token file; they are never put into tool arguments, results or logs. There is no generic "call any URL" tool: the assistant can only invoke the specific Workday operations the server exposes. DaySight MCP only reads from Workday: there are no tools that create, update or delete data, and the client refuses anything but a read request.
 
 ---
 
@@ -100,8 +100,8 @@ The scope limits which parts of Workday the server can reach at all. The extensi
 | **Advanced Compensation** | `compensation_scorecards_*` and `compensation_scorecardResults_*` | Optional, sensitive |
 | **Jobs & Positions** | `staffing_jobFamilies_*`, `staffing_jobProfiles_*` | Optional |
 | **Contact Information** | `staffing_workers_homeContactInformationChanges_*`, `staffing_workers_workContactInformationChanges_*` | Optional, personal data |
-| **Core Compensation** | `compensation_workers_requestOneTimePayment_create` only (a change operation) | Only if you switch on changes |
-| **Benefits** | Benefit plans and benefit elections, including employer contributions (for example for total rewards). The identifier `benefits` follows the display-name pattern: confirm the spelling in *View API Client*. | Optional, sensitive |
+| **Core Compensation** | `compensation_*` read tools and the compensation WQL data sources behind `total_rewards` (merit and bonus targets). Compensation is sensitive. | Optional, sensitive |
+| **Benefits** | the benefit elections behind `total_rewards` (employer contribution). The identifier is `benefits`. | Optional, sensitive |
 | **Core Payroll** | `workers_paySlips_*` | Only if you really need it; sensitive |
 | **Customers**, **Customer Accounts** | `customers_*` | Optional |
 | **System** | `auditLogs_*` (deprecated by Workday) | Not recommended |
@@ -112,13 +112,13 @@ The scope limits which parts of Workday the server can reach at all. The extensi
 **Example for everything read-only:** tick these on the API Client and put the same identifiers in the form's *Scopes* field:
 `staffing organizations_and_roles time_off_and_leave tenant_non_configurable performance_enablement worker_profile_and_skills career_and_development_planning talent_pipeline recruiting advanced_compensation benefits jobs_positions contact_information`
 
-**Work email and phone.** The worker answers (`workers_get`, `workers_directReports_list` and the other worker views) carry `primaryWorkEmail` and `primaryWorkPhone` when **Aggregates only** is unticked. According to the OpenAPI files, those operations use the `staffing` scope, so no extra scope is needed for them; `contact_information` covers the operations that read and change a worker's contact information (the `homeContactInformationChanges` and `workContactInformationChanges` tools). Keep `contact_information` in the scopes if you use those. If an answer lacks the work email although the tool is offered, the reply lists nothing removed for it and the cause is on the Workday side (the signed-in user's security groups or the API Client's scopes): check with the *View API Client* report and the security domains in step 4. Not yet confirmed on a live tenant.
+**Work email and phone.** The worker answers (`workers_get`, `workers_directReports_list` and the other worker views) carry `primaryWorkEmail` and `primaryWorkPhone`. According to the OpenAPI files, those operations use the `staffing` scope, so no extra scope is needed for them. If an answer lacks the work email although the tool is offered, the cause is on the Workday side (the signed-in user's security groups or the API Client's scopes): the error or the source note names the scope and security domains that are needed, and the *View API Client* report and the security domains in step 4 show what is granted. Not yet confirmed on a live tenant.
 
 Each tool's description names the scope the spec lists for it. Operations that list several scopes are reachable with the ones you have; if one still answers 403, add the next scope in its description.
 
 The mapping comes from the scopes and security domains documented per operation in the Workday REST OpenAPI files the server is generated from (`spec/*_oas3.json`; the *Common* file plus Staffing, Absence Management, Compensation, Performance Enablement, Recruiting and Talent Management). The user approves the API Client on Workday's consent page when they log in.
 
-**Too many tools?** The extension offers more than 180 read tools plus the sign-in tools. If your AI client struggles with that many, use the form field **Workday areas** (`WORKDAY_SERVICES`) to list only the areas you want, for example `common,absence`. The valid names are `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting` and `talent`; the default is `all`.
+**Too many tools?** DaySight MCP offers 226 tools. If your AI client struggles with that many, list the tools you do not want in `WORKDAY_DISABLED_TOOLS` (a comma-separated list of tool names) or the first path words you do want in `WORKDAY_TOOL_GROUPS` (for example `workers,organizations`), in a `.env` file or the environment.
 
 ### Step 4. Security domain permissions
 
@@ -183,13 +183,10 @@ Note that the authorization host usually differs from the services host. Always 
 | **Token Endpoint** | For example `https://<services host>/ccx/oauth2/<tenant>/token`. The tenant and API address are derived from it. |
 | **Redirection URI** | Keep the default `https://localhost:3000/callback`. It must be registered on the API Client, and its port (3000) must be free on your PC when you sign in. |
 | **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles`. Add the ones for the areas you use (step 3). |
-| **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. |
 | **Use PKCE** | **Tick it** when your API Client has *Support Proof Key for Code Exchange* ticked (the recommended set-up) |
-| **Aggregates only (no person-level data)** | On by default; leave it on for a standard rollout. WQL answers only with aggregates, no worker names are returned, and diversity data (ethnicity, disability, veteran status, nationality) is read only as counts with small groups hidden. REST offers only the organization-structure and reference tools (`organizations_*`, `supervisoryOrganizations_*`, `organizationTypes_*`, `currencies_*`, `jobChangeReasons_*`). Untick it only if the people using DaySight MCP may send individual-level HR data, including names and diversity fields, to the AI provider. The worker, pay slip, time off and other individual-record tools then appear and anything Workday lets the signed-in user see can be returned, with personal contact details (home and personal email, phone and address) and identifiers removed from the answers. Work email and work phone come through, so a team list can include them. The tools that change data in Workday also need it unticked. Religion and sexual orientation are never read. This is the only privacy switch: there is no separate setting for names or diversity. |
 | **Smallest group shown (optional)** | Groups smaller than this are hidden or rolled into Other in every aggregate and in the report. Default and minimum 3; use 5 or more for small units. |
-| **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
-| **Allow Workday Query Language (WQL) reports** | Optional, off by default. Turns on the read-only workforce analytics tools for the whole organization. Needs a Workday API Client that can use WQL. |
-| **Allow workforce reports (PDF)** | Optional, off by default, needs the WQL switch. Lets Claude build the workforce report as a PDF in a folder on your PC. |
+| **Report folder (optional)** | Where the PDF report and the total rewards CSV are saved. If empty, a `DaySight Reports` folder is created for you. |
+| **Keep worker data in memory (minutes, optional)** | How long the prepared worker data is reused for follow-up questions without asking Workday again. Default 10. |
 | **Licence key** | Optional. Leave empty during the 30-day trial. After the trial, paste the licence key you received here, quit and reopen Claude Desktop and start a new chat. |
 
 5. Turn the extension **on** (toggle in Settings > Extensions).
@@ -283,7 +280,7 @@ Ask Claude (in the Chat tab of Claude Desktop):
 3. *"Who reports to me?"* (`workers_directReports_list`).
 4. *"List the first 10 supervisory organizations."*
 
-Questions 2 and 3 use tools that return individual records, so with **Aggregates only** on (the default) they are not offered. Ask question 4 first, and untick **Aggregates only** only on a test tenant where individual-level answers are acceptable.
+Questions 2 and 3 return individual records (your own record and your direct reports); question 4 returns organization data.
 
 Example prompts for your team are in the [example questions](example-questions.md).
 
@@ -299,7 +296,7 @@ Example prompts for your team are in the [example questions](example-questions.m
 | Browser shows a certificate warning | Expected once for the self-signed `https://localhost:3000` callback. Continue to localhost. |
 | Claude says the **30-day trial has ended** (error `TRIAL_EXPIRED`) | The trial lasts 30 days from first use for each Workday tenant. Claude shows a **request code**; it is a hash, not your tenant name. Email the code to contacts@daysight.dev (or use the [contact page](https://daysight.dev/contact.html)). When you receive the licence key, paste it into the extension's **Licence key** setting, quit and reopen Claude Desktop, and start a new chat. A key works for the tenant it was issued for, whichever API client is used. A new API client on the same tenant does not restart the 30 days. Nothing in Workday was changed, and the check sends nothing off your computer. |
 | Sign-in fails, hangs, or the browser says it cannot connect to `localhost:3000` | Port 3000 must be free during sign-in because the callback listens there. Check what is using it (below), close that program, and run `workday_login` again. If you cannot free the port, register another redirect URI on your API Client (or ask your Workday administrator to) (for example `https://localhost:3100/callback`) and enter exactly that value in the extension's **Redirection URI** field. The port in the extension and the one registered in Workday must be identical. |
-| Login works but a tool returns 403 / permission denied | Either the scope is missing on the API Client (add it, then log in again) or your Workday security groups lack the security domain named in the tool description. |
+| Login works but a tool returns 403 / permission denied | Either the scope is missing on the API Client (add it, then log in again) or your Workday security groups lack the security domain named in the tool description. The error itself says what is needed: the API Client scopes (with the identifiers for the Scopes field), the security domains the user's security group needs View access to, who can fix it, and the step "Activate Pending Security Policy Changes". Pass that on to your Workday security administrator. |
 | Asked to log in again every hour | The API Client was registered without **Non-Expiring Refresh Tokens**. Edit the client, tick it, and log in again. |
 | "Session expired and could not be refreshed" | Ask Claude to call `workday_login` again. |
 | Answers are truncated | List tools return 25 records by default (max 100). Ask for a narrower search or the next page. |
@@ -324,8 +321,6 @@ Close that program normally. Only if it is a stray process you recognize, stop i
 
 - Register your **own** API Client and never share its secret. Never post the client secret or client ID in chat, email, tickets, screenshots or Git, and never share the files in `%USERPROFILE%\.daysight-mcp\`. If a secret is ever exposed, regenerate it in Workday.
 - Give your API Client the smallest set of scopes that covers the questions you want to ask.
-- Leave **Aggregates only** on unless the people using it may send individual-level HR data to the AI provider.
-- Keep **Allow changes in Workday** off in the extension form unless you have a reviewed need.
 - Prefer a non-production tenant (sandbox / implementation) for first tests.
 - Use **Claude Enterprise**, which does not use your conversations to train models, for privacy and safety. Remember that whatever the assistant retrieves is sent to the AI provider as part of the conversation. Check your company's policy on sending HR data to the chosen AI service before you roll it out.
 - The extension keeps the client secret in Claude Desktop's secure storage and the login token encrypted in your user profile.

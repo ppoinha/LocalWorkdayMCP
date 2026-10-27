@@ -22,9 +22,9 @@ These are targets, not guarantees:
 
 There is no bug bounty. Please give a reasonable time to fix an issue before you disclose it, and do not test against a Workday tenant you do not own or have permission to test.
 
-## Privacy switch
+## What can leave your computer
 
-One setting controls what personal data can leave your computer: **Aggregates only**, on by default. While it is on, answers are counts, averages and percentiles with small groups hidden (default minimum 3, setting **Smallest group shown**), no names or other person-level data are returned, and diversity data (ethnicity, disability, veteran status, nationality) is read only as such counts. Unticking it means the people using DaySight MCP may send individual-level HR data, including names, to the AI provider; anything Workday lets the signed-in user see can then be returned. Work email and work phone come through only when it is unticked. Personal contact details (home and personal email, phone and address) and identifiers are removed in both modes, and religion and sexual orientation are never read.
+DaySight MCP only reads from Workday: there are no tools that create, update or delete data, and the Workday client refuses anything but a read request. There is no privacy switch. Whatever Workday lets the signed-in user see can be returned to the AI provider the person is chatting with, including individual-level HR data such as worker names (when asked for), pay, and the total rewards tables. Workday security (the API Client scopes and the user's security groups) is the control that decides what that is. Aggregate answers hide groups under a minimum size (default 3, setting **Smallest group shown**). Personal contact details (home and personal email, phone and address), national IDs and bank details are removed from every answer, and religion and sexual orientation are never read. Work email and work phone come through. When Workday security blocks something, the error says which API Client scope and security domains are needed, so an administrator can grant exactly that and nothing wider.
 
 ## Supported versions
 

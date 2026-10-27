@@ -1,6 +1,6 @@
 # DaySight MCP
 
-> DaySight MCP is a Workday MCP server (Model Context Protocol) that lets an AI assistant answer workforce analytics questions about a Workday tenant in plain English, with charts and dashboards. It runs as a desktop extension on the user's own computer, signs in with the user's own Workday account and returns aggregates only. Proprietary software (DaySight MCP Licence Agreement). The download is a free 30-day trial for each Workday tenant; a licence key is needed after that. Independent project, not affiliated with Workday, Inc.
+> DaySight MCP is a Workday MCP server (Model Context Protocol) that lets an AI assistant answer workforce analytics questions about a Workday tenant in plain English, with charts and dashboards. It runs as a desktop extension on the user's own computer, signs in with the user's own Workday account and only reads from Workday and returns summaries for workforce analytics. Proprietary software (DaySight MCP Licence Agreement). The download is a free 30-day trial for each Workday tenant; a licence key is needed after that. Independent project, not affiliated with Workday, Inc.
 
 ## Pages
 

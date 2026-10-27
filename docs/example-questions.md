@@ -12,7 +12,7 @@ What you can ask once DaySight MCP is installed and you have signed in, and the 
 
 ## Workforce analytics
 
-Switch on **Allow Workday Query Language (WQL) reports** in the extension settings. Answers are summaries only: no names, no individual pay, groups under three people are never shown, and pay figures need groups of five or more. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust.
+Workforce analytics answers are summaries only: no names, no individual pay, groups under three people are never shown, and pay figures need groups of five or more. Workforce analytics is still being checked against real tenants, so compare the first figures with a Workday report you trust.
 
 **"Show the board scorecard."**
 > Headcount 4,812 (up 2.7% on a year ago), 4,655 FTE. 612 hires and 487 exits in the last 12 months, turnover 10.1%. Women in leadership 38%. Standing out: Customer Support has the highest turnover, and 9% of Finance is within five years of retirement age.
@@ -56,7 +56,7 @@ See sample charts and a sample dashboard on the [website](https://daysight.dev/e
 
 ## Reports
 
-**"Build the workforce report as a PDF."** (also needs **Allow workforce reports (PDF)**)
+**"Build the workforce report as a PDF."**
 > Created a 24-page workforce report in your DaySight MCP Reports folder: 21 sections included, 2 left out because the data was missing, each with the reason.
 
 **"What can you do with my Workday?"**

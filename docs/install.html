@@ -53,7 +53,7 @@
 <li><h3>Register your API Client</h3><p>In Workday, run the task Register API Client: Authorization Code Grant with Support PKCE ticked, so no client secret is needed. Choose the scopes for the areas you want and keep its client ID and endpoints. The guide covers each Workday screen.</p></li>
 <li><h3>Download the file</h3><p><a href="downloads/daysight-mcp-0.9.6.mcpb" download>Download <code>daysight-mcp-0.9.6.mcpb</code></a> (about 0.8 MB). It contains no secrets. You can check it against the SHA-256 value below.</p></li>
 <li><h3>Install in Claude Desktop</h3><p>Open <b>Settings, Extensions, Advanced settings, Install Extension</b> and pick the file. Use this route rather than double-clicking the file.</p></li>
-<li><h3>Fill in the form</h3><p>Enter your client ID, the authorization and token endpoints, and tick Use PKCE (no secret needed). Keep the default redirect address and switch on <b>Allow Workday Query Language (WQL) reports</b> for workforce analytics.</p></li>
+<li><h3>Fill in the form</h3><p>Enter your client ID, the authorization and token endpoints, and tick Use PKCE (no secret needed). Keep the default redirect address.</p></li>
 <li><h3>Sign in</h3><p>In a new chat in the <b>Chat</b> tab, ask your assistant to call <code>workday_login</code>. Sign in to Workday as yourself and approve. Your browser warns once about the local certificate; continue to localhost.</p></li>
 <li><h3>Ask a question</h3><p>Try "Show the board scorecard", then "Draw it as a dashboard". Ask for <code>workday_auth_status</code> any time to check that you are signed in.</p></li>
 </ol>
