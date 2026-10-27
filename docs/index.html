@@ -25,16 +25,13 @@
 <meta name="theme-color" content="#0A1D28">
 <link rel="icon" type="image/svg+xml" href="assets/daysight-mcp-logo.svg">
 <link rel="apple-touch-icon" href="assets/daysight-mcp-logo-512.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://daysight.dev/#website","url":"https://daysight.dev/","name":"DaySight MCP","inLanguage":"en","description":"DaySight MCP is a Workday MCP server that lets your AI assistant answer workforce questions in plain English, with charts and dashboards."},{"@type":"Organization","@id":"https://daysight.dev/#project","name":"DaySight MCP","url":"https://daysight.dev/","logo":"https://daysight.dev/assets/daysight-mcp-logo-512.png"},{"@type":"SoftwareApplication","@id":"https://daysight.dev/#software","name":"DaySight MCP","applicationCategory":"BusinessApplication","operatingSystem":"Windows","url":"https://daysight.dev/","image":"https://daysight.dev/assets/og-image.png","description":"A Model Context Protocol (MCP) server for Workday that lets an AI assistant answer workforce analytics questions in plain English, with charts and dashboards. Runs as a desktop extension on your own computer.","downloadUrl":"https://github.com/ppoinha/LocalWorkdayMCP/releases","license":"https://polyformproject.org/licenses/noncommercial/1.0.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"30-day trial for each Workday tenant, then a licence key. Source-available under the PolyForm Noncommercial License 1.0.0"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://daysight.dev/#website","url":"https://daysight.dev/","name":"DaySight MCP","inLanguage":"en","description":"DaySight MCP is a Workday MCP server that lets your AI assistant answer workforce questions in plain English, with charts and dashboards."},{"@type":"Organization","@id":"https://daysight.dev/#project","name":"DaySight MCP","url":"https://daysight.dev/","logo":"https://daysight.dev/assets/daysight-mcp-logo-512.png"},{"@type":"SoftwareApplication","@id":"https://daysight.dev/#software","name":"DaySight MCP","applicationCategory":"BusinessApplication","operatingSystem":"Windows","url":"https://daysight.dev/","image":"https://daysight.dev/assets/og-image.png","description":"A Model Context Protocol (MCP) server for Workday that lets an AI assistant answer workforce analytics questions in plain English, with charts and dashboards. Runs as a desktop extension on your own computer.","downloadUrl":"https://daysight.dev/downloads/daysight-mcp-0.9.6.mcpb","license":"https://daysight.dev/license.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"30-day trial for each Workday tenant, then a licence key. Proprietary software under the DaySight MCP Licence Agreement"}}]}</script>
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="./"><img src="assets/daysight-mcp-logo.svg" alt="" width="40" height="40">DaySight MCP</a>
-<nav class="main" aria-label="Main"><a href="./" aria-current="page">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a></nav>
+<nav class="main" aria-label="Main"><a href="./" aria-current="page">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
 </div></header>
 <main>
 
@@ -56,7 +53,7 @@
 <button class="chip" type="button" data-demo data-src="assets/videos/pay-comparison.mp4?v=3" data-poster="assets/videos/pay-comparison-poster.jpg?v=3" aria-pressed="false">Pay comparison</button>
 <button class="chip" type="button" data-demo data-src="assets/videos/recruiting.mp4?v=3" data-poster="assets/videos/recruiting-poster.jpg?v=3" aria-pressed="false">Recruiting</button>
 </div>
-<p class="note" style="margin-top:12px">Recorded on a Workday demo tenant. Aggregates only, no individual records. Early testing, runs on your own Windows PC through Claude Desktop, free for non-commercial use, with a 30-day trial for each Workday tenant. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
+<p class="note" style="margin-top:12px">Recorded on a Workday demo tenant. Aggregates only, no individual records. Early testing, runs on your own Windows PC through Claude Desktop, with a free 30-day trial for each Workday tenant. For privacy and safety, use it with Claude Enterprise, which does not use your conversations to train models.</p>
 </div>
 </div></section>
 
@@ -93,7 +90,7 @@
 <section class="band"><div class="wrap">
 <div class="sechead"><p class="eyebrow">How it works</p><h2>From download to first answer in four steps</h2></div>
 <ol class="steps">
-<li><h3>Register your API Client</h3><p>In Workday, you create your own API Client and choose its scopes. Your client ID and secret are yours alone.</p></li>
+<li><h3>Register your API Client</h3><p>In Workday, you create your own API Client and choose its scopes. Your client is yours alone, and with PKCE it needs no secret.</p></li>
 <li><h3>Install the extension</h3><p>In Claude Desktop, open Settings, Extensions, Advanced settings and pick the downloaded file.</p></li>
 <li><h3>Fill in the short form</h3><p>Paste your client details and endpoints, and switch on the analytics option.</p></li>
 <li><h3>Sign in and ask</h3><p>Ask your assistant to call <code>workday_login</code>, approve in your browser, then start asking questions.</p></li>
@@ -108,14 +105,14 @@
 <div style="margin-top:28px"><div class="privacy"><span><b>Privacy and safety.</b> Use DaySight MCP with <b>Claude Enterprise</b>, which does not use your conversations to train models. Whatever your assistant retrieves is sent to the AI provider as part of the conversation.</span></div></div>
 </div></section>
 <section><div class="wrap"><div class="cta"><h2>Try it on your own Workday tenant</h2><p>Download the extension, register your own API Client and ask your first question. A test or implementation tenant is the best place to start.</p>
-<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="https://github.com/ppoinha/LocalWorkdayMCP/releases">Download</a></div></div></div></section>
+<div class="row" style="justify-content:center"><a class="btn" href="install.html">How to install</a><a class="btn ghost" href="downloads/daysight-mcp-0.9.6.mcpb" download>Download</a></div></div></div></section>
 
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="https://github.com/ppoinha/LocalWorkdayMCP">GitHub</a><a href="https://github.com/ppoinha/LocalWorkdayMCP/issues">Feedback</a></div>
+<div class="links"><a href="./">Home</a><a href="demos.html">Demos</a><a href="features.html">Features</a><a href="examples.html">Examples</a><a href="install.html">Install</a><a href="security.html">Security</a><a href="contact.html">Contact</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a><a href="license.html">Licence</a><a href="attributions.html">Attributions</a></div>
 <p>For privacy and safety, use DaySight MCP with Claude Enterprise, which does not use your conversations to train models.</p>
-<p>Source-available and free for non-commercial use under the <a href="https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE">PolyForm Noncommercial License 1.0.0</a>. Copyright (c) 2026 ppoinha. The download is a 30-day trial for each Workday tenant; after that a licence key is needed to continue (see <a href="contact.html">Contact</a>).</p>
-<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc. or Anthropic. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
+<p>DaySight MCP is proprietary software, licensed under the <a href="license.html">DaySight MCP Licence Agreement</a>. Each Workday tenant gets a free 30-day evaluation; after that a licence key is needed (see <a href="contact.html">Contact</a>). Copyright (c) 2026 Paulo Poinha.</p>
+<p>DaySight MCP is an independent project. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic or OpenAI. Workday is a trademark of Workday, Inc. Claude is a trademark of Anthropic. ChatGPT is a trademark of OpenAI. The demo videos were recorded on a Workday demo tenant and show aggregates only. Other example names, numbers and charts on this site are illustrative sample data.</p>
 </div></footer>
 <script src="assets/site.js" defer></script>
 </body>

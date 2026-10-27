@@ -6,7 +6,7 @@
 
 Connect Claude to Workday and ask questions in plain English, signing in with your own Workday account. The recommended route is a one-file install into **Claude Desktop on Windows**: you register your own Workday API Client (section 3), install `daysight-mcp-<version>.mcpb` from Claude Desktop's Settings, fill in a short form with your own client details, and sign in. 
 
-**Licence:** the DaySight MCP software and this guide are source-available and free for **non-commercial use only** under the [PolyForm Noncommercial License 1.0.0](https://github.com/ppoinha/LocalWorkdayMCP/blob/main/LICENSE). Commercial use is not permitted. The download is also a **30-day trial** for each Workday tenant; after that you need a licence key (see section 4 and the troubleshooting section).
+**Licence:** DaySight MCP is proprietary software, licensed under the [DaySight MCP Licence Agreement](https://daysight.dev/license.html). Each Workday tenant gets a **free 30-day evaluation**; after that you need a licence key (see section 4 and the troubleshooting section). A PDF version of this guide with the ChatGPT desktop route is on the [Install page](https://daysight.dev/install.html).
 
 **Privacy and safety:** use DaySight MCP with **Claude Enterprise**, which does not use your conversations to train models. Whatever Claude retrieves is sent to the AI provider as part of the conversation.
 
@@ -38,13 +38,13 @@ The assistant never sees the client secret or tokens. They are read from your lo
 | Item | Notes |
 |---|---|
 | A Windows computer with **Claude Desktop** (current version) | A Claude account, signed in. For privacy and safety, use **Claude Enterprise**, which does not use your conversations to train models. Extensions are installed from Claude Desktop's settings. |
-| The extension file `daysight-mcp-<version>.mcpb` | Download it from the **Releases** page of this repository, <https://github.com/ppoinha/LocalWorkdayMCP/releases> (under *Assets* of the latest release). It contains no secrets. |
+| The extension file `daysight-mcp-<version>.mcpb` | Download it from the [Install page](https://daysight.dev/install.html#download) of the website. It contains no secrets. |
 | **Your own Workday API Client** | You register it yourself in Workday (section 3). That gives you your own client ID and client secret, plus the authorization and token endpoints. Nobody else needs, or should receive, your secret. |
 | Your own Workday account | The one you will sign in with. Its permissions decide what you see. |
 | A web browser on the same computer | The sign-in page opens there and redirects back to `localhost`. |
-| **Port 3000 free** on your PC during sign-in | The sign-in callback `https://localhost:3000/callback` listens on port 3000 while you log in. See the note below. |
+| **A free port** on your PC during sign-in (3000 by default) | The sign-in callback `https://localhost:3000/callback` listens on that port while you log in. Any free port works if the Redirection URI in Workday and the setting in the app are identical. See the note below. |
 
-**Port 3000 must be free.** While you sign in, the extension briefly listens on your computer at `https://localhost:3000/callback`, and Workday sends your browser back to that address. If another program already uses port 3000 (a development server, another app, a previous sign-in that is still waiting), the sign-in fails. If this happens, `workday_login` stops with a message naming the port. Close that program and try again; section 10 shows how to check what is using the port. The port in the **Redirection URI** form field must match the port Workday has registered for the API Client. If you use a different port, register that exact URI in Workday and enter the same one in the extension.
+**The callback port (3000 by default) must be free; you can choose any other free port.** While you sign in, the extension briefly listens on your computer at `https://localhost:3000/callback`, and Workday sends your browser back to that address. If another program already uses port 3000 (a development server, another app, a previous sign-in that is still waiting), the sign-in fails. If this happens, `workday_login` stops with a message naming the port. Close that program and try again; section 10 shows how to check what is using the port. The port in the **Redirection URI** form field must match the port Workday has registered for the API Client. If you use a different port, register that exact URI in Workday and enter the same one in the extension.
 
 You do **not** need Node.js, Git or npm.
 
@@ -60,24 +60,25 @@ You do **not** need Node.js, Git or npm.
 
 ### Step 1. Check who is allowed to register API Clients
 
-The person registering the client needs permission on the security domain that secures the *Register API Client for Integrations* task. Use the Workday report **View Security for Securable Item** on that task to see which domain and security groups control it, then make sure the group of whoever registers the client (you or your administrator) has the required (Modify/Put) access. Changes to security policy only take effect after step 5.
+The person registering the client needs permission on the security domain that secures the *Register API Client* task. Use the Workday report **View Security for Securable Item** on that task to see which domain and security groups control it, then make sure the group of whoever registers the client (you or your administrator) has the required (Modify/Put) access. Changes to security policy only take effect after step 5.
 
 ### Step 2. Register the API Client
 
-1. In Workday, search for the task **Register API Client for Integrations** and open it.
+1. In Workday, search for the task **Register API Client** and open it.
 2. Fill in:
 
 | Field | Value |
 |---|---|
 | **Client Name** | A recognizable name, for example `DaySight MCP (pilot)`. |
 | **Client Grant Type** | **Authorization Code Grant**. This is what lets each user sign in as themselves. |
+| **Support Proof Key for Code Exchange (PKCE)** | **Tick this.** With PKCE you do not need a client secret: leave **Client Secret** empty in the extension and tick **Use PKCE**. |
 | **Access Token Type** | **Bearer**. |
 | **Redirection URI** | `https://localhost:3000/callback`. It must match `WORKDAY_REDIRECT_URI` (the extension's *Redirection URI* field) exactly, including the port. Your PC listens on this address only while a login is in progress, with a locally generated self-signed certificate, so **port 3000 must be free on your PC** during sign-in. If you register a different port, use that exact URI in the extension form. |
-| **Non-Expiring Refresh Tokens** | **Tick this.** Without it a user has to log in again every time the short-lived access token expires. With it the server refreshes silently. |
+| **Non-Expiring Refresh Tokens** | If the form offers it, **tick this.** Without it a user has to log in again every time the short-lived access token expires. With it the server refreshes silently. |
 | **Scope (Functional Areas)** | Choose the scopes from the table below. |
 
 3. Optionally leave **Include Workday Owned Scope** unticked unless you know you need it.
-4. Click **OK**. Workday shows the **Client ID** and **Client Secret**. **Copy the secret now**: it is shown once. Store both in a password manager. Never put them in chat, email, tickets, screenshots or Git.
+4. Click **OK**. Workday shows the **Client ID**. Copy it. A PKCE client has no secret. (If you chose to register a client with a secret instead, copy the **Client Secret** now: it is shown once. Store it in a password manager and never put it in chat, email, tickets, screenshots or Git.)
 
 > **Your client ID and secret are yours alone.** Each user registers their own API Client, so the secret is never shared or sent to anyone. Claude Desktop stores it securely on your computer. If it ever leaks (chat, email, screenshot, Git), regenerate it in Workday. If your API Client has **Support Proof Key for Code Exchange** ticked and your tenant accepts clients without a secret, you can tick **Use PKCE** in the extension form and leave the secret empty.
 
@@ -100,6 +101,7 @@ The scope limits which parts of Workday the server can reach at all. The extensi
 | **Jobs & Positions** | `staffing_jobFamilies_*`, `staffing_jobProfiles_*` | Optional |
 | **Contact Information** | `staffing_workers_homeContactInformationChanges_*`, `staffing_workers_workContactInformationChanges_*` | Optional, personal data |
 | **Core Compensation** | `compensation_workers_requestOneTimePayment_create` only (a change operation) | Only if you switch on changes |
+| **Benefits** | Benefit plans and benefit elections, including employer contributions (for example for total rewards). The identifier `benefits` follows the display-name pattern: confirm the spelling in *View API Client*. | Optional, sensitive |
 | **Core Payroll** | `workers_paySlips_*` | Only if you really need it; sensitive |
 | **Customers**, **Customer Accounts** | `customers_*` | Optional |
 | **System** | `auditLogs_*` (deprecated by Workday) | Not recommended |
@@ -157,7 +159,7 @@ If you changed any security group permissions (step 1 or step 4), run the task *
 | **Token Endpoint** | `https://<services host>/ccx/oauth2/<tenant>/token` | extension form: *Token Endpoint* (`WORKDAY_TOKEN_URL`) |
 | **Workday REST API Endpoint** | `https://<services host>/ccx/api/v1/<tenant>` | derived automatically (optional `WORKDAY_API_BASE`) |
 | **Client ID** | long random string | extension form: *Client ID* (`WORKDAY_CLIENT_ID`) |
-| **Client Secret** | long random string (from step 2) | extension form: *Client Secret* (`WORKDAY_CLIENT_SECRET`) |
+| **Client Secret** | none for a PKCE client (leave the form field empty) | extension form: *Client Secret* (`WORKDAY_CLIENT_SECRET`) |
 | **Scope identifiers** | for example `staffing`, `organizations_and_roles`, `system`, `tenant_non_configurable` | extension form: *Scopes*, space-separated (`WORKDAY_SCOPES`) |
 | **Redirection URI** | `https://localhost:3000/callback` (as registered in step 2) | extension form: *Redirection URI* (`WORKDAY_REDIRECT_URI`) |
 
@@ -167,7 +169,7 @@ Note that the authorization host usually differs from the services host. Always 
 
 ## 4. Install the Claude Desktop extension (recommended, Windows)
 
-1. Download `daysight-mcp-<version>.mcpb` from the repository's [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*) and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
+1. Download `daysight-mcp-<version>.mcpb` from the [Install page](https://daysight.dev/install.html#download) of the website and save it somewhere you can find it, for example your Downloads folder. Make sure Claude Desktop is installed and you are signed in.
 2. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension** and pick the `daysight-mcp-<version>.mcpb` file.
    - This is the only install route we have confirmed. Use it rather than opening the file from Explorer.
 3. Claude Desktop shows the extension ("Workday") and its details. Review them and confirm the installation.
@@ -176,13 +178,13 @@ Note that the authorization host usually differs from the services host. Always 
 | Form field | What to enter |
 |---|---|
 | **Client ID** | From the API Client (required) |
-| **Client Secret** | From the API Client. Stored securely by Claude Desktop. Leave empty only if you use PKCE without a secret. |
+| **Client Secret** | Leave empty for a PKCE client. Only if your API Client has a secret, enter it here; Claude Desktop stores it securely. |
 | **Authorization Endpoint** | For example `https://<host>/<tenant>/authorize` |
 | **Token Endpoint** | For example `https://<services host>/ccx/oauth2/<tenant>/token`. The tenant and API address are derived from it. |
 | **Redirection URI** | Keep the default `https://localhost:3000/callback`. It must be registered on the API Client, and its port (3000) must be free on your PC when you sign in. |
 | **Scopes** | Space-separated scope identifiers, default `staffing organizations_and_roles`. Add the ones for the areas you use (step 3). |
 | **Workday areas** | Which Workday services Claude may use: `all` (default), or a comma-separated list of `common`, `staffing`, `absence`, `compensation`, `performance`, `recruiting`, `talent`. |
-| **Use PKCE** | Leave off unless your API Client has *Support Proof Key for Code Exchange* ticked |
+| **Use PKCE** | **Tick it** when your API Client has *Support Proof Key for Code Exchange* ticked (the recommended set-up) |
 | **Aggregates only (no person-level data)** | On by default; leave it on for a standard rollout. WQL answers only with aggregates, no worker names are returned, and diversity data (ethnicity, disability, veteran status, nationality) is read only as counts with small groups hidden. REST offers only the organization-structure and reference tools (`organizations_*`, `supervisoryOrganizations_*`, `organizationTypes_*`, `currencies_*`, `jobChangeReasons_*`). Untick it only if the people using DaySight MCP may send individual-level HR data, including names and diversity fields, to the AI provider. The worker, pay slip, time off and other individual-record tools then appear and anything Workday lets the signed-in user see can be returned, with personal contact details (home and personal email, phone and address) and identifiers removed from the answers. Work email and work phone come through, so a team list can include them. The tools that change data in Workday also need it unticked. Religion and sexual orientation are never read. This is the only privacy switch: there is no separate setting for names or diversity. |
 | **Smallest group shown (optional)** | Groups smaller than this are hidden or rolled into Other in every aggregate and in the report. Default and minimum 3; use 5 or more for small units. |
 | **Allow changes in Workday** | Leave **off**. It enables every tool that creates, updates or deletes data (job changes, time off requests, goals, scorecards and more). |
@@ -201,7 +203,7 @@ To change a value later, go to Settings > Extensions > Workday, update the form 
 
 ## 5. Sign in to Workday
 
-Before you start, make sure **port 3000 is free** on your PC (see section 2 and the troubleshooting section) and close any program that uses it.
+Before you start, make sure the **callback port (3000 by default) is free** on your PC (see section 2 and the troubleshooting section) and close any program that uses it.
 
 1. In a **new chat in the Chat tab**, ask: *"Call workday_login."* Claude Desktop may ask you to allow the tool; allow it.
 2. Your browser opens the Workday sign-in page. If nothing opens, Claude shows the URL; copy it into your browser.
@@ -223,6 +225,7 @@ The server currently speaks **stdio only**: the client starts it as a local proc
 |---|---|---|---|
 | **Claude Desktop** (Windows, `.mcpb` extension; **Chat tab** only, not the Code tab) | Yes, via the extension | Yes, via Settings > Connectors (custom connector) | **Yes, recommended** (section 4) |
 | **ChatGPT** (web; Plus, Pro, Business, Enterprise, Education, via Developer mode) | **No**, remote endpoints only | Yes (streaming HTTP and SSE; OAuth, none, or mixed) | **Not yet**, needs the planned remote deployment |
+| **ChatGPT desktop app** (Windows) | Yes, a local server can be added to its MCP configuration | n/a | **Yes, newer route**: see the PDF install guide, section 4 (the DaySight setup program) |
 | **Microsoft Copilot Studio** (agents) | Not documented; the wizard asks for a server URL | Yes (Streamable HTTP; SSE no longer supported; none, API key or OAuth 2.0) | **Not yet**, needs the planned remote deployment |
 | **Microsoft 365 Copilot** (chat) | No direct local support documented | Through Copilot Studio agents or admin-registered servers | **Not yet** |
 | Other MCP clients (Cursor, Windsurf, Gemini CLI, and others) | Usually yes | Varies | Not supported by this extension. **Not tested by us.** |
@@ -237,7 +240,7 @@ The extension in section 4 is the supported route today. These notes describe wh
 
 ### 7.1 ChatGPT
 
-**Honest status: not possible today.** ChatGPT connects to **remote MCP endpoints** (public HTTPS), not to local stdio processes, and the DaySight MCP server has no HTTP transport yet. When the central deployment exists, the steps will be roughly:
+**Honest status: not possible from ChatGPT on the web.** (The ChatGPT desktop app can run DaySight MCP locally: see the PDF install guide, section 4.) ChatGPT on the web connects to **remote MCP endpoints** (public HTTPS), not to local stdio processes, and the DaySight MCP server has no HTTP transport yet. When the central deployment exists, the steps will be roughly:
 
 1. In ChatGPT: **Settings > Apps > Advanced settings > Developer mode** (available to Pro, Plus, Business, Enterprise and Education accounts on the web).
 2. **Create app**, give it a name, enter the server's HTTPS MCP URL, choose authentication (OAuth), and confirm.

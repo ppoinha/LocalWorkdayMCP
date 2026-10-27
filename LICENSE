@@ -1,75 +1,151 @@
-Required Notice: Copyright (c) 2026 ppoinha (https://github.com/ppoinha/LocalWorkdayMCP)
+# DaySight MCP Licence Agreement
 
-# PolyForm Noncommercial License 1.0.0
+Version 1.0, 27 October 2026
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+Licensor: Paulo Poinha, Chruzackerstr 28, 8193 Eglisau, Switzerland (contacts@daysight.dev)
 
-## Acceptance
+## In short
 
-In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+This summary is for convenience. The numbered terms below are the agreement.
 
-## Copyright License
+- DaySight MCP is proprietary software. You get a licence to use it, not ownership of it. The source code is not provided.
+- Every Workday tenant gets a free 30-day evaluation. After that you need a licence key for that tenant. Keys are issued by the Licensor under a quote or order.
+- Use it for your own organization's internal purposes. Do not copy it to others, resell it, host it as a service, take it apart, or switch off the trial or licence check.
+- The software runs on your own computer. The Licensor receives none of your Workday data, credentials or tokens.
+- It is provided as is. You stay responsible for your Workday set-up, for what you send to your AI provider and for how you use the answers.
 
-The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+## 1. Parties and acceptance
 
-## Distribution License
+1.1 This agreement is between the Licensor named above and you, the person or organization that installs or uses the Software ("Licensee"). If you install or use the Software for an organization, you confirm that you are authorized to bind it, and "Licensee" means that organization.
 
-The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+1.2 The Software is offered to businesses, public bodies and other organizations and to people acting for them. It is not offered to consumers.
 
-## Notices
+1.3 You accept this agreement by downloading, installing or using the Software, or by entering a licence key. If you do not accept it, do not install or use the Software.
 
-You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+## 2. Definitions
 
-> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+2.1 "Software" means DaySight MCP: the extension file and any installer, the files it contains, the documentation, and every update or new version the Licensor provides to you. It does not include the Workday service, an AI assistant or any other third-party product.
 
-## Changes and New Works License
+2.2 "Tenant" means one Workday tenant that the Software connects to.
 
-The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+2.3 "Licence Key" means a signed key issued by the Licensor that unlocks the Software for a named Tenant for the term stated in the key.
 
-## Patent License
+2.4 "Third-Party Components" means the open-source and other third-party software included in the Software, listed on the attributions page of the website and in the third-party notices file.
 
-The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+## 3. Licence
 
-## Noncommercial Purposes
+3.1 Subject to this agreement, the Licensor grants you a non-exclusive, non-transferable, non-sublicensable licence to install the Software on computers you control and to use it, in object-code form, for your own internal business purposes, to query your own Tenant through your own Workday API Client.
 
-Any noncommercial purpose is a permitted purpose.
+3.2 The licence is limited to the Tenant, the term and any other limits stated in the Licence Key or in the quote or order.
 
-## Personal Uses
+3.3 Types of licence:
 
-Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+- **Evaluation.** Free for 30 days for each Tenant, counted from the first time the Software is used with that Tenant. It is for evaluating the Software. When the 30 days end, the Software stops returning Workday data until you enter a Licence Key.
+- **Subscription.** A Licence Key valid for the period stated in it, for example one year. It ends when the period ends unless renewed with a new key.
+- **Unlimited.** A Licence Key without an end date, for the Tenant it names.
 
-## Noncommercial Organizations
+3.4 All rights not expressly granted are reserved. No source code is licensed or delivered. Nothing in this agreement transfers ownership of the Software or any intellectual property in it.
 
-Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+## 4. Restrictions
 
-## Fair Use
+4.1 You may not, and may not allow anyone else to:
 
-You may have "fair use" rights for the software under the law. These terms do not limit them.
+- (a) copy the Software, except the copies needed to install it and to make normal backups;
+- (b) distribute, sell, rent, lend, sublicense or otherwise make the Software or a Licence Key available to anyone else, or provide the Software to others as a hosted or managed service;
+- (c) use the Software or a Licence Key for a Tenant it was not issued for, or share a Licence Key outside your organization;
+- (d) decompile, disassemble, reverse engineer or try to obtain the source code of the Software, or modify or create derivative works of it, except to the extent that mandatory law gives you that right despite this restriction;
+- (e) remove, disable, bypass or tamper with the trial, the Licence Key check, the settings that limit what data is returned, or any copyright or other notice;
+- (f) use the Software, or what you learn from it, to build or help build a competing product;
+- (g) use the Software in breach of the law, of your agreement with Workday, Inc., or of the terms of your AI provider.
 
-## No Other Rights
+4.2 Third-Party Components remain under their own licences. Nothing in this agreement limits the rights those licences give you for those components.
 
-These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+## 5. Fees and taxes
 
-## Patent Defense
+5.1 The evaluation is free. Fees for other licences are set out in the quote or order accepted by both parties. Unless it says otherwise, fees are paid in advance, are due 30 days after invoice, exclude taxes and duties, and are not refundable once the Licence Key has been issued, except where the law requires otherwise.
 
-If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+5.2 If a payment is late, the Licensor may refuse to issue or renew a Licence Key until it is paid.
 
-## Violations
+## 6. Your responsibilities
 
-The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+6.1 You register and look after your own Workday API Client, its client secret and your sign-in. You choose its scopes and the Software's settings. The Software cannot reach more than your Workday account and API Client allow.
 
-## No Liability
+6.2 You are responsible for deciding whether and how data from Workday may be sent to your AI provider, for choosing an AI provider and plan that fit your policies, and for meeting your own legal and contractual duties as the party responsible for the data. This includes data protection law, employee information and consultation duties, and any works council or similar rules.
 
-***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+6.3 The Software is meant for analytics and reporting. It is not designed to take, or to be the sole basis of, decisions about individual people. You remain responsible for human review of any decision that relies on its output.
 
-## Definitions
+6.4 AI assistants can produce answers that are wrong or incomplete. You check results before relying on them.
 
-The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
+6.5 On request you will confirm in writing which Tenants the Software is used with.
 
-**You** refers to the individual or entity agreeing to these terms.
+## 7. Data protection
 
-**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
+7.1 The Software runs on your computer. The Licensor does not receive, store or have access to your Workday data, API Client credentials, tokens or conversations. The Software has no telemetry and does not contact the Licensor.
 
-**Your licenses** are all the licenses granted to you for the software under these terms.
+7.2 The trial record is stored on your computer. It contains only a hash of the Tenant name and the first and last use dates.
 
-**Use** means anything you do with the software requiring one of your licenses.
+7.3 The Licensor processes personal data you send when you contact it, for example your email address and the request code, as described in the privacy notice on the website. For that purpose the Licensor is the controller. For the data you process with the Software the Licensor is not your processor.
+
+## 8. Third-party products
+
+8.1 Workday, Claude, ChatGPT, Copilot and other third-party names belong to their owners. The Software is an independent product. It is not affiliated with, endorsed by or supported by Workday, Inc., Anthropic, OpenAI or Microsoft.
+
+8.2 The terms of those providers apply to your use of their products. The Licensor does not control them and is not liable for them.
+
+## 9. Updates and support
+
+9.1 The Licensor may provide updates and new versions, but is not obliged to. An update or new version is part of the Software and is covered by this agreement, or by the version of this agreement that comes with it.
+
+9.2 There is no support obligation. The Licensor will try to answer questions sent to contacts@daysight.dev. Support with agreed response times needs a separate written agreement.
+
+## 10. Warranty
+
+10.1 The evaluation is provided without any warranty.
+
+10.2 Otherwise the Software is provided "as is". To the extent the law allows, the Licensor gives no warranty that the Software is error-free, uninterrupted, suitable for a particular purpose or compatible with future versions of Workday or of any AI client, and excludes all implied warranties.
+
+10.3 Workday changes its service and its interfaces. The Licensor does not guarantee that the Software keeps working with them.
+
+## 11. Liability
+
+11.1 Nothing in this agreement limits liability that cannot be limited by law, including liability for intent or gross negligence and for injury to life or health.
+
+11.2 To the extent the law allows, the Licensor is not liable for indirect or consequential loss, loss of profit, revenue, goodwill or data, or for the cost of replacement, however it arises.
+
+11.3 To the extent the law allows, the Licensor's total liability under or in connection with this agreement is limited to the fees you paid for the Licence Key that the claim relates to in the 12 months before the event. For the free evaluation it is limited to CHF 100.
+
+11.4 The Licensor is not liable for loss caused by your choice of settings, your Workday configuration, or what you or your AI provider do with the data the Software returns.
+
+## 12. Term and termination
+
+12.1 This agreement starts when you accept it and lasts as long as your licence. An evaluation ends automatically after 30 days. A Subscription ends at the end of its period.
+
+12.2 Either party may end this agreement for good cause by written notice. The Licensor may end it immediately if you breach section 3 or 4. For other breaches the Licensor will first give you 30 days to put it right.
+
+12.3 When the agreement ends you stop using the Software, delete all copies and delete the Licence Key. Fees already paid are not refunded, except where the law requires it.
+
+12.4 Sections 4, 7, 8, 10, 11, 12.3, 13 and 14 continue after the agreement ends.
+
+## 13. Earlier versions
+
+13.1 Copies of earlier versions of the Software that the Licensor made available under the PolyForm Noncommercial License 1.0.0 stay under that licence. This agreement applies to this version and to every later version of the Software, unless a later version says otherwise.
+
+## 14. General
+
+14.1 This agreement, together with any quote or order and the Licence Key, is the whole agreement about the Software. If they conflict, the quote or order comes first.
+
+14.2 The Licensor may update this agreement for new versions of the Software. An update does not change the terms of a Licence Key already issued until that key is renewed or you install a version that comes with the new terms.
+
+14.3 If a term is invalid or cannot be enforced, the rest stays in force and the parties will replace it with a valid term that comes closest to its purpose.
+
+14.4 You may not transfer this agreement or your rights under it without the Licensor's written consent. The Licensor may transfer them to a successor of its business.
+
+14.5 You will not use or export the Software in breach of applicable export control or sanctions laws.
+
+14.6 Notices are given by email to the address you or the Licensor has provided, or to contacts@daysight.dev for the Licensor.
+
+14.7 This agreement is written in English. If it is translated, the English text prevails.
+
+14.8 Swiss law applies, without its conflict-of-law rules and excluding the United Nations Convention on Contracts for the International Sale of Goods. The courts of the canton of Zurich, Switzerland, have exclusive jurisdiction, unless mandatory law provides another court.
+
+Copyright (c) 2026 Paulo Poinha. All rights reserved.

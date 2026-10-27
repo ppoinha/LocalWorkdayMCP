@@ -1,4 +1,9 @@
 /* DaySight MCP site. Layout: single column, wide hero with a sample chat, grids of plain cards. */
+/* Self-hosted fonts (Inter, Sora, IBM Plex Mono; SIL Open Font License 1.1, see attributions.html). Latin subset. */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-var.woff2) format('woff2')}
+@font-face{font-family:'Sora';font-style:normal;font-weight:600 700;font-display:swap;src:url(fonts/sora-var.woff2) format('woff2')}
 :root{
   --bg:#F3F7F7; --card:#FFFFFF; --fg:#0A1D28; --muted:#46606A; --line:#D3E0E1;
   --accent:#0B7A6D; --accent-fg:#FFFFFF; --soft:#E3F1EF; --deep:#0A1D28; --deep-fg:#E8F4F2; --mint:#5EEAD4;
@@ -167,3 +172,11 @@ svg.chart{min-width:440px}
 .hero.hero-video h1{font-size:clamp(30px,4.6vw,46px)}
 .hero.hero-video .lede{font-size:clamp(16px,2vw,19px)}
 .hero.hero-video .wrap{gap:24px}
+.sha{word-break:break-all}
+.prose{max-width:760px}
+.prose h2{font-size:22px;margin:34px 0 10px}
+.prose h2:first-child,.prose .note+h2{margin-top:22px}
+.prose p,.prose li{margin:0 0 12px}
+.prose ul{padding-left:22px;margin:0 0 14px}
+.prose table{width:100%;margin:14px 0 24px}
+.addr{font-style:normal;line-height:1.75;margin:10px 0}

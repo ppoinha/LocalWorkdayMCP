@@ -8,14 +8,14 @@ Ask analytical questions about your Workday data in plain English, and get answe
 
 **Website:** <https://daysight.dev/> (demo videos, features, examples, install walkthrough and security overview).
 
-This repository contains the **installer and documentation** for DaySight MCP, a [Model Context Protocol](https://modelcontextprotocol.io) server for the Workday REST API. The server source code is not published here.
+This repository contains the **documentation** for DaySight MCP, a [Model Context Protocol](https://modelcontextprotocol.io) server for the Workday REST API. The software is proprietary and its source code is not published. The download, the install guide and the legal pages are on the website.
 
 > **Status: early testing.** Today it is installed locally, by each person, on their own **Windows** computer, through **Claude Desktop**. A central deployment for a whole organization is planned.
 
 ## Get started
 
-1. **Read the [installation guide](docs/installation-guide.md).** It walks through registering your own Workday API Client (your own client ID and secret, nothing shared), installing the extension and signing in.
-2. **Download the install file** `daysight-mcp-<version>.mcpb` from the [Releases page](https://github.com/ppoinha/LocalWorkdayMCP/releases) (under *Assets*).
+1. **Read the [install guide (PDF)](https://daysight.dev/downloads/daysight-mcp-install-guide.pdf)** or the [text version](docs/installation-guide.md). It walks through registering your own Workday API Client (your own client ID and secret, nothing shared), installing the extension and signing in.
+2. **Download the install file** `daysight-mcp-<version>.mcpb` from the [Install page](https://daysight.dev/install.html#download) of the website.
 3. In Claude Desktop open **Settings > Extensions > Advanced settings > Install Extension**, pick the file, fill in the form, and use it from the **Chat** tab.
 4. Try the [example questions](docs/example-questions.md).
 
@@ -23,7 +23,7 @@ Port 3000 must be free on your PC while you sign in. The guide explains why and 
 
 ## 30-day trial
 
-The download is a **30-day trial** for each Workday tenant, counted from the first time you use it. When it ends, your assistant says so and shows a **request code** (a hash, not your tenant name). [Email your request code](https://daysight.dev/contact.html) (contacts@daysight.dev) to get a licence key, then paste it into the extension's **Licence key** setting. Nothing in Workday is changed when the trial ends, and the check sends nothing off your computer.
+The download is a **30-day trial** for each Workday tenant, counted from the first time you use it. When it ends, your assistant says so and shows a **request code** (a hash, not your tenant name). [Email your request code](https://daysight.dev/contact.html) (contacts@daysight.dev) to get a quote and a licence key, then paste it into the extension's **Licence key** setting. Nothing in Workday is changed when the trial ends, and the check sends nothing off your computer.
 
 ## How access works
 
@@ -41,8 +41,10 @@ The download is a **30-day trial** for each Workday tenant, counted from the fir
 
 ## Feedback
 
-Please open an [issue](https://github.com/ppoinha/LocalWorkdayMCP/issues) with what you asked, what you expected and what happened. Do not include client secrets, tokens or real employee data.
+Please write to contacts@daysight.dev (or use the [contact page](https://daysight.dev/contact.html)) with what you asked, what you expected and what happened. Do not include client secrets, tokens or real employee data.
 
-## License
+## Licence
 
-Source-available, **not open source**. Free for non-commercial use under the [PolyForm Noncommercial License 1.0.0](LICENSE); commercial use is not permitted. The download is a 30-day trial per Workday tenant (see above). Copyright (c) 2026 ppoinha.
+DaySight MCP is proprietary software, licensed under the [DaySight MCP Licence Agreement](LICENSE) ([web version](https://daysight.dev/license.html)). Each Workday tenant gets a free 30-day evaluation (see above); after that a licence key is needed. Earlier versions that were distributed under the PolyForm Noncommercial License 1.0.0 stay under that licence. Third-party components are listed on the [attributions page](https://daysight.dev/attributions.html). [Terms of use](https://daysight.dev/terms.html) and [privacy notice](https://daysight.dev/privacy.html) for the website.
+
+Copyright (c) 2026 Paulo Poinha, Chruzackerstr 28, 8193 Eglisau, Switzerland.
