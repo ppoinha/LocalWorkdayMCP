@@ -118,7 +118,7 @@ Each tool's description names the scope the spec lists for it. Operations that l
 
 The mapping comes from the scopes and security domains documented per operation in the Workday REST OpenAPI files the server is generated from (`spec/*_oas3.json`; the *Common* file plus Staffing, Absence Management, Compensation, Performance Enablement, Recruiting and Talent Management). The user approves the API Client on Workday's consent page when they log in.
 
-**Too many tools?** DaySight MCP offers 226 tools. If your AI client struggles with that many, list the tools you do not want in `WORKDAY_DISABLED_TOOLS` (a comma-separated list of tool names) or the first path words you do want in `WORKDAY_TOOL_GROUPS` (for example `workers,organizations`), in a `.env` file or the environment.
+**Too many tools?** DaySight MCP offers 227 tools. If your AI client struggles with that many, list the tools you do not want in `WORKDAY_DISABLED_TOOLS` (a comma-separated list of tool names) or the first path words you do want in `WORKDAY_TOOL_GROUPS` (for example `workers,organizations`), in a `.env` file or the environment.
 
 ### Step 4. Security domain permissions
 
