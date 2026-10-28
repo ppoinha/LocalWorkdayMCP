@@ -9,7 +9,7 @@
 - [Examples](https://daysight.dev/examples.html): sample questions to ask
 - [Demos](https://daysight.dev/demos.html): short recorded demos
 - [Install](https://daysight.dev/install.html): setup steps for Claude Desktop and the ChatGPT desktop app on Windows
-- [Security](https://daysight.dev/security.html): access model, privacy and what stays local
+- [Security](https://daysight.dev/security.html): runs on your own PC, read-only, Workday permissions decide what comes back, one-minute video and executive summary PDF
 - [Contact](https://daysight.dev/contact.html): contact details, legal notice, request a licence key after the 30-day trial, or ask a question
 - [Install guide (PDF)](https://daysight.dev/downloads/daysight-mcp-install-guide.pdf): step-by-step guide for Claude Desktop and the ChatGPT desktop app
 - [Licence Agreement](https://daysight.dev/license.html), [Terms of use](https://daysight.dev/terms.html), [Privacy](https://daysight.dev/privacy.html), [Attributions](https://daysight.dev/attributions.html)
