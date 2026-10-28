@@ -207,19 +207,19 @@ svg.chart{min-width:440px}
 .link i{display:block;position:relative;width:100%;height:4px;border-radius:2px;background:currentColor}
 .link i::after{content:"";position:absolute;right:-4px;top:50%;transform:translateY(-50%);border-left:12px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent}
 .link em{font-style:normal;font-size:12px;line-height:1.25;text-align:center;font-weight:600}
-.path-hero{background:var(--deep);color:var(--deep-fg);border-radius:20px;padding:26px 28px 28px;border:2px solid var(--mint);box-shadow:0 0 0 6px color-mix(in srgb,var(--mint) 18%,transparent),0 24px 48px -28px rgba(10,29,40,.6);display:flex;flex-direction:column;gap:22px}
+.path-hero{background:#fff;color:var(--fg);border-radius:20px;padding:26px 28px 28px;border:2px solid var(--mint);box-shadow:0 0 0 6px color-mix(in srgb,var(--mint) 18%,transparent),0 24px 48px -28px rgba(10,29,40,.6);display:flex;flex-direction:column;gap:22px}
 .path-top{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
 .pill-mint{background:var(--mint);color:#08141B;font-family:var(--display);font-weight:700;font-size:17px;padding:8px 18px;border-radius:999px}
-.zero{display:flex;align-items:baseline;gap:10px;color:var(--mint);font-family:var(--display);font-weight:600;font-size:18px}
-.zero b{font-size:52px;line-height:1;color:#fff;font-weight:700}
+.zero{display:flex;align-items:baseline;gap:10px;color:var(--accent);font-family:var(--display);font-weight:600;font-size:18px}
+.zero b{font-size:52px;line-height:1;color:var(--deep);font-weight:700}
 .path-hero .node{background:#0F222C;border-color:#25424d;min-height:110px}
 .path-hero .node b{color:#fff;font-size:20px}
 .path-hero .node small{color:#93AAB1}
 .path-hero .node.me{background:var(--mint);border-color:var(--mint)}
 .path-hero .node.me b{color:#08141B}
 .path-hero .node.me small{color:#0F3A38;font-weight:500}
-.path-hero .link{color:var(--mint)}
-.path-note{font-family:var(--display);font-weight:600;font-size:clamp(20px,3vw,26px);color:#fff}
+.path-hero .link{color:var(--accent)}
+.path-note{font-family:var(--display);font-weight:600;font-size:clamp(20px,3vw,26px);color:var(--deep)}
 @media (max-width:760px){
   .flow{flex-direction:column;align-items:stretch}
   .link{flex:0 0 auto;flex-direction:row;justify-content:center;gap:12px;padding-block:6px;min-height:52px}
